@@ -3,7 +3,7 @@
  *
  * See the README file for copyright information and how to reach the author.
  *
- * $Id: backtrack.h 11 2005-10-28 01:00:01Z tom $
+ * $Id: backtrack.h 14 2005-10-29 14:08:06Z tom $
  */
 
 #ifndef VDR_SUDOKU_BACKTRACK_H
@@ -131,7 +131,7 @@ namespace BackTrack
     /** Reset the decision tree, i.e. the next call to 'find_solution' finds
      * the first valid solution.
      */
-    virtual void reset();
+    void reset();
 
   private:
 
