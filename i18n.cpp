@@ -3,7 +3,13 @@
  *
  * See the README file for copyright information and how to reach the author.
  *
- * $Id: i18n.cpp 11 2005-10-28 01:00:01Z tom $
+ * $Id: i18n.cpp 15 2005-10-29 14:11:48Z tom $
+ *
+ *
+ * Translations provided by:
+ *
+ * Finnish     Ville Skyttä <ville.skytta@iki.fi>
+ *
  */
 
 #include "i18n.h"
@@ -19,7 +25,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "", // Português / Portuguese
     "", // Français / French
     "", // Norsk / Norwegian
-    "", // suomi / Finnish
+    "Sudoku", // suomi / Finnish
     "", // Polski / Polish
     "", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
@@ -48,7 +54,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "", // Português / Portuguese
     "", // Français / French
     "", // Norsk / Norwegian
-    "", // suomi / Finnish
+    "Sudoku-numeroristikot", // suomi / Finnish
     "", // Polski / Polish
     "", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
@@ -77,7 +83,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "", // Português / Portuguese
     "", // Français / French
     "", // Norsk / Norwegian
-    "", // suomi / Finnish
+    "Annettujen numeroiden lukumäärä", // suomi / Finnish
     "", // Polski / Polish
     "", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
@@ -106,7 +112,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "", // Português / Portuguese
     "", // Français / French
     "", // Norsk / Norwegian
-    "", // suomi / Finnish
+    "Järjestä annetut symmetrisesti", // suomi / Finnish
     "", // Polski / Polish
     "", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
@@ -135,7 +141,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "", // Português / Portuguese
     "", // Français / French
     "", // Norsk / Norwegian
-    "", // suomi / Finnish
+    "Merkitse virheet", // suomi / Finnish
     "", // Polski / Polish
     "", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
@@ -164,7 +170,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "", // Português / Portuguese
     "", // Français / French
     "", // Norsk / Norwegian
-    "", // suomi / Finnish
+    "Merkitse epävarmat", // suomi / Finnish
     "", // Polski / Polish
     "", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
@@ -193,7 +199,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "", // Português / Portuguese
     "", // Français / French
     "", // Norsk / Norwegian
-    "", // suomi / Finnish
+    "Läpinäkyvyys (%)", // suomi / Finnish
     "", // Polski / Polish
     "", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
@@ -222,7 +228,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "", // Português / Portuguese
     "", // Français / French
     "", // Norsk / Norwegian
-    "", // suomi / Finnish
+    "Onnittelut!\nValitse 'OK' aloittaaksesi uuden tehtävän", // suomi / Finnish
     "", // Polski / Polish
     "", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
