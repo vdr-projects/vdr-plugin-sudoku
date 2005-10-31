@@ -52,6 +52,8 @@ Setup:
 - Mark ambiguous numbers  Cells with ambiguous numbers are marked with magenta
                           color (yes/no).
                           Default is yes.
+- Clear marks             Unmark all cells when reset the puzzle (yes/no).
+                          Default is no.
 - Transparency (%)        Set the transparency of the menu (0-100).
                           Default is 50.
 

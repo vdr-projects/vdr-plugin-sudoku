@@ -3,7 +3,7 @@
  *
  * See the README file for copyright information and how to reach the author.
  *
- * $Id: setup.h 11 2005-10-28 01:00:01Z tom $
+ * $Id: setup.h 16 2005-10-31 21:12:41Z tom $
  */
 
 #ifndef VDR_SUDOKU_SETUP_H
@@ -26,6 +26,7 @@ namespace SudokuPlugin
     int symmetric;
     int mark_errors;
     int mark_ambiguous;
+    int clear_marks;
     int transparency;
 
     /** Constructor */

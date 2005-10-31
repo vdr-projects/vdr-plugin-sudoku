@@ -10,3 +10,5 @@ VDR Plugin 'sudoku' Revision History
 - Fixed compiler warnings with gcc-4.0 (thanks to Ville Skyttä for reporting
   this).
 - Added Finnish language texts (thanks to Ville Skyttä).
+- Added setup option whether or not all cells are unmarked when the puzzle is
+  reset.

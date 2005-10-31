@@ -3,7 +3,7 @@
  *
  * See the README file for copyright information and how to reach the author.
  *
- * $Id: menu.cpp 11 2005-10-28 01:00:01Z tom $
+ * $Id: menu.cpp 16 2005-10-31 21:12:41Z tom $
  */
 
 #include "menu.h"
@@ -155,7 +155,7 @@ eOSState Menu::ProcessKey(eKeys key)
           if (puzzle.untouched())
             puzzle.generate(setup.givens_count, setup.symmetric);
           else
-            puzzle.reset();
+            puzzle.reset(setup.clear_marks);
           break;
         default:
           return osContinue;

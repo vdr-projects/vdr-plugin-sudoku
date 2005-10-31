@@ -3,7 +3,7 @@
  *
  * See the README file for copyright information and how to reach the author.
  *
- * $Id: puzzle.cpp 11 2005-10-28 01:00:01Z tom $
+ * $Id: puzzle.cpp 16 2005-10-31 21:12:41Z tom $
  */
 
 #include "puzzle.h"
@@ -71,8 +71,14 @@ Puzzle::Puzzle(unsigned int givens_count, bool symmetric)
     generate(givens_count, symmetric);
 }
 
-/** Reset the puzzle. */
+/** Reset the puzzle (including marks). */
 void Puzzle::reset()
+{
+  reset(true);
+}
+
+/** Reset the puzzle (either with or without marks). */
+void Puzzle::reset(bool clear_marks)
 {
   unsigned int i;
 
@@ -85,8 +91,9 @@ void Puzzle::reset()
     compute_numbers(i);
 
   // Reset marked cells.
-  for (i = 0; i < SDIM; ++i)
-    marks[i] = false;
+  if (clear_marks)
+    for (i = 0; i < SDIM; ++i)
+      marks[i] = false;
 }
 
 /** Set the number into this cell. */

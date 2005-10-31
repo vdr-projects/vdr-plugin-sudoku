@@ -3,7 +3,7 @@
  *
  * See the README file for copyright information and how to reach the author.
  *
- * $Id: puzzle.h 11 2005-10-28 01:00:01Z tom $
+ * $Id: puzzle.h 16 2005-10-31 21:12:41Z tom $
  */
 
 #ifndef VDR_SUDOKU_PUZZLE_H
@@ -104,8 +104,11 @@ namespace Sudoku
     /** Constructor */
     Puzzle(unsigned int givens_count = 0, bool symmetric = true);
 
-    /** Reset the puzzle. */
+    /** Reset the puzzle (including marks). */
     virtual void reset();
+
+    /** Reset the puzzle (either with or without marks). */
+    virtual void reset(bool clear_marks);
 
     /** Set the number into this cell. */
     virtual void set(Pos pos, unsigned int number);

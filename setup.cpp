@@ -3,7 +3,7 @@
  *
  * See the README file for copyright information and how to reach the author.
  *
- * $Id: setup.cpp 11 2005-10-28 01:00:01Z tom $
+ * $Id: setup.cpp 16 2005-10-31 21:12:41Z tom $
  */
 
 #include "setup.h"
@@ -25,6 +25,7 @@ SetupData::SetupData()
   symmetric = 1;
   mark_errors = 1;
   mark_ambiguous = 1;
+  clear_marks = 0;
   transparency = 50;
 }
 
@@ -43,6 +44,8 @@ bool SetupData::parse(const char* name, const char* value)
     mark_errors = atoi(value);
   else if (!strcasecmp(name, "MarkAmbiguous"))
     mark_ambiguous = atoi(value);
+  else if (!strcasecmp(name, "ClearMarks"))
+    clear_marks = atoi(value);
   else if (!strcasecmp(name, "Transparency"))
     transparency = atoi(value);
   else
@@ -62,6 +65,7 @@ SetupPage::SetupPage(SetupData& setup) :
   Add(new cMenuEditBoolItem(tr("Mark errors"), &data.mark_errors));
   Add(new cMenuEditBoolItem(tr("Mark ambiguous numbers"),
                             &data.mark_ambiguous));
+  Add(new cMenuEditBoolItem(tr("Clear marks"), &data.clear_marks));
   Add(new cMenuEditIntItem(tr("Transparency (%)"), &data.transparency, 0, 100));
 }
 
@@ -76,5 +80,6 @@ void SetupPage::Store()
   SetupStore("Symmetric", setup.symmetric);
   SetupStore("MarkErrors", setup.mark_errors);
   SetupStore("MarkAmbiguous", setup.mark_ambiguous);
+  SetupStore("ClearMarks", setup.clear_marks);
   SetupStore("Transparency", setup.transparency);
 }
