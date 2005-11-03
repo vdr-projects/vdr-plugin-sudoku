@@ -3,7 +3,7 @@
  *
  * See the README file for copyright information and how to reach the author.
  *
- * $Id: sudoku.cpp 11 2005-10-28 01:00:01Z tom $
+ * $Id: sudoku.cpp 18 2005-11-03 21:48:08Z tom $
  */
 
 #include "sudoku.h"
@@ -55,10 +55,10 @@ namespace SudokuPlugin
     /** OSD object that shows the plugin's main menu */
     virtual cOsdObject* MainMenuAction();
 
-    /** Setup menu page to adjust the parameters of the plugin */
+    /** Setup menu page to adjust the setup parameters of the plugin */
     virtual cMenuSetupPage* SetupMenu();
 
-    /** Parse the parameters of the plugin. */
+    /** Parse the setup parameters of the plugin. */
     virtual bool SetupParse(const char* name, const char* value);
   };
 
@@ -91,7 +91,7 @@ cOsdObject* Plugin::MainMenuAction()
   return new Menu(setup, puzzle, curr);
 }
 
-/** Setup menu page to adjust the parameters of the plugin
+/** Setup menu page to adjust the setup parameters of the plugin
  *
  * This method is called every time the plugin's setup menu entry is selected.
  */
@@ -100,9 +100,9 @@ cMenuSetupPage* Plugin::SetupMenu()
   return new SetupPage(setup);
 }
 
-/** Parse the parameters of the plugin.
+/** Parse the setup parameters of the plugin.
  *
- * This method is called for each parameter the plugin has previously
+ * This method is called for each setup parameter the plugin has previously
  * stored in the global setup data.
  */
 bool Plugin::SetupParse(const char* name, const char* value)

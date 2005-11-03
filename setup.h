@@ -3,7 +3,7 @@
  *
  * See the README file for copyright information and how to reach the author.
  *
- * $Id: setup.h 16 2005-10-31 21:12:41Z tom $
+ * $Id: setup.h 19 2005-11-03 21:54:19Z tom $
  */
 
 #ifndef VDR_SUDOKU_SETUP_H
@@ -32,14 +32,14 @@ namespace SudokuPlugin
     /** Constructor */
     SetupData();
 
-    /** Parse the parameters of the plugin. */
+    /** Parse the setup parameters of the plugin. */
     bool parse(const char* name, const char* value);
   };
 
 
   //--- class SudokuPlugin::SetupPage ------------------------------------------
 
-  /** Setup menu page to adjust the parameters of the plugin */
+  /** Setup menu page to adjust the setup parameters of the plugin */
   class SetupPage : public cMenuSetupPage
   {
     SetupData& setup;
@@ -52,7 +52,7 @@ namespace SudokuPlugin
 
   protected:
 
-    /** Store the parameters of the plugin. */
+    /** Store the setup parameters of the plugin. */
     virtual void Store();
   };
 

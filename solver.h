@@ -3,7 +3,7 @@
  *
  * See the README file for copyright information and how to reach the author.
  *
- * $Id: solver.h 11 2005-10-28 01:00:01Z tom $
+ * $Id: solver.h 18 2005-11-03 21:48:08Z tom $
  */
 
 #ifndef VDR_SUDOKU_SOLVER_H
@@ -59,12 +59,12 @@ namespace Sudoku
    *    \code
    *    Puzzle puzzle; // Generate an empty puzzle without givens.
    *    Solver solver(puzzle);
-   *    solver.find_next_solution(true);
+   *    solver.find_next_solution();
    *    while (solver.solution_is_valid())
    *    {
    *      // Do something with the puzzle.
    *      ...
-   *      solver.find_next_solution(true);
+   *      solver.find_next_solution();
    *    }
    *    \endcode
    */

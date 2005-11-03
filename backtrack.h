@@ -3,7 +3,7 @@
  *
  * See the README file for copyright information and how to reach the author.
  *
- * $Id: backtrack.h 14 2005-10-29 14:08:06Z tom $
+ * $Id: backtrack.h 18 2005-11-03 21:48:08Z tom $
  */
 
 #ifndef VDR_SUDOKU_BACKTRACK_H
@@ -121,7 +121,7 @@ namespace BackTrack
     /** Find the next valid solution to the problem.
      *
      * Repeated calls will find all solutions to a problem if multiple solutions
-     * exist. Return true if a solution was found.
+     * exist.
      */
     void find_next_solution();
 

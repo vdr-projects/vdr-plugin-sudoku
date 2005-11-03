@@ -3,7 +3,7 @@
  *
  * See the README file for copyright information and how to reach the author.
  *
- * $Id: setup.cpp 17 2005-11-03 21:42:11Z tom $
+ * $Id: setup.cpp 19 2005-11-03 21:54:19Z tom $
  */
 
 #include "setup.h"
@@ -17,7 +17,7 @@ using namespace SudokuPlugin;
 
 /** Constructor
  *
- * Initialize the parameters of the plugin with standard values.
+ * Initialize the setup parameters of the plugin with standard values.
  */
 SetupData::SetupData()
 {
@@ -29,9 +29,9 @@ SetupData::SetupData()
   transparency = 50;
 }
 
-/** Parse the parameters of the plugin.
+/** Parse the setup parameters of the plugin.
  *
- * This method is called for each parameter the plugin has previously
+ * This method is called for each setup parameter the plugin has previously
  * stored in the global setup data.
  */
 bool SetupData::parse(const char* name, const char* value)
@@ -69,9 +69,10 @@ SetupPage::SetupPage(SetupData& setup) :
   Add(new cMenuEditIntItem(tr("Transparency (%)"), &data.transparency, 0, 100));
 }
 
-/** Store the parameters of the plugin.
+/** Store the setup parameters of the plugin.
  *
- * The parameters of the plugin are stored into the global setup data file.
+ * The setup parameters of the plugin are stored into the global setup data
+ * file.
  */
 void SetupPage::Store()
 {
