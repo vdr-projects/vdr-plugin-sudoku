@@ -3,7 +3,7 @@
  *
  * See the README file for copyright information and how to reach the author.
  *
- * $Id: i18n.cpp 16 2005-10-31 21:12:41Z tom $
+ * $Id: i18n.cpp 17 2005-11-03 21:42:11Z tom $
  *
  *
  * Translations provided by:
@@ -191,15 +191,15 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
 #endif
 #endif
   },
-  { "Clear marks", // English
-    "Markierungen löschen", // Deutsch / German
+  { "Clear marks on reset", // English
+    "Markierungen löschen beim Reset", // Deutsch / German
     "", // Slovenski / Slovenian
     "", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
     "", // Français / French
     "", // Norsk / Norwegian
-    "", // suomi / Finnish
+    "Poista merkinnät aloitettaessa", // suomi / Finnish
     "", // Polski / Polish
     "", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek

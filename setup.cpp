@@ -3,7 +3,7 @@
  *
  * See the README file for copyright information and how to reach the author.
  *
- * $Id: setup.cpp 16 2005-10-31 21:12:41Z tom $
+ * $Id: setup.cpp 17 2005-11-03 21:42:11Z tom $
  */
 
 #include "setup.h"
@@ -65,7 +65,7 @@ SetupPage::SetupPage(SetupData& setup) :
   Add(new cMenuEditBoolItem(tr("Mark errors"), &data.mark_errors));
   Add(new cMenuEditBoolItem(tr("Mark ambiguous numbers"),
                             &data.mark_ambiguous));
-  Add(new cMenuEditBoolItem(tr("Clear marks"), &data.clear_marks));
+  Add(new cMenuEditBoolItem(tr("Clear marks on reset"), &data.clear_marks));
   Add(new cMenuEditIntItem(tr("Transparency (%)"), &data.transparency, 0, 100));
 }
 
