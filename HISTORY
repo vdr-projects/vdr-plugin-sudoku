@@ -5,7 +5,7 @@ VDR Plugin 'sudoku' Revision History
 
 - Initial revision.
 
-2005-  -  : Version 0.1.1
+2005-11-04: Version 0.1.1
 
 - Fixed compiler warnings with gcc-4.0 (thanks to Ville Skyttä for reporting
   this).
