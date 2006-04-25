@@ -3,7 +3,7 @@
 #
 # See the README file for copyright information and how to reach the author.
 #
-# $Id: Makefile 11 2005-10-28 01:00:01Z tom $
+# $Id: Makefile 28 2006-04-25 00:09:14Z tom $
 
 # Define STATIC_LINK=1 to force static linking
 #STATIC_LINK = 1
@@ -15,11 +15,11 @@ PROGRAM = sudoku_generator
 
 SRCS = ../puzzle.cpp ../generator.cpp ../solver.cpp ../backtrack.cpp
 
-VERSION = $(shell grep 'static const char\* VERSION *=' ../sudoku.cpp | \
-                  awk '{ print $$6 }' | sed -e 's/[";]//g')
+VERSION = $(shell sed -ne '/static .* VERSION *=/s/^.*"\(.*\)".*$$/\1/p' \
+                      ../sudoku.cpp)
 
 CXX      ?= g++
-CXXFLAGS ?= -O2 -Wall -Woverloaded-virtual
+CXXFLAGS ?= -g -O2 -Wall -Woverloaded-virtual
 DEFINES  += -D_GNU_SOURCE -DVERSION=\"$(VERSION)\"
 
 ifdef STATIC_LINK
