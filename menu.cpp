@@ -3,7 +3,7 @@
  *
  * See the README file for copyright information and how to reach the author.
  *
- * $Id: menu.cpp 16 2005-10-31 21:12:41Z tom $
+ * $Id: menu.cpp 27 2006-04-25 00:08:15Z tom $
  */
 
 #include "menu.h"
@@ -15,22 +15,6 @@
 #include <vdr/osdbase.h>
 #include <vdr/osd.h>
 #include <vdr/font.h>
-
-// Compatibility to older vdr versions
-#if VDRVERSNUM < 10307
-  #define tColor eDvbColor
-  #define DrawRectangle Fill
-  #define DrawBitmap SetBitmap
-  #define cOsdProvider cOsd
-  #define NewOsd OpenRaw
-  struct tArea { int x1, y1, x2, y2, bpp; };
-  #define SetAreas(a,n) Create(a->x1,             a->y1,\
-                               a->x2 - a->x1 + 1, a->y2 - a->y1 + 1,\
-                               a->bpp, true)
-  #define Color GetColor
-  #define savePalette(bitmap) savePalette(2)
-  #define SetPalette(palette, area) Width('X')
-#endif
 
 using namespace SudokuPlugin;
 using namespace Sudoku;
@@ -209,15 +193,8 @@ void Menu::paint()
     if (puzzle.get(p) != 0)
     {
       char txt[2] = { '0' + puzzle.get(p), 0 };
-#if VDRVERSNUM < 10307
-      osd->SetFont(fontFix);
-      osd->Text(x1 + max((CELL_SIZE - osd->Width(txt)) / 2, 0),
-                y1 + max((CELL_SIZE - cOsd::LineHeight()) / 2, 0),
-                txt, fg, bg);
-#else
       const cFont* font = cFont::GetFont(fontFix);
       osd->DrawText(x1, y1, txt, fg, bg, font, CELL_SIZE, CELL_SIZE, taCenter);
-#endif
     }
   }
 

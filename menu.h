@@ -3,7 +3,7 @@
  *
  * See the README file for copyright information and how to reach the author.
  *
- * $Id: menu.h 11 2005-10-28 01:00:01Z tom $
+ * $Id: menu.h 27 2006-04-25 00:08:15Z tom $
  */
 
 #ifndef VDR_SUDOKU_MENU_H
@@ -15,13 +15,6 @@ namespace Sudoku { class Puzzle; class Pos; }
 #include <vdr/config.h>
 #include <vdr/osdbase.h>
 #include <vdr/osd.h>
-
-// Compatibility to older vdr versions
-#if VDRVERSNUM < 10307
-  #define cOsd_ cOsdBase
-#else
-  #define cOsd_ cOsd
-#endif
 
 
 namespace SudokuPlugin
@@ -36,7 +29,7 @@ namespace SudokuPlugin
     Sudoku::Puzzle& puzzle;
     Sudoku::Pos& curr;
     int xPos, yPos;
-    cOsd_* osd;
+    cOsd* osd;
     Bitmap* info;
     const char* infoText;
     bool new_puzzle_request;

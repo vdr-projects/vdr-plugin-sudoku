@@ -3,7 +3,7 @@
  *
  * See the README file for copyright information and how to reach the author.
  *
- * $Id: bitmap.h 11 2005-10-28 01:00:01Z tom $
+ * $Id: bitmap.h 27 2006-04-25 00:08:15Z tom $
  */
 
 #ifndef VDR_SUDOKU_BITMAP_H
@@ -13,11 +13,6 @@
 #include <vdr/config.h>
 #include <vdr/osdbase.h>
 #include <vdr/osd.h>
-
-// Compatibility to older vdr versions
-#if VDRVERSNUM < 10307
-  #define tColor eDvbColor
-#endif
 
 
 namespace SudokuPlugin
@@ -41,11 +36,6 @@ namespace SudokuPlugin
 
     /** Draw a frame into the bitmap. */
     void frame(int x1, int y1, int x2, int y2, tColor frameColor);
-
-#if VDRVERSNUM < 10307
-    /** Wrap the text to fit into the bitmap (taken from font.c / VDR 1.3.7). */
-    char *textWrapper(const char *Text, int *p_lines);
-#endif
   };
 
 } // namespace SudokuPlugin
