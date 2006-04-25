@@ -3,7 +3,7 @@
  *
  * See the README file for copyright information and how to reach the author.
  *
- * $Id: i18n.cpp 17 2005-11-03 21:42:11Z tom $
+ * $Id: i18n.cpp 29 2006-04-25 00:09:36Z tom $
  *
  *
  * Translations provided by:
@@ -33,18 +33,11 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "", // Românã / Romanian
     "", // Magyar / Hungarian
     "", // Català / Catalanian
-#if VDRVERSNUM > 10302
     "", // ÀãááÚØÙ / Russian
-#if VDRVERSNUM > 10307
     "", // Hrvatski / Croatian
-#if VDRVERSNUM > 10313
     "", // Eesti / Estonian
-#if VDRVERSNUM > 10316
     "", // Dansk / Danish
-#endif
-#endif
-#endif
-#endif
+    "", // Èesky / Czech
   },
   { "Sudoku - generate and solve Number Place puzzles", // English
     "Sudoku - Erzeugen und Lösen von Zahlenpuzzles", // Deutsch / German
@@ -62,18 +55,11 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "", // Românã / Romanian
     "", // Magyar / Hungarian
     "", // Català / Catalanian
-#if VDRVERSNUM > 10302
     "", // ÀãááÚØÙ / Russian
-#if VDRVERSNUM > 10307
     "", // Hrvatski / Croatian
-#if VDRVERSNUM > 10313
     "", // Eesti / Estonian
-#if VDRVERSNUM > 10316
     "", // Dansk / Danish
-#endif
-#endif
-#endif
-#endif
+    "", // Èesky / Czech
   },
   { "Givens count", // English
     "Anzahl vorgegebener Zahlen", // Deutsch / German
@@ -91,18 +77,11 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "", // Românã / Romanian
     "", // Magyar / Hungarian
     "", // Català / Catalanian
-#if VDRVERSNUM > 10302
     "", // ÀãááÚØÙ / Russian
-#if VDRVERSNUM > 10307
     "", // Hrvatski / Croatian
-#if VDRVERSNUM > 10313
     "", // Eesti / Estonian
-#if VDRVERSNUM > 10316
     "", // Dansk / Danish
-#endif
-#endif
-#endif
-#endif
+    "", // Èesky / Czech
   },
   { "Symmetric givens", // English
     "Vorgegebene Zahlen symmetrisch anordnen", // Deutsch / German
@@ -120,18 +99,11 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "", // Românã / Romanian
     "", // Magyar / Hungarian
     "", // Català / Catalanian
-#if VDRVERSNUM > 10302
     "", // ÀãááÚØÙ / Russian
-#if VDRVERSNUM > 10307
     "", // Hrvatski / Croatian
-#if VDRVERSNUM > 10313
     "", // Eesti / Estonian
-#if VDRVERSNUM > 10316
     "", // Dansk / Danish
-#endif
-#endif
-#endif
-#endif
+    "", // Èesky / Czech
   },
   { "Mark errors", // English
     "Fehler markieren", // Deutsch / German
@@ -149,18 +121,11 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "", // Românã / Romanian
     "", // Magyar / Hungarian
     "", // Català / Catalanian
-#if VDRVERSNUM > 10302
     "", // ÀãááÚØÙ / Russian
-#if VDRVERSNUM > 10307
     "", // Hrvatski / Croatian
-#if VDRVERSNUM > 10313
     "", // Eesti / Estonian
-#if VDRVERSNUM > 10316
     "", // Dansk / Danish
-#endif
-#endif
-#endif
-#endif
+    "", // Èesky / Czech
   },
   { "Mark ambiguous numbers", // English
     "Unklare Zahlen markieren", // Deutsch / German
@@ -178,18 +143,11 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "", // Românã / Romanian
     "", // Magyar / Hungarian
     "", // Català / Catalanian
-#if VDRVERSNUM > 10302
     "", // ÀãááÚØÙ / Russian
-#if VDRVERSNUM > 10307
     "", // Hrvatski / Croatian
-#if VDRVERSNUM > 10313
     "", // Eesti / Estonian
-#if VDRVERSNUM > 10316
     "", // Dansk / Danish
-#endif
-#endif
-#endif
-#endif
+    "", // Èesky / Czech
   },
   { "Clear marks on reset", // English
     "Markierungen löschen beim Reset", // Deutsch / German
@@ -207,18 +165,11 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "", // Românã / Romanian
     "", // Magyar / Hungarian
     "", // Català / Catalanian
-#if VDRVERSNUM > 10302
     "", // ÀãááÚØÙ / Russian
-#if VDRVERSNUM > 10307
     "", // Hrvatski / Croatian
-#if VDRVERSNUM > 10313
     "", // Eesti / Estonian
-#if VDRVERSNUM > 10316
     "", // Dansk / Danish
-#endif
-#endif
-#endif
-#endif
+    "", // Èesky / Czech
   },
   { "Transparency (%)", // English
     "Transparenz (%)", // Deutsch / German
@@ -236,18 +187,11 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "", // Românã / Romanian
     "", // Magyar / Hungarian
     "", // Català / Catalanian
-#if VDRVERSNUM > 10302
     "", // ÀãááÚØÙ / Russian
-#if VDRVERSNUM > 10307
     "", // Hrvatski / Croatian
-#if VDRVERSNUM > 10313
     "", // Eesti / Estonian
-#if VDRVERSNUM > 10316
     "", // Dansk / Danish
-#endif
-#endif
-#endif
-#endif
+    "", // Èesky / Czech
   },
   { "Congratulations!\nPress OK to start a new puzzle", // English
     "Herzlichen Glückwunsch!\nOK startet ein neues Puzzle", // Deutsch / German
@@ -265,18 +209,11 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "", // Românã / Romanian
     "", // Magyar / Hungarian
     "", // Català / Catalanian
-#if VDRVERSNUM > 10302
     "", // ÀãááÚØÙ / Russian
-#if VDRVERSNUM > 10307
     "", // Hrvatski / Croatian
-#if VDRVERSNUM > 10313
     "", // Eesti / Estonian
-#if VDRVERSNUM > 10316
     "", // Dansk / Danish
-#endif
-#endif
-#endif
-#endif
+    "", // Èesky / Czech
   },
   { NULL }
 };
