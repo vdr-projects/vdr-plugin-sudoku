@@ -3,7 +3,7 @@
  *
  * See the README file for copyright information and how to reach the author.
  *
- * $Id: sudoku.cpp 30 2006-04-25 00:10:18Z tom $
+ * $Id: sudoku.cpp 70 2007-02-23 20:45:21Z tom $
  */
 
 #include "sudoku.h"
@@ -19,7 +19,7 @@ namespace SudokuPlugin
 {
 
   /** Version number of the plugin */
-  static const char* VERSION = "0.1.2";
+  static const char* VERSION = "0.1.3";
 
   /** Short description of the plugin's purpose */
   static const char* DESCRIPTION =
