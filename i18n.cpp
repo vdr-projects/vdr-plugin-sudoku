@@ -3,12 +3,13 @@
  *
  * See the README file for copyright information and how to reach the author.
  *
- * $Id: i18n.cpp 29 2006-04-25 00:09:36Z tom $
+ * $Id: i18n.cpp 68 2007-02-23 20:43:08Z tom $
  *
  *
  * Translations provided by:
  *
  * Finnish     Ville Skyttä <ville.skytta@iki.fi>
+ * Spanish     bittor from open7x0.org
  *
  */
 
@@ -27,7 +28,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "", // Norsk / Norwegian
     "Sudoku", // suomi / Finnish
     "", // Polski / Polish
-    "", // Español / Spanish
+    "Sudoku", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
     "", // Svenska / Swedish
     "", // Românã / Romanian
@@ -49,7 +50,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "", // Norsk / Norwegian
     "Sudoku-numeroristikot", // suomi / Finnish
     "", // Polski / Polish
-    "", // Español / Spanish
+    "Solucionar rompecabezas numérico", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
     "", // Svenska / Swedish
     "", // Românã / Romanian
@@ -71,7 +72,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "", // Norsk / Norwegian
     "Annettujen numeroiden lukumäärä", // suomi / Finnish
     "", // Polski / Polish
-    "", // Español / Spanish
+    "Celdas rellenadas", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
     "", // Svenska / Swedish
     "", // Românã / Romanian
@@ -93,7 +94,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "", // Norsk / Norwegian
     "Järjestä annetut symmetrisesti", // suomi / Finnish
     "", // Polski / Polish
-    "", // Español / Spanish
+    "Números simétricos rellenados", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
     "", // Svenska / Swedish
     "", // Românã / Romanian
@@ -115,7 +116,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "", // Norsk / Norwegian
     "Merkitse virheet", // suomi / Finnish
     "", // Polski / Polish
-    "", // Español / Spanish
+    "Marcar errores", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
     "", // Svenska / Swedish
     "", // Românã / Romanian
@@ -137,7 +138,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "", // Norsk / Norwegian
     "Merkitse epävarmat", // suomi / Finnish
     "", // Polski / Polish
-    "", // Español / Spanish
+    "Marcar números ambiguos", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
     "", // Svenska / Swedish
     "", // Românã / Romanian
@@ -159,7 +160,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "", // Norsk / Norwegian
     "Poista merkinnät aloitettaessa", // suomi / Finnish
     "", // Polski / Polish
-    "", // Español / Spanish
+    "Quitar marcas al reiniciar", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
     "", // Svenska / Swedish
     "", // Românã / Romanian
@@ -181,7 +182,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "", // Norsk / Norwegian
     "Läpinäkyvyys (%)", // suomi / Finnish
     "", // Polski / Polish
-    "", // Español / Spanish
+    "Transparencia (%)", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
     "", // Svenska / Swedish
     "", // Românã / Romanian
@@ -203,7 +204,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "", // Norsk / Norwegian
     "Onnittelut!\nValitse 'OK' aloittaaksesi uuden tehtävän", // suomi / Finnish
     "", // Polski / Polish
-    "", // Español / Spanish
+    "¡Enhorabuena!\nPulse OK para iniciar un nuevo rompecabezas", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
     "", // Svenska / Swedish
     "", // Românã / Romanian
