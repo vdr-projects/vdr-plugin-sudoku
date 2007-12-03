@@ -3,11 +3,13 @@
 #
 # See the README file for copyright information and how to reach the author.
 #
-# $Id: Makefile 28 2006-04-25 00:09:14Z tom $
+# $Id: Makefile 102 2007-12-03 22:10:04Z tom $
 
 # The official name of this plugin.
 # This name will be used in the '-P...' option of VDR to load the plugin.
 # By default the main source file also carries this name.
+# IMPORTANT: the presence of this macro is important for the Make.config
+# file. So it must be defined, even if it is not used here!
 #
 PLUGIN = sudoku
 
@@ -44,43 +46,61 @@ PACKAGE = vdr-$(ARCHIVE)
 ### Includes and Defines (add further entries here):
 
 INCLUDES += -I$(VDRDIR)/include
-
 DEFINES += -D_GNU_SOURCE -DPLUGIN_NAME_I18N='"$(PLUGIN)"'
+CXXFLAGS += $(INCLUDES) $(DEFINES)
 
-### The object files (add further files here):
+### The source and object files
 
-OBJS = $(PLUGIN).o setup.o i18n.o bitmap.o menu.o \
-       puzzle.o generator.o solver.o backtrack.o
+SRCS = $(wildcard *.cpp)
+OBJS = $(SRCS:%.cpp=%.o)
 
-### Implicit rules:
+### The main target:
 
-%.o: %.cpp
-	$(CXX) $(CXXFLAGS) -c $(DEFINES) $(INCLUDES) $<
+all: libvdr-$(PLUGIN).so i18n
+	@cd tools && $(MAKE)
 
-# Dependencies:
+### Dependencies:
 
-MAKEDEP = $(CXX) -MM -MG
 DEPFILE = .dependencies
 $(DEPFILE): Makefile
-	@$(MAKEDEP) $(DEFINES) $(INCLUDES) $(OBJS:%.o=%.cpp) > $@
+	@$(CXX) -MM -MG $(SRCS) > $@
 
 -include $(DEPFILE)
 
+### Internationalization (I18N):
+
+PODIR     = po
+LOCALEDIR = $(VDRDIR)/locale
+I18Npo    = $(notdir $(wildcard $(PODIR)/*.po))
+I18Npot   = $(PODIR)/$(PLUGIN).pot
+
+$(I18Npot): $(SRCS)
+	xgettext -C -cTRANSLATORS --no-wrap --no-location -k -ktr -ktrNOOP \
+	         --msgid-bugs-address='<tom@toms-cafe.de>' -o $@ $^
+
+%.po: $(I18Npot)
+	msgmerge -U --no-wrap --no-location --backup=none -q $@ $<
+	@touch $@
+
+$(LOCALEDIR)/%/LC_MESSAGES/vdr-$(PLUGIN).mo: $(PODIR)/%.po
+	@mkdir -p $(dir $@)
+	msgfmt -c -o $@ $<
+
+.PHONY: i18n
+i18n: $(I18Npo:%.po=$(LOCALEDIR)/%/LC_MESSAGES/vdr-$(PLUGIN).mo)
+
 ### Targets:
 
-all: libvdr-$(PLUGIN).so
-	@cd tools && $(MAKE)
-
 libvdr-$(PLUGIN).so: $(OBJS)
-	$(CXX) $(CXXFLAGS) -shared $(OBJS) -o $@
-	@cp $@ $(LIBDIR)/$@.$(APIVERSION)
+	$(CXX) $(CXXFLAGS) -shared $^ -o $@
+	@cp --remove-destination $@ $(LIBDIR)/$@.$(APIVERSION)
 
 dist: clean
 	@-rm -rf $(TMPDIR)/$(ARCHIVE)
 	@mkdir $(TMPDIR)/$(ARCHIVE)
 	@cp -a * $(TMPDIR)/$(ARCHIVE)
 	@tar czf $(PACKAGE).tgz -C $(TMPDIR) \
-             --exclude debian --exclude CVS --exclude .svn $(ARCHIVE)
+	     --exclude debian --exclude CVS --exclude .svn $(ARCHIVE)
 	@-rm -rf $(TMPDIR)/$(ARCHIVE)
 	@echo Distribution package created as $(PACKAGE).tgz
 
@@ -88,6 +108,6 @@ srcdoc: Doxyfile $(OBJS:%.o=%.cpp) $(OBJS:%.o=%.h)
 	VERSION=$(VERSION) /usr/bin/doxygen
 
 clean:
-	@-rm -f $(OBJS) $(DEPFILE) *.so* *.tgz core* *~
+	@-rm -f $(DEPFILE) *.o *.so $(I18Npot) *.tgz core* *~
 	@-rm -rf srcdoc
 	@cd tools && $(MAKE) clean

@@ -3,7 +3,7 @@
  *
  * See the README file for copyright information and how to reach the author.
  *
- * $Id: i18n.cpp 68 2007-02-23 20:43:08Z tom $
+ * $Id: i18n.cpp 102 2007-12-03 22:10:04Z tom $
  *
  *
  * Translations provided by:
@@ -16,6 +16,8 @@
 #include "i18n.h"
 #include <vdr/config.h>
 
+
+#if VDRVERSNUM < 10507
 
 const tI18nPhrase SudokuPlugin::Phrases[] = {
   { "Sudoku", // English
@@ -218,3 +220,5 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
   },
   { NULL }
 };
+
+#endif

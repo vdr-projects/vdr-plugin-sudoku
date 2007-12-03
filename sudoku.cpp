@@ -3,7 +3,7 @@
  *
  * See the README file for copyright information and how to reach the author.
  *
- * $Id: sudoku.cpp 70 2007-02-23 20:45:21Z tom $
+ * $Id: sudoku.cpp 102 2007-12-03 22:10:04Z tom $
  */
 
 #include "sudoku.h"
@@ -12,6 +12,7 @@
 #include "setup.h"
 #include "i18n.h"
 #include <vdr/plugin.h>
+#include <vdr/config.h>
 
 
 /** 'Sudoku' is a VDR plugin to generate and solve Number Place puzzles. */
@@ -23,10 +24,10 @@ namespace SudokuPlugin
 
   /** Short description of the plugin's purpose */
   static const char* DESCRIPTION =
-    "Sudoku - generate and solve Number Place puzzles";
+    trNOOP("Sudoku - generate and solve Number Place puzzles");
 
   /** Name of the entry in VDR's main menu */
-  static const char* MAINMENUENTRY = "Sudoku";
+  static const char* MAINMENUENTRY = trNOOP("Sudoku");
 
 
   //--- class SudokuPlugin::Plugin ---------------------------------------------
@@ -76,7 +77,9 @@ using namespace SudokuPlugin;
  */
 bool Plugin::Start()
 {
+#if VDRVERSNUM < 10507
   RegisterI18n(Phrases);
+#endif
   puzzle.generate(setup.givens_count, setup.symmetric);
   curr = curr.center();
   return true;

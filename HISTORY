@@ -1,5 +1,5 @@
-VDR Plugin 'sudoku' Revision History
-------------------------------------
+VDR plug-in 'Sudoku' Revision History
+-------------------------------------
 
 2005-10-28: Version 0.1.0
 
@@ -22,3 +22,7 @@ VDR Plugin 'sudoku' Revision History
 2007-02-23: Version 0.1.3
 
 - Added Spanish language texts (thanks to bittor from open7x0.org).
+
+____-__-__: Version _._._
+
+- Added gettext support (VDR >= 1.5.7).
