@@ -28,3 +28,4 @@ ____-__-__: Version _._._
 - Added gettext support (VDR >= 1.5.7).
 - Fixed compiler warnings with gcc-4.1.2.
 - Updated FSF address in the license information.
+- Improved copyright and license information in the header of all source files.

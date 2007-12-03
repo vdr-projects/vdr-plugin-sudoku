@@ -1,12 +1,25 @@
-This is a "plugin" for the Video Disk Recorder (VDR).
+Sudoku: A plug-in for the Video Disk Recorder
+---------------------------------------------
 
-Written by:                  Thomas Günther <tom@toms-cafe.de>
+Copyright (C) 2005-2007, Thomas Günther <tom@toms-cafe.de>
 
-Project's homepage:          http://toms-cafe.de/vdr/sudoku
+Project's homepage: http://toms-cafe.de/vdr/sudoku
 
-Latest version available at: http://toms-cafe.de/vdr/sudoku
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
 
-See the file COPYING for license information.
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along
+with this program; if not, write to the Free Software Foundation, Inc.,
+51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+
+See the file COPYING for the full license information.
 
 
 Requirements:
@@ -18,7 +31,7 @@ Requirements:
 Description:
 ------------
 
-'Sudoku' is a VDR plugin to generate and solve Number Place puzzles, so called
+'Sudoku' is a VDR plug-in to generate and solve Number Place puzzles, so called
 Sudokus.
 
 A Sudoku puzzle consists of 9 x 9 cells subdivided into 9 regions with 3 x 3
@@ -28,7 +41,7 @@ painted with cyan background color. The aim of the puzzle is to find the missing
 numbers. There is only one solution of a Sudoku puzzle.
 
 The Sudoku puzzles are generated on-the-fly. The number of givens can be set in
-the plugin's setup page down to a minimum of 26 givens. The generation of
+the plug-in's setup page down to a minimum of 26 givens. The generation of
 puzzles with less than 26 givens takes too long. By default the cells with
 givens are symmetrically ordered. But this can be disabled in the setup.
 
@@ -39,7 +52,7 @@ background color. With the yellow key the cursor is moved to the next free cell
 with minimal possible numbers. The red key set the next possible number for the
 current cell.
 
-Each time the plugin is started from the main menu the same puzzle is shown. A
+Each time the plug-in is started from the main menu the same puzzle is shown. A
 new puzzle is only generated on VDR startup or if it has been requested by
 pressing the blue key. This key has two functions. If no numbers are set a new
 puzzle is generated. Otherwise all numbers are reset so that only the givens are
@@ -77,7 +90,7 @@ Keys:
                           reset the number if greater numbers are not possible.
 - Blue                    Reset the puzzle (if some numbers set).
                           Start a new puzzle (if no numbers set).
-- Back                    Quit the plugin.
+- Back                    Quit the plug-in.
 
 
 Cell colors:
