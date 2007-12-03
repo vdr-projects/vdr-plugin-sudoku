@@ -3,7 +3,7 @@
  *
  * See the README file for copyright information and how to reach the author.
  *
- * $Id: menu.cpp 27 2006-04-25 00:08:15Z tom $
+ * $Id: menu.cpp 103 2007-12-03 22:26:42Z tom $
  */
 
 #include "menu.h"
@@ -71,8 +71,8 @@ void Menu::Show()
   osd = cOsdProvider::NewOsd(0, 0);
   if (osd)
   {
-    tArea areas[] = { x1, y1, x2, y2, 4 };
-    osd->SetAreas(areas, 1);
+    tArea area = { x1, y1, x2, y2, 4 };
+    osd->SetAreas(&area, 1);
     paint();
   }
 }
