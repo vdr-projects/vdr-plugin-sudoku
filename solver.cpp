@@ -17,7 +17,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: solver.cpp 106 2007-12-03 23:28:24Z tom $
+ * $Id: solver.cpp 108 2008-01-06 16:01:26Z tom $
  */
 
 #define USE_RAND
@@ -47,7 +47,7 @@ void Solver::set_first_at(unsigned int level)
 {
   assert(level < free_count);
   const Pos p = puzzle.next_free();
-  assert (p <= Pos::last());
+  assert(p <= Pos::last());
 
   free_list[level] = p;
   puzzle.set(p, 0);

@@ -17,7 +17,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: puzzle.cpp 107 2008-01-06 15:50:41Z tom $
+ * $Id: puzzle.cpp 108 2008-01-06 16:01:26Z tom $
  */
 
 #include "puzzle.h"
@@ -60,16 +60,16 @@ void Numbers::set_contents(const Numbers& sudoku, const bool marks[SDIM])
 /** Set the number into this cell. */
 void Numbers::set(Pos pos, unsigned int number)
 {
-  assert (pos <= Pos::last());
-  assert (0 <= number && number <= DIM);
+  assert(pos <= Pos::last());
+  assert(0 <= number && number <= DIM);
   content[pos] = number;
 }
 
 /** Get the number from this cell. */
 unsigned int Numbers::get(Pos pos) const
 {
-  assert (pos <= Pos::last());
-  assert (0 <= content[pos] && content[pos] <= DIM);
+  assert(pos <= Pos::last());
+  assert(0 <= content[pos] && content[pos] <= DIM);
   return content[pos];
 }
 
@@ -113,8 +113,8 @@ void Puzzle::reset(bool clear_marks)
 /** Set the number into this cell. */
 void Puzzle::set(Pos pos, unsigned int number)
 {
-  assert (pos <= Pos::last());
-  assert (0 <= number && number <= DIM);
+  assert(pos <= Pos::last());
+  assert(0 <= number && number <= DIM);
 
   if (!given(pos) && get(pos) != number)
   {
@@ -169,21 +169,21 @@ bool Puzzle::untouched() const
 /** Is the number in this cell given? */
 bool Puzzle::given(Pos pos) const
 {
-  assert (pos <= Pos::last());
+  assert(pos <= Pos::last());
   return givens.get(pos) != 0;
 }
 
 /** Is there an error on this position? */
 bool Puzzle::error(Pos pos) const
 {
-  assert (pos <= Pos::last());
+  assert(pos <= Pos::last());
   return !correct(pos);
 }
 
 /** Is the number in this cell ambiguous? */
 bool Puzzle::ambiguous(Pos pos) const
 {
-  assert (pos <= Pos::last());
+  assert(pos <= Pos::last());
   return get(pos) != 0 && count[pos] > 1;
 }
 
@@ -202,7 +202,7 @@ bool Puzzle::solved() const
 /** Is this cell marked? */
 bool Puzzle::marked(Pos pos) const
 {
-  assert (pos <= Pos::last());
+  assert(pos <= Pos::last());
   return marks[pos];
 }
 
@@ -228,7 +228,7 @@ Pos Puzzle::next_free(Pos pos) const
 /** Get the next possible number for this cell. */
 unsigned int Puzzle::next_number(Pos pos)
 {
-  assert (pos <= Pos::last());
+  assert(pos <= Pos::last());
   unsigned int n = get(pos);
   unsigned int i;
 
@@ -243,7 +243,7 @@ unsigned int Puzzle::next_number(Pos pos)
 /** Get the count of possible numbers for this cell. */
 unsigned int Puzzle::numbers_count(Pos pos)
 {
-  assert (pos <= Pos::last());
+  assert(pos <= Pos::last());
   return count[pos];
 }
 
