@@ -17,7 +17,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: puzzle.cpp 106 2007-12-03 23:28:24Z tom $
+ * $Id: puzzle.cpp 107 2008-01-06 15:50:41Z tom $
  */
 
 #include "puzzle.h"
@@ -209,7 +209,7 @@ bool Puzzle::marked(Pos pos) const
 /** Toggle the mark for this cell. */
 void Puzzle::toggle_mark(Pos pos)
 {
-  assert (pos < Pos::last());
+  assert(pos <= Pos::last());
   marks[pos] = !marks[pos];
 }
 

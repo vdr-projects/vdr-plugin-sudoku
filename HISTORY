@@ -29,3 +29,4 @@ ____-__-__: Version _._._
 - Fixed compiler warnings with gcc-4.1.2.
 - Updated FSF address in the license information.
 - Improved copyright and license information in the header of all source files.
+- Fixed (un)marking the cell on the bottom right.
