@@ -17,7 +17,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: setup.h 109 2008-01-06 19:43:20Z tom $
+ * $Id: setup.h 110 2008-01-06 23:32:09Z tom $
  */
 
 #ifndef VDR_SUDOKU_SETUP_H
@@ -41,6 +41,7 @@ namespace SudokuPlugin
     int mark_errors;
     int mark_ambiguous;
     int show_possibles_pattern;
+    int show_possibles_digits;
     int clear_marks;
     int transparency;
 

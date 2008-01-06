@@ -17,7 +17,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: menu.cpp 109 2008-01-06 19:43:20Z tom $
+ * $Id: menu.cpp 110 2008-01-06 23:32:09Z tom $
  */
 
 #include "menu.h"
@@ -69,11 +69,20 @@ Menu::Menu(const SetupData& setup, Puzzle& puzzle, Pos& curr) :
   info = NULL;
   infoText = NULL;
   new_puzzle_request = false;
+#if VDRVERSNUM >= 10504
+  mini_font = cFont::CreateFont(Setup.FontOsd, 3 * CELL_SIZE / RDIM / 4,
+                                CELL_SIZE / RDIM);
+#else
+  mini_font = NULL;
+#endif
 }
 
 /** Destructor */
 Menu::~Menu()
 {
+#if VDRVERSNUM >= 10504
+  delete mini_font;
+#endif
   delete info;
   delete osd;
 }
@@ -212,7 +221,7 @@ void Menu::paint()
       const cFont* font = cFont::GetFont(fontFix);
       osd->DrawText(x1, y1, txt, fg, bg, font, CELL_SIZE, CELL_SIZE, taCenter);
     }
-    else if (setup.show_possibles_pattern)
+    else if (setup.show_possibles_pattern || setup.show_possibles_digits)
     {
       for (unsigned int n = 1; n <= DIM; ++n)
       {
@@ -222,9 +231,22 @@ void Menu::paint()
           int y3 = y1 + (((n - 1) / RDIM) * CELL_SIZE) / RDIM;
           int x4 = x1 + (((n - 1) % RDIM + 1) * CELL_SIZE) / RDIM - 1;
           int y4 = y1 + (((n - 1) / RDIM + 1) * CELL_SIZE) / RDIM - 1;
-          fg = TRANS(POSSIBLE_FG, trans);
-          bg = TRANS(POSSIBLE_BG(n), trans);
-          osd->DrawRectangle(x3, y3, x4, y4, bg);
+
+          if (setup.show_possibles_pattern)
+          {
+            fg = TRANS(POSSIBLE_FG, trans);
+            bg = TRANS(POSSIBLE_BG(n), trans);
+            osd->DrawRectangle(x3, y3, x4, y4, bg);
+          }
+
+#if VDRVERSNUM >= 10504
+          if (setup.show_possibles_digits)
+          {
+            char txt[2] = { '0' + n, 0 };
+            osd->DrawText(x3, y3, txt, fg, bg, mini_font,
+                          CELL_SIZE / RDIM, CELL_SIZE / RDIM, taCenter);
+          }
+#endif
         }
       }
     }

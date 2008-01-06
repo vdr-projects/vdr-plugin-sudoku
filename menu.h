@@ -17,7 +17,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: menu.h 106 2007-12-03 23:28:24Z tom $
+ * $Id: menu.h 110 2008-01-06 23:32:09Z tom $
  */
 
 #ifndef VDR_SUDOKU_MENU_H
@@ -47,6 +47,7 @@ namespace SudokuPlugin
     Bitmap* info;
     const char* infoText;
     bool new_puzzle_request;
+    const cFont* mini_font;
 
   public:
 

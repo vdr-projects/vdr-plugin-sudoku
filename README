@@ -79,6 +79,10 @@ Setup:
                           cell the background of the corresponding grid section
                           is colored.
                           Default is yes.
+- Show possible numbers as digits (VDR >= 1.5.4)
+                          Show digits in all empty cells representing the possible
+                          numbers (yes/no).
+                          Default is yes.
 - Clear marks on reset    Unmark all cells when the puzzle is reset (yes/no).
                           Default is no.
 - Transparency (%)        Set the transparency of the menu (0-100).

@@ -17,7 +17,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: setup.cpp 109 2008-01-06 19:43:20Z tom $
+ * $Id: setup.cpp 110 2008-01-06 23:32:09Z tom $
  */
 
 #include "setup.h"
@@ -40,6 +40,7 @@ SetupData::SetupData()
   mark_errors = 1;
   mark_ambiguous = 1;
   show_possibles_pattern = 1;
+  show_possibles_digits = 1;
   clear_marks = 0;
   transparency = 50;
 }
@@ -61,6 +62,8 @@ bool SetupData::parse(const char* name, const char* value)
     mark_ambiguous = atoi(value);
   else if (!strcasecmp(name, "ShowPossiblesPattern"))
     show_possibles_pattern = atoi(value);
+  else if (!strcasecmp(name, "ShowPossiblesDigits"))
+    show_possibles_digits = atoi(value);
   else if (!strcasecmp(name, "ClearMarks"))
     clear_marks = atoi(value);
   else if (!strcasecmp(name, "Transparency"))
@@ -84,6 +87,10 @@ SetupPage::SetupPage(SetupData& setup) :
                             &data.mark_ambiguous));
   Add(new cMenuEditBoolItem(tr("Show possible numbers as pattern"),
                             &data.show_possibles_pattern));
+#if VDRVERSNUM >= 10504
+  Add(new cMenuEditBoolItem(tr("Show possible numbers as digits"),
+                            &data.show_possibles_digits));
+#endif
   Add(new cMenuEditBoolItem(tr("Clear marks on reset"), &data.clear_marks));
   Add(new cMenuEditIntItem(tr("Transparency (%)"), &data.transparency, 0, 100));
 }
@@ -101,6 +108,7 @@ void SetupPage::Store()
   SetupStore("MarkErrors", setup.mark_errors);
   SetupStore("MarkAmbiguous", setup.mark_ambiguous);
   SetupStore("ShowPossiblesPattern", setup.show_possibles_pattern);
+  SetupStore("ShowPossiblesDigits", setup.show_possibles_digits);
   SetupStore("ClearMarks", setup.clear_marks);
   SetupStore("Transparency", setup.transparency);
 }
