@@ -71,6 +71,14 @@ Setup:
 - Mark ambiguous numbers  Cells with ambiguous numbers are marked with magenta
                           color (yes/no).
                           Default is yes.
+- Show possible numbers as pattern
+                          Show a pattern in all empty cells representing the
+                          possible numbers. The pattern is structured by a small
+                          3 x 3 grid featuring the numbers from 1 to 9 from top
+                          left to bottom right. If a number is possible in this
+                          cell the background of the corresponding grid section
+                          is colored.
+                          Default is yes.
 - Clear marks on reset    Unmark all cells when the puzzle is reset (yes/no).
                           Default is no.
 - Transparency (%)        Set the transparency of the menu (0-100).

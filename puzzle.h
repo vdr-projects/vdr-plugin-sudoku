@@ -17,7 +17,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: puzzle.h 106 2007-12-03 23:28:24Z tom $
+ * $Id: puzzle.h 109 2008-01-06 19:43:20Z tom $
  */
 
 #ifndef VDR_SUDOKU_PUZZLE_H
@@ -165,6 +165,9 @@ namespace Sudoku
 
     /** Get the count of possible numbers for this cell. */
     unsigned int numbers_count(Pos pos);
+
+    /** Is this number in this cell a possible number? */
+    bool possible_number(Pos pos, unsigned int number);
 
 private:
 

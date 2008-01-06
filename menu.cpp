@@ -17,7 +17,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: menu.cpp 106 2007-12-03 23:28:24Z tom $
+ * $Id: menu.cpp 109 2008-01-06 19:43:20Z tom $
  */
 
 #include "menu.h"
@@ -53,6 +53,8 @@ using namespace Sudoku;
 #define MARKED_BG       clrGreen
 #define GIVEN_FG        clrBlack
 #define GIVEN_BG        clrCyan
+#define POSSIBLE_FG     clrBlack
+#define POSSIBLE_BG(n)  (((n) % 2) ? clrYellow : 0xFF8C00 /* darkorange */)
 
 
 //--- class SudokuPlugin::Menu -------------------------------------------------
@@ -209,6 +211,22 @@ void Menu::paint()
       char txt[2] = { '0' + puzzle.get(p), 0 };
       const cFont* font = cFont::GetFont(fontFix);
       osd->DrawText(x1, y1, txt, fg, bg, font, CELL_SIZE, CELL_SIZE, taCenter);
+    }
+    else if (setup.show_possibles_pattern)
+    {
+      for (unsigned int n = 1; n <= DIM; ++n)
+      {
+        if (puzzle.possible_number(p, n))
+        {
+          int x3 = x1 + (((n - 1) % RDIM) * CELL_SIZE) / RDIM;
+          int y3 = y1 + (((n - 1) / RDIM) * CELL_SIZE) / RDIM;
+          int x4 = x1 + (((n - 1) % RDIM + 1) * CELL_SIZE) / RDIM - 1;
+          int y4 = y1 + (((n - 1) / RDIM + 1) * CELL_SIZE) / RDIM - 1;
+          fg = TRANS(POSSIBLE_FG, trans);
+          bg = TRANS(POSSIBLE_BG(n), trans);
+          osd->DrawRectangle(x3, y3, x4, y4, bg);
+        }
+      }
     }
   }
 

@@ -17,7 +17,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: setup.cpp 106 2007-12-03 23:28:24Z tom $
+ * $Id: setup.cpp 109 2008-01-06 19:43:20Z tom $
  */
 
 #include "setup.h"
@@ -39,6 +39,7 @@ SetupData::SetupData()
   symmetric = 1;
   mark_errors = 1;
   mark_ambiguous = 1;
+  show_possibles_pattern = 1;
   clear_marks = 0;
   transparency = 50;
 }
@@ -58,6 +59,8 @@ bool SetupData::parse(const char* name, const char* value)
     mark_errors = atoi(value);
   else if (!strcasecmp(name, "MarkAmbiguous"))
     mark_ambiguous = atoi(value);
+  else if (!strcasecmp(name, "ShowPossiblesPattern"))
+    show_possibles_pattern = atoi(value);
   else if (!strcasecmp(name, "ClearMarks"))
     clear_marks = atoi(value);
   else if (!strcasecmp(name, "Transparency"))
@@ -79,6 +82,8 @@ SetupPage::SetupPage(SetupData& setup) :
   Add(new cMenuEditBoolItem(tr("Mark errors"), &data.mark_errors));
   Add(new cMenuEditBoolItem(tr("Mark ambiguous numbers"),
                             &data.mark_ambiguous));
+  Add(new cMenuEditBoolItem(tr("Show possible numbers as pattern"),
+                            &data.show_possibles_pattern));
   Add(new cMenuEditBoolItem(tr("Clear marks on reset"), &data.clear_marks));
   Add(new cMenuEditIntItem(tr("Transparency (%)"), &data.transparency, 0, 100));
 }
@@ -95,6 +100,7 @@ void SetupPage::Store()
   SetupStore("Symmetric", setup.symmetric);
   SetupStore("MarkErrors", setup.mark_errors);
   SetupStore("MarkAmbiguous", setup.mark_ambiguous);
+  SetupStore("ShowPossiblesPattern", setup.show_possibles_pattern);
   SetupStore("ClearMarks", setup.clear_marks);
   SetupStore("Transparency", setup.transparency);
 }
