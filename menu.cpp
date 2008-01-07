@@ -17,7 +17,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: menu.cpp 110 2008-01-06 23:32:09Z tom $
+ * $Id: menu.cpp 111 2008-01-07 00:04:25Z tom $
  */
 
 #include "menu.h"
@@ -70,9 +70,11 @@ Menu::Menu(const SetupData& setup, Puzzle& puzzle, Pos& curr) :
   infoText = NULL;
   new_puzzle_request = false;
 #if VDRVERSNUM >= 10504
+  maxi_font = cFont::CreateFont(Setup.FontOsd, 3 * CELL_SIZE / 4, CELL_SIZE);
   mini_font = cFont::CreateFont(Setup.FontOsd, 3 * CELL_SIZE / RDIM / 4,
                                 CELL_SIZE / RDIM);
 #else
+  maxi_font = cFont::GetFont(fontFix);
   mini_font = NULL;
 #endif
 }
@@ -81,6 +83,7 @@ Menu::Menu(const SetupData& setup, Puzzle& puzzle, Pos& curr) :
 Menu::~Menu()
 {
 #if VDRVERSNUM >= 10504
+  delete maxi_font;
   delete mini_font;
 #endif
   delete info;
@@ -218,8 +221,8 @@ void Menu::paint()
     if (puzzle.get(p) != 0)
     {
       char txt[2] = { '0' + puzzle.get(p), 0 };
-      const cFont* font = cFont::GetFont(fontFix);
-      osd->DrawText(x1, y1, txt, fg, bg, font, CELL_SIZE, CELL_SIZE, taCenter);
+      osd->DrawText(x1, y1, txt, fg, bg, maxi_font,
+                    CELL_SIZE, CELL_SIZE, taCenter);
     }
     else if (setup.show_possibles_pattern || setup.show_possibles_digits)
     {
