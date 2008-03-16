@@ -17,7 +17,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: sudoku_generator.cpp 106 2007-12-03 23:28:24Z tom $
+ * $Id: sudoku_generator.cpp 114 2008-03-16 22:20:33Z tom $
  */
 
 #include "../puzzle.h"
@@ -126,20 +126,7 @@ void print_sudoku(const Numbers& sudoku1, const Numbers& sudoku2,
 
 void dump_sudoku(const Numbers& sudoku)
 {
-  for (unsigned int row = 0; row < DIM; ++row)
-  {
-    for (unsigned int col = 0; col < DIM; ++col)
-    {
-      unsigned int n = sudoku.get(Pos(col, row));
-      if (n)
-        printf("%d", n);
-      else
-        printf("_");
-    }
-    if (row < DIM-1)
-      printf("+");
-  }
-  printf("\n");
+  printf("%s\n", sudoku.get_dump());
 }
 
 int generate_puzzle(unsigned int givens_count, bool non_sym, bool dump)
@@ -156,24 +143,9 @@ int generate_puzzle(unsigned int givens_count, bool non_sym, bool dump)
   return 0;
 }
 
-Numbers dump_to_numbers(const char *dump)
-{
-  Numbers numbers;
-  for (Pos p = Pos::first(); *dump && p <= Pos::last(); ++dump)
-  {
-    if (*dump != '+')
-    {
-      if (*dump > '0' && *dump - '0' <= DIM)
-        numbers.set(p, *dump - '0');
-      p = p.next();
-    }
-  }
-  return numbers;
-}
-
 int solve_puzzle(const char *dump)
 {
-  Numbers numbers(dump_to_numbers(dump));
+  Numbers numbers(dump);
   bool given_marks[SDIM];
   for (Pos p = Pos::first(); p <= Pos::last(); p = p.next())
     given_marks[p] = numbers.get(p) != 0;
@@ -193,7 +165,7 @@ int solve_puzzle(const char *dump)
 
 int print_puzzle(const char *dump)
 {
-  Numbers numbers(dump_to_numbers(dump));
+  Numbers numbers(dump);
   print_sudoku(numbers);
   return 0;
 }

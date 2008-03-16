@@ -17,7 +17,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: puzzle.h 109 2008-01-06 19:43:20Z tom $
+ * $Id: puzzle.h 114 2008-03-16 22:20:33Z tom $
  */
 
 #ifndef VDR_SUDOKU_PUZZLE_H
@@ -80,14 +80,18 @@ namespace Sudoku
   class Numbers
   {
     unsigned int content[SDIM];
+    mutable char* numbers_dump;
 
   public:
 
     /** Constructor */
-    Numbers();
+    Numbers(const char* dump = 0);
 
     /** Destructor */
     virtual ~Numbers();
+
+    /** Get the numbers as dump */
+    virtual const char* get_dump() const;
 
     /** Remove all numbers. */
     virtual void reset();
@@ -109,14 +113,24 @@ namespace Sudoku
   class Puzzle : public Numbers
   {
     Numbers givens;
-    bool marks[SDIM];
+    Numbers marks;
     bool numbers[SDIM][DIM+1];
     unsigned int count[SDIM];
+    mutable char* puzzle_dump;
 
   public:
 
     /** Constructor */
-    Puzzle(unsigned int givens_count = 0, bool symmetric = true);
+    Puzzle(const char* dump = 0);
+
+    /** Constructor with generation of a random puzzle */
+    Puzzle(unsigned int givens_count, bool symmetric = true);
+
+    /** Destructor */
+    virtual ~Puzzle();
+
+    /** Get the puzzle as dump */
+    virtual const char* get_dump() const;
 
     /** Reset the puzzle (including marks). */
     virtual void reset();

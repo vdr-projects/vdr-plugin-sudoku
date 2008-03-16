@@ -17,7 +17,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: menu.h 113 2008-03-16 20:12:52Z tom $
+ * $Id: menu.h 114 2008-03-16 22:20:33Z tom $
  */
 
 #ifndef VDR_SUDOKU_MENU_H
@@ -35,6 +35,7 @@ namespace SudokuPlugin
   class SetupData;
   class Bitmap;
   class CommandMenu;
+  class ListMenu;
 
   //--- class SudokuPlugin::Menu -----------------------------------------------
 
@@ -42,6 +43,7 @@ namespace SudokuPlugin
   class Menu : public cOsdObject
   {
     const SetupData& setup;
+    const char* confdir;
     Sudoku::Puzzle& puzzle;
     Sudoku::Pos& curr;
     int xPos, yPos;
@@ -52,11 +54,13 @@ namespace SudokuPlugin
     const cFont* maxi_font;
     const cFont* mini_font;
     CommandMenu* command_menu;
+    ListMenu* list_menu;
 
   public:
 
     /** Constructor */
-    Menu(const SetupData& setup, Sudoku::Puzzle& puzzle, Sudoku::Pos& curr);
+    Menu(const SetupData& setup, const char* confdir,
+         Sudoku::Puzzle& puzzle, Sudoku::Pos& curr);
 
     /** Destructor */
     virtual ~Menu();
@@ -69,6 +73,12 @@ namespace SudokuPlugin
 
     /** Generate a new puzzle. */
     eOSState generate();
+
+    /** Load a puzzle. */
+    eOSState load();
+
+    /** Save the puzzle. */
+    eOSState save();
 
     /** Reset the puzzle. */
     eOSState reset();

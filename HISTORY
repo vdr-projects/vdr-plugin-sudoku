@@ -35,3 +35,4 @@ ____-__-__: Version _._._
 - Paint numbers with a larger font (VDR >= 1.5.4).
 - Changed the background color of marked cells to darkgreen.
 - Added commands menu.
+- Added commands to load and save puzzles from/to the sudoku-list file.

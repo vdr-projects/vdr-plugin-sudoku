@@ -17,7 +17,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: menu.cpp 113 2008-03-16 20:12:52Z tom $
+ * $Id: menu.cpp 114 2008-03-16 22:20:33Z tom $
  */
 
 #include "menu.h"
@@ -25,6 +25,7 @@
 #include "setup.h"
 #include "bitmap.h"
 #include "commands.h"
+#include "list.h"
 #include "i18n.h"
 #include <vdr/config.h>
 #include <vdr/osdbase.h>
@@ -34,6 +35,9 @@
 using namespace SudokuPlugin;
 using namespace Sudoku;
 
+
+// Definition of the file name of the sudoku list
+#define SUDOKU_LIST     "sudoku-list"
 
 // Definitions for grid structure
 #define CELL_SIZE       42
@@ -61,8 +65,8 @@ using namespace Sudoku;
 //--- class SudokuPlugin::Menu -------------------------------------------------
 
 /** Constructor */
-Menu::Menu(const SetupData& setup, Puzzle& puzzle, Pos& curr) :
-  cOsdObject(true), setup(setup), puzzle(puzzle), curr(curr)
+Menu::Menu(const SetupData& setup, const char* confdir, Puzzle& puzzle, Pos& curr) :
+  cOsdObject(true), setup(setup), confdir(confdir), puzzle(puzzle), curr(curr)
 {
   xPos = (720 - GRID_SIZE) / 2;
   yPos = (576 - GRID_SIZE) / 2;
@@ -79,11 +83,13 @@ Menu::Menu(const SetupData& setup, Puzzle& puzzle, Pos& curr) :
   mini_font = NULL;
 #endif
   command_menu = NULL;
+  list_menu = NULL;
 }
 
 /** Destructor */
 Menu::~Menu()
 {
+  delete list_menu;
   delete command_menu;
 #if VDRVERSNUM >= 10504
   delete maxi_font;
@@ -123,6 +129,21 @@ eOSState Menu::ProcessKey(eKeys key)
         state = (this->*command)();
       if (state == osContinue)
         Show();
+    }
+    return state;
+  }
+
+  if (list_menu)
+  {
+    eOSState state = list_menu->ProcessKey(key);
+    if (state == osBack)
+    {
+      state = osContinue;
+      const char* sudoku = list_menu->get_selected_sudoku();
+      if (sudoku)
+        puzzle = Puzzle(sudoku);
+      DELETENULL(list_menu);
+      Show();
     }
     return state;
   }
@@ -207,6 +228,29 @@ eOSState Menu::generate()
 {
   puzzle.generate(setup.givens_count, setup.symmetric);
   return osContinue;
+}
+
+/** Load a puzzle. */
+eOSState Menu::load()
+{
+  if (osd)
+    osd->Flush();
+  DELETENULL(osd);
+  list_menu = new ListMenu(AddDirectory(confdir, SUDOKU_LIST));
+  list_menu->Display();
+  return osUnknown;
+}
+
+/** Save the puzzle. */
+eOSState Menu::save()
+{
+  if (osd)
+    osd->Flush();
+  DELETENULL(osd);
+  list_menu = new ListMenu(AddDirectory(confdir, SUDOKU_LIST),
+                           puzzle.get_dump());
+  list_menu->Display();
+  return osUnknown;
 }
 
 /** Reset the puzzle. */

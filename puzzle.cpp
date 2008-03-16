@@ -17,11 +17,12 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: puzzle.cpp 109 2008-01-06 19:43:20Z tom $
+ * $Id: puzzle.cpp 114 2008-03-16 22:20:33Z tom $
  */
 
 #include "puzzle.h"
 #include "generator.h"
+#include <string.h>
 #include <assert.h>
 
 using namespace Sudoku;
@@ -30,14 +31,42 @@ using namespace Sudoku;
 //--- class Sudoku::Numbers ----------------------------------------------------
 
 /** Constructor */
-Numbers::Numbers()
+Numbers::Numbers(const char* dump) :
+  numbers_dump()
 {
   reset();
+
+  if (dump)
+    for (unsigned int i = 0; *dump && *dump != ':' && i < SDIM; ++i, ++dump)
+      if (*dump == '+')
+        --i;
+      else if (*dump > '0' && *dump - '0' <= DIM)
+        content[i] = *dump - '0';
+
+  assert(!numbers_dump);
 }
 
 /** Destructor */
 Numbers::~Numbers()
 {
+  delete[] numbers_dump;
+}
+
+/** Get the numbers as dump */
+const char* Numbers::get_dump() const
+{
+  if (!numbers_dump)
+    numbers_dump = new char[SDIM + DIM];
+  assert(numbers_dump);
+
+  char* dump = numbers_dump;
+  unsigned int n;
+  for (unsigned int row = 0; row < DIM; ++row, *dump++ = '+')
+    for (unsigned int col = 0; col < DIM; ++col, ++dump)
+      *dump = (n = get(Pos(col, row))) ? '0' + n : '_';
+  *--dump = 0;
+
+  return numbers_dump;
 }
 
 /** Remove all numbers. */
@@ -77,12 +106,72 @@ unsigned int Numbers::get(Pos pos) const
 //--- class Sudoku::Puzzle -----------------------------------------------------
 
 /** Constructor */
-Puzzle::Puzzle(unsigned int givens_count, bool symmetric)
+Puzzle::Puzzle(const char* dump) :
+  puzzle_dump()
+{
+  // Set givens from the first part of the dump (before the first colon)
+  givens = Numbers(dump);
+  reset();
+
+  // Set numbers from the second part (between the first and the second colon)
+  if (dump)
+    dump = strchr(dump, ':');
+  if (dump)
+  {
+    Numbers numbers(++dump);
+    for (unsigned int i = 0; i < SDIM; ++i)
+      if (numbers.get(i) != 0)
+        set(i, numbers.get(i));
+  }
+
+  // Set marks from the third part (behind the second colon)
+  if (dump)
+    dump = strchr(dump, ':');
+  if (dump)
+    marks = Numbers(++dump);
+
+  assert(!puzzle_dump);
+}
+
+/** Constructor with generation of a random puzzle */
+Puzzle::Puzzle(unsigned int givens_count, bool symmetric) :
+  puzzle_dump()
 {
   if (givens_count == 0)
     clear_givens();
   else
     generate(givens_count, symmetric);
+
+  assert(!puzzle_dump);
+}
+
+/** Destructor */
+Puzzle::~Puzzle()
+{
+  delete[] puzzle_dump;
+}
+
+/** Get the puzzle as dump */
+const char* Puzzle::get_dump() const
+{
+  if (!puzzle_dump)
+    puzzle_dump = new char[3 * (SDIM + DIM)];
+  assert(puzzle_dump);
+
+  // Set givens as first part of the dump
+  strcpy(puzzle_dump, givens.get_dump());
+  if (!untouched())
+  {
+    // Set numbers as second part of the dump
+    strcat(puzzle_dump, ":");
+    strcat(puzzle_dump, Numbers::get_dump());
+
+    // Set marks as third part of the dump
+    strcat(puzzle_dump, ":");
+    strcat(puzzle_dump, marks.get_dump());
+  }
+
+  return puzzle_dump;
 }
 
 /** Reset the puzzle (including marks). */
@@ -106,8 +195,7 @@ void Puzzle::reset(bool clear_marks)
 
   // Reset marked cells.
   if (clear_marks)
-    for (i = 0; i < SDIM; ++i)
-      marks[i] = false;
+    marks.reset();
 }
 
 /** Set the number into this cell. */
@@ -157,9 +245,7 @@ void Puzzle::clear_givens()
 /** No cells set? */
 bool Puzzle::untouched() const
 {
-  unsigned int i;
-
-  for (i = 0; i < SDIM; ++i)
+  for (unsigned int i = 0; i < SDIM; ++i)
     if (get(i) != givens.get(i))
       return false;
 
@@ -190,9 +276,7 @@ bool Puzzle::ambiguous(Pos pos) const
 /** All cells set and no errors? */
 bool Puzzle::solved() const
 {
-  unsigned int i;
-
-  for (i = 0; i < SDIM; ++i)
+  for (unsigned int i = 0; i < SDIM; ++i)
     if (get(i) == 0 || !correct(i))
       return false;
 
@@ -203,14 +287,14 @@ bool Puzzle::solved() const
 bool Puzzle::marked(Pos pos) const
 {
   assert(pos <= Pos::last());
-  return marks[pos];
+  return marks.get(pos) != 0;
 }
 
 /** Toggle the mark for this cell. */
 void Puzzle::toggle_mark(Pos pos)
 {
   assert(pos <= Pos::last());
-  marks[pos] = !marks[pos];
+  marks.set(pos, marks.get(pos) != 0 ? 0 : 1);
 }
 
 /** Get the next free cell with minimal possible numbers. */

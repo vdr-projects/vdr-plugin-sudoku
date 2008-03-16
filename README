@@ -56,6 +56,24 @@ Each time the plug-in is started from the main menu the same puzzle is shown. A
 new puzzle is only generated on VDR startup or if it has been requested by
 selecting this command in the commands menu, which is opened with the blue key.
 
+In the commands menu you can load and save puzzles from/to the sudoku-list file.
+This file is located at the plugins folder inside the configuration folder of
+VDR. If you don't specify a configuration folder, your videodir is used (e.g.
+/video0/plugins/sudoku/sudoku-list).
+
+The sudoku-list file contains lines with a sudoku dump and an optional
+description. The sudoku dump has to begin at the first position of the line.
+The delimiter between sudoku dump and description is a space. All behind the
+first space is considered as description.
+
+A sudoku dump consists of up to three parts. The first part contains only the
+givens, the second part all numbers set so far (including the givens), and the
+third part the marked cells. They are delimited from each other by a colon. All
+except of the first part is optional. The parts are strings with 81 digits or
+underlines. An underline is considered as a zero. All other characters, except
+of colons and spaces, which terminate the string, are ignored. They could be
+used to structure the dump, e.g. plus signs after each 9 digits/underlines.
+
 
 Setup:
 ------
@@ -106,6 +124,11 @@ Commands menu:
 --------------
 
 - Generate a new puzzle   Generate a random puzzle.
+- Load a puzzle           Load a puzzle from the sudoku list. In the list menu
+                          you can also delete sudokus from the list or edit the
+                          descriptions.
+- Save the puzzle         Add the puzzle to the sudoku list, together with an
+                          optional description.
 - Reset the puzzle        Reset the numbers in all cells, excluding the givens.
 - Exit                    Quit the plug-in.
 

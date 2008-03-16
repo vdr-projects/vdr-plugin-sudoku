@@ -17,7 +17,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: commands.cpp 113 2008-03-16 20:12:52Z tom $
+ * $Id: commands.cpp 114 2008-03-16 22:20:33Z tom $
  */
 
 #include "commands.h"
@@ -39,6 +39,8 @@ CommandMenu::CommandMenu() :
 {
   SetHasHotkeys();
   Add(new Command(hk(tr("Generate a new puzzle")), &Menu::generate));
+  Add(new Command(hk(tr("Load a puzzle")),         &Menu::load));
+  Add(new Command(hk(tr("Save the puzzle")),       &Menu::save));
   Add(new Command(hk(tr("Reset the puzzle")),      &Menu::reset));
   Add(new Command(hk(tr("Exit")),                  &Menu::exit));
   command = NULL;
