@@ -17,7 +17,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: i18n.h 106 2007-12-03 23:28:24Z tom $
+ * $Id: i18n.h 113 2008-03-16 20:12:52Z tom $
  */
 
 #ifndef VDR_SUDOKU_I18N_H
@@ -31,6 +31,7 @@
 #if VDRVERSNUM < 10507
 
 #define trNOOP(s) (s)
+#define trVDR(s) tr(s)
 
 namespace SudokuPlugin
 {

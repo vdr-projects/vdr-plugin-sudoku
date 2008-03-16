@@ -17,14 +17,13 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: menu.h 111 2008-01-07 00:04:25Z tom $
+ * $Id: menu.h 113 2008-03-16 20:12:52Z tom $
  */
 
 #ifndef VDR_SUDOKU_MENU_H
 #define VDR_SUDOKU_MENU_H
 
 #include "sudoku.h"
-namespace SudokuPlugin { class SetupData; class Bitmap; }
 namespace Sudoku { class Puzzle; class Pos; }
 #include <vdr/config.h>
 #include <vdr/osdbase.h>
@@ -33,6 +32,9 @@ namespace Sudoku { class Puzzle; class Pos; }
 
 namespace SudokuPlugin
 {
+  class SetupData;
+  class Bitmap;
+  class CommandMenu;
 
   //--- class SudokuPlugin::Menu -----------------------------------------------
 
@@ -49,6 +51,7 @@ namespace SudokuPlugin
     bool new_puzzle_request;
     const cFont* maxi_font;
     const cFont* mini_font;
+    CommandMenu* command_menu;
 
   public:
 
@@ -63,6 +66,15 @@ namespace SudokuPlugin
 
     /** Process user events. */
     virtual eOSState ProcessKey(eKeys key);
+
+    /** Generate a new puzzle. */
+    eOSState generate();
+
+    /** Reset the puzzle. */
+    eOSState reset();
+
+    /** Exit plugin menu. */
+    eOSState exit();
 
   private:
 

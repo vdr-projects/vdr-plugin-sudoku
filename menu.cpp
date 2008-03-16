@@ -17,13 +17,14 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: menu.cpp 112 2008-03-16 17:56:36Z tom $
+ * $Id: menu.cpp 113 2008-03-16 20:12:52Z tom $
  */
 
 #include "menu.h"
 #include "puzzle.h"
 #include "setup.h"
 #include "bitmap.h"
+#include "commands.h"
 #include "i18n.h"
 #include <vdr/config.h>
 #include <vdr/osdbase.h>
@@ -77,11 +78,13 @@ Menu::Menu(const SetupData& setup, Puzzle& puzzle, Pos& curr) :
   maxi_font = cFont::GetFont(fontFix);
   mini_font = NULL;
 #endif
+  command_menu = NULL;
 }
 
 /** Destructor */
 Menu::~Menu()
 {
+  delete command_menu;
 #if VDRVERSNUM >= 10504
   delete maxi_font;
   delete mini_font;
@@ -108,18 +111,39 @@ void Menu::Show()
 /** Process user events. */
 eOSState Menu::ProcessKey(eKeys key)
 {
+  if (command_menu)
+  {
+    eOSState state = command_menu->ProcessKey(key);
+    if (state == osBack)
+    {
+      state = osContinue;
+      CommandType command = command_menu->get_selected_command();
+      DELETENULL(command_menu);
+      if (command)
+        state = (this->*command)();
+      if (state == osContinue)
+        Show();
+    }
+    return state;
+  }
+
   eOSState state = cOsdObject::ProcessKey(key);
   if (state == osUnknown)
   {
     if (key == kBack)
-      return osEnd;
+      return exit();
+    if (key == kBlue)
+    {
+      osd->Flush();
+      DELETENULL(osd);
+      command_menu = new CommandMenu();
+      command_menu->Display();
+      return osContinue;
+    }
     if (new_puzzle_request)
     {
       if (key == kOk)
-      {
-        new_puzzle_request = false;
-        puzzle.generate(setup.givens_count, setup.symmetric);
-      }
+        generate();
     }
     else
     {
@@ -163,12 +187,6 @@ eOSState Menu::ProcessKey(eKeys key)
           if (puzzle.next_free(curr) <= Pos::last())
             curr = puzzle.next_free(curr);
           break;
-        case kBlue:
-          if (puzzle.untouched())
-            puzzle.generate(setup.givens_count, setup.symmetric);
-          else
-            puzzle.reset(setup.clear_marks);
-          break;
         default:
           return osContinue;
       }
@@ -182,6 +200,26 @@ eOSState Menu::ProcessKey(eKeys key)
     state = osContinue;
   }
   return state;
+}
+
+/** Generate a new puzzle. */
+eOSState Menu::generate()
+{
+  puzzle.generate(setup.givens_count, setup.symmetric);
+  return osContinue;
+}
+
+/** Reset the puzzle. */
+eOSState Menu::reset()
+{
+  puzzle.reset(setup.clear_marks);
+  return osContinue;
+}
+
+/** Exit plugin menu. */
+eOSState Menu::exit()
+{
+  return osEnd;
 }
 
 /** Paint all pieces of the menu. */
@@ -273,6 +311,8 @@ void Menu::paint()
     osd->DrawBitmap(xPos + 10, yPos + 10, *info);
     infoText = NULL;
   }
+  else
+    new_puzzle_request = false;
 
   osd->Flush();
 }

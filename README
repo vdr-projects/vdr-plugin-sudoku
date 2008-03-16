@@ -54,9 +54,7 @@ current cell.
 
 Each time the plug-in is started from the main menu the same puzzle is shown. A
 new puzzle is only generated on VDR startup or if it has been requested by
-pressing the blue key. This key has two functions. If no numbers are set a new
-puzzle is generated. Otherwise all numbers are reset so that only the givens are
-shown.
+selecting this command in the commands menu, which is opened with the blue key.
 
 
 Setup:
@@ -100,9 +98,16 @@ Keys:
                           possible numbers.
 - Red                     Set the next possible number for the current cell -
                           reset the number if greater numbers are not possible.
-- Blue                    Reset the puzzle (if some numbers set).
-                          Start a new puzzle (if no numbers set).
+- Blue                    Open the commands menu.
 - Back                    Quit the plug-in.
+
+
+Commands menu:
+--------------
+
+- Generate a new puzzle   Generate a random puzzle.
+- Reset the puzzle        Reset the numbers in all cells, excluding the givens.
+- Exit                    Quit the plug-in.
 
 
 Cell colors:
