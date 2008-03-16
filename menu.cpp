@@ -17,7 +17,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: menu.cpp 111 2008-01-07 00:04:25Z tom $
+ * $Id: menu.cpp 112 2008-03-16 17:56:36Z tom $
  */
 
 #include "menu.h"
@@ -50,7 +50,7 @@ using namespace Sudoku;
 #define AMBIG_FG        clrWhite
 #define AMBIG_BG        clrMagenta
 #define MARKED_FG       clrWhite
-#define MARKED_BG       clrGreen
+#define MARKED_BG       0x006400 /* darkgreen */
 #define GIVEN_FG        clrBlack
 #define GIVEN_BG        clrCyan
 #define POSSIBLE_FG     clrBlack

@@ -33,3 +33,4 @@ ____-__-__: Version _._._
 - Show possible numbers as pattern.
 - Show possible numbers as digits (VDR >= 1.5.4).
 - Paint numbers with a larger font (VDR >= 1.5.4).
+- Changed the background color of marked cells to darkgreen.
