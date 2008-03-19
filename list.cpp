@@ -17,7 +17,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: list.cpp 114 2008-03-16 22:20:33Z tom $
+ * $Id: list.cpp 115 2008-03-19 00:38:58Z tom $
  */
 
 #include "list.h"
@@ -27,6 +27,12 @@
 #include <vdr/osd.h>
 #include <vdr/menuitems.h>
 #include <assert.h>
+
+// Compatibility to older vdr versions
+#if VDRVERSNUM < 10511
+  #define cMenuEditStrItem(n, v, l) cMenuEditStrItem((n), (v), (l),\
+                                                     trVDR(FileNameChars))
+#endif
 
 using namespace SudokuPlugin;
 
