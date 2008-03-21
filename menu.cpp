@@ -17,7 +17,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: menu.cpp 117 2008-03-21 17:57:50Z tom $
+ * $Id: menu.cpp 118 2008-03-21 18:05:54Z tom $
  */
 
 #include "menu.h"
@@ -379,7 +379,7 @@ void Menu::paint()
   if (infoText)
   {
     if (!info)
-      info = new Bitmap(GRID_SIZE - 20, 60);
+      info = new Bitmap(GRID_SIZE - 20, 90);
     info->text(infoText);
     osd->DrawBitmap(xPos + 10, yPos + 10, *info);
     infoText = NULL;
