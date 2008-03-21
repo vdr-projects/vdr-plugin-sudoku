@@ -17,7 +17,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: menu.h 114 2008-03-16 22:20:33Z tom $
+ * $Id: menu.h 116 2008-03-21 16:41:20Z tom $
  */
 
 #ifndef VDR_SUDOKU_MENU_H
@@ -28,6 +28,8 @@ namespace Sudoku { class Puzzle; class Pos; }
 #include <vdr/config.h>
 #include <vdr/osdbase.h>
 #include <vdr/osd.h>
+#include <vdr/plugin.h>
+#include <vdr/tools.h>
 
 
 namespace SudokuPlugin
@@ -36,14 +38,15 @@ namespace SudokuPlugin
   class Bitmap;
   class CommandMenu;
   class ListMenu;
+  class SetupPage;
 
   //--- class SudokuPlugin::Menu -----------------------------------------------
 
   /** Main menu of the plugin */
   class Menu : public cOsdObject
   {
+    cPlugin* plugin;
     const SetupData& setup;
-    const char* confdir;
     Sudoku::Puzzle& puzzle;
     Sudoku::Pos& curr;
     int xPos, yPos;
@@ -55,11 +58,13 @@ namespace SudokuPlugin
     const cFont* mini_font;
     CommandMenu* command_menu;
     ListMenu* list_menu;
+    cMenuSetupPage* setup_menu;
+    cString listfile;
 
   public:
 
     /** Constructor */
-    Menu(const SetupData& setup, const char* confdir,
+    Menu(cPlugin* plugin, const SetupData& setup,
          Sudoku::Puzzle& puzzle, Sudoku::Pos& curr);
 
     /** Destructor */
@@ -82,6 +87,9 @@ namespace SudokuPlugin
 
     /** Reset the puzzle. */
     eOSState reset();
+
+    /** Open setup menu. */
+    eOSState open_setup();
 
     /** Exit plugin menu. */
     eOSState exit();

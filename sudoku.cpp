@@ -17,7 +17,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: sudoku.cpp 114 2008-03-16 22:20:33Z tom $
+ * $Id: sudoku.cpp 116 2008-03-21 16:41:20Z tom $
  */
 
 #include "sudoku.h"
@@ -105,7 +105,7 @@ bool Plugin::Start()
  */
 cOsdObject* Plugin::MainMenuAction()
 {
-  return new Menu(setup, ConfigDirectory(Name()), puzzle, curr);
+  return new Menu(this, setup, puzzle, curr);
 }
 
 /** Setup menu page to adjust the setup parameters of the plugin

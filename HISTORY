@@ -36,3 +36,4 @@ ____-__-__: Version _._._
 - Changed the background color of marked cells to darkgreen.
 - Added commands menu.
 - Added commands to load and save puzzles from/to the sudoku-list file.
+- Added setup to commands menu.

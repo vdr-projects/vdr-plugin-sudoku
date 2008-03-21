@@ -17,7 +17,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: menu.cpp 114 2008-03-16 22:20:33Z tom $
+ * $Id: menu.cpp 116 2008-03-21 16:41:20Z tom $
  */
 
 #include "menu.h"
@@ -65,8 +65,8 @@ using namespace Sudoku;
 //--- class SudokuPlugin::Menu -------------------------------------------------
 
 /** Constructor */
-Menu::Menu(const SetupData& setup, const char* confdir, Puzzle& puzzle, Pos& curr) :
-  cOsdObject(true), setup(setup), confdir(confdir), puzzle(puzzle), curr(curr)
+Menu::Menu(cPlugin* plugin, const SetupData& setup, Puzzle& puzzle, Pos& curr) :
+  cOsdObject(true), plugin(plugin), setup(setup), puzzle(puzzle), curr(curr)
 {
   xPos = (720 - GRID_SIZE) / 2;
   yPos = (576 - GRID_SIZE) / 2;
@@ -84,11 +84,14 @@ Menu::Menu(const SetupData& setup, const char* confdir, Puzzle& puzzle, Pos& cur
 #endif
   command_menu = NULL;
   list_menu = NULL;
+  setup_menu = NULL;
+  listfile = AddDirectory(plugin->ConfigDirectory(plugin->Name()), SUDOKU_LIST);
 }
 
 /** Destructor */
 Menu::~Menu()
 {
+  delete setup_menu;
   delete list_menu;
   delete command_menu;
 #if VDRVERSNUM >= 10504
@@ -129,6 +132,7 @@ eOSState Menu::ProcessKey(eKeys key)
         state = (this->*command)();
       if (state == osContinue)
         Show();
+      state = osContinue;
     }
     return state;
   }
@@ -143,6 +147,20 @@ eOSState Menu::ProcessKey(eKeys key)
       if (sudoku)
         puzzle = Puzzle(sudoku);
       DELETENULL(list_menu);
+      Show();
+    }
+    return state;
+  }
+
+  if (setup_menu)
+  {
+    eOSState state = setup_menu->ProcessKey(key);
+    if (state == osBack)
+    {
+      state = osContinue;
+      if (key == kOk)
+        Setup.Save();
+      DELETENULL(setup_menu);
       Show();
     }
     return state;
@@ -236,7 +254,7 @@ eOSState Menu::load()
   if (osd)
     osd->Flush();
   DELETENULL(osd);
-  list_menu = new ListMenu(AddDirectory(confdir, SUDOKU_LIST));
+  list_menu = new ListMenu(listfile);
   list_menu->Display();
   return osUnknown;
 }
@@ -247,8 +265,7 @@ eOSState Menu::save()
   if (osd)
     osd->Flush();
   DELETENULL(osd);
-  list_menu = new ListMenu(AddDirectory(confdir, SUDOKU_LIST),
-                           puzzle.get_dump());
+  list_menu = new ListMenu(listfile, puzzle.get_dump());
   list_menu->Display();
   return osUnknown;
 }
@@ -258,6 +275,18 @@ eOSState Menu::reset()
 {
   puzzle.reset(setup.clear_marks);
   return osContinue;
+}
+
+/** Open setup menu. */
+eOSState Menu::open_setup()
+{
+  if (osd)
+    osd->Flush();
+  DELETENULL(osd);
+  setup_menu = plugin->SetupMenu();
+  setup_menu->SetPlugin(plugin);
+  setup_menu->Display();
+  return osUnknown;
 }
 
 /** Exit plugin menu. */
