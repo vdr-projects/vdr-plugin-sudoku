@@ -1,7 +1,7 @@
 /*
  * Sudoku: A plug-in for the Video Disk Recorder
  *
- * Copyright (C) 2005-2007, Thomas Günther <tom@toms-cafe.de>
+ * Copyright (C) 2005-2008, Thomas Günther <tom@toms-cafe.de>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,7 +17,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: i18n.h 113 2008-03-16 20:12:52Z tom $
+ * $Id: i18n.h 117 2008-03-21 17:57:50Z tom $
  */
 
 #ifndef VDR_SUDOKU_I18N_H
