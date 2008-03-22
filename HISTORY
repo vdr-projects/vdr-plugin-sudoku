@@ -23,7 +23,7 @@ VDR plug-in 'Sudoku' Revision History
 
 - Added Spanish language texts (thanks to bittor from open7x0.org).
 
-____-__-__: Version _._._
+2008-03-22: Version 0.2.0
 
 - Added gettext support (VDR >= 1.5.7).
 - Fixed compiler warnings with gcc-4.1.2.
