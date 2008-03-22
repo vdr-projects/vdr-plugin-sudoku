@@ -38,3 +38,4 @@ VDR plug-in 'Sudoku' Revision History
 - Added commands to load and save puzzles from/to the sudoku-list file.
 - Added setup to commands menu.
 - Fixed height of info window for spanish text.
+- Updated German language texts.

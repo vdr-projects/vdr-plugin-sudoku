@@ -1,7 +1,7 @@
 /*
  * Sudoku: A plug-in for the Video Disk Recorder
  *
- * Copyright (C) 2005-2007, Thomas Günther <tom@toms-cafe.de>
+ * Copyright (C) 2005-2008, Thomas Günther <tom@toms-cafe.de>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,7 +17,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: i18n.cpp 106 2007-12-03 23:28:24Z tom $
+ * $Id: i18n.cpp 120 2008-03-22 00:16:44Z tom $
  *
  *
  * Translations provided by:
@@ -67,6 +67,248 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "Sudoku-numeroristikot", // suomi / Finnish
     "", // Polski / Polish
     "Solucionar rompecabezas numérico", // Español / Spanish
+    "", // ÅëëçíéêÜ / Greek
+    "", // Svenska / Swedish
+    "", // Românã / Romanian
+    "", // Magyar / Hungarian
+    "", // Català / Catalanian
+    "", // ÀãááÚØÙ / Russian
+    "", // Hrvatski / Croatian
+    "", // Eesti / Estonian
+    "", // Dansk / Danish
+    "", // Èesky / Czech
+  },
+  { "Generate a new puzzle", // English
+    "Neues Puzzle erzeugen", // Deutsch / German
+    "", // Slovenski / Slovenian
+    "", // Italiano / Italian
+    "", // Nederlands / Dutch
+    "", // Português / Portuguese
+    "", // Français / French
+    "", // Norsk / Norwegian
+    "", // suomi / Finnish
+    "", // Polski / Polish
+    "", // Español / Spanish
+    "", // ÅëëçíéêÜ / Greek
+    "", // Svenska / Swedish
+    "", // Românã / Romanian
+    "", // Magyar / Hungarian
+    "", // Català / Catalanian
+    "", // ÀãááÚØÙ / Russian
+    "", // Hrvatski / Croatian
+    "", // Eesti / Estonian
+    "", // Dansk / Danish
+    "", // Èesky / Czech
+  },
+  { "Load a puzzle", // English
+    "Puzzle laden", // Deutsch / German
+    "", // Slovenski / Slovenian
+    "", // Italiano / Italian
+    "", // Nederlands / Dutch
+    "", // Português / Portuguese
+    "", // Français / French
+    "", // Norsk / Norwegian
+    "", // suomi / Finnish
+    "", // Polski / Polish
+    "", // Español / Spanish
+    "", // ÅëëçíéêÜ / Greek
+    "", // Svenska / Swedish
+    "", // Românã / Romanian
+    "", // Magyar / Hungarian
+    "", // Català / Catalanian
+    "", // ÀãááÚØÙ / Russian
+    "", // Hrvatski / Croatian
+    "", // Eesti / Estonian
+    "", // Dansk / Danish
+    "", // Èesky / Czech
+  },
+  { "Save the puzzle", // English
+    "Puzzle speichern", // Deutsch / German
+    "", // Slovenski / Slovenian
+    "", // Italiano / Italian
+    "", // Nederlands / Dutch
+    "", // Português / Portuguese
+    "", // Français / French
+    "", // Norsk / Norwegian
+    "", // suomi / Finnish
+    "", // Polski / Polish
+    "", // Español / Spanish
+    "", // ÅëëçíéêÜ / Greek
+    "", // Svenska / Swedish
+    "", // Românã / Romanian
+    "", // Magyar / Hungarian
+    "", // Català / Catalanian
+    "", // ÀãááÚØÙ / Russian
+    "", // Hrvatski / Croatian
+    "", // Eesti / Estonian
+    "", // Dansk / Danish
+    "", // Èesky / Czech
+  },
+  { "Reset the puzzle", // English
+    "Puzzle zurücksetzen", // Deutsch / German
+    "", // Slovenski / Slovenian
+    "", // Italiano / Italian
+    "", // Nederlands / Dutch
+    "", // Português / Portuguese
+    "", // Français / French
+    "", // Norsk / Norwegian
+    "", // suomi / Finnish
+    "", // Polski / Polish
+    "", // Español / Spanish
+    "", // ÅëëçíéêÜ / Greek
+    "", // Svenska / Swedish
+    "", // Românã / Romanian
+    "", // Magyar / Hungarian
+    "", // Català / Catalanian
+    "", // ÀãááÚØÙ / Russian
+    "", // Hrvatski / Croatian
+    "", // Eesti / Estonian
+    "", // Dansk / Danish
+    "", // Èesky / Czech
+  },
+  { "Open setup menu", // English
+    "Einstellungsmenü öffnen", // Deutsch / German
+    "", // Slovenski / Slovenian
+    "", // Italiano / Italian
+    "", // Nederlands / Dutch
+    "", // Português / Portuguese
+    "", // Français / French
+    "", // Norsk / Norwegian
+    "", // suomi / Finnish
+    "", // Polski / Polish
+    "", // Español / Spanish
+    "", // ÅëëçíéêÜ / Greek
+    "", // Svenska / Swedish
+    "", // Românã / Romanian
+    "", // Magyar / Hungarian
+    "", // Català / Catalanian
+    "", // ÀãááÚØÙ / Russian
+    "", // Hrvatski / Croatian
+    "", // Eesti / Estonian
+    "", // Dansk / Danish
+    "", // Èesky / Czech
+  },
+  { "Exit", // English
+    "Beenden", // Deutsch / German
+    "", // Slovenski / Slovenian
+    "", // Italiano / Italian
+    "", // Nederlands / Dutch
+    "", // Português / Portuguese
+    "", // Français / French
+    "", // Norsk / Norwegian
+    "", // suomi / Finnish
+    "", // Polski / Polish
+    "", // Español / Spanish
+    "", // ÅëëçíéêÜ / Greek
+    "", // Svenska / Swedish
+    "", // Românã / Romanian
+    "", // Magyar / Hungarian
+    "", // Català / Catalanian
+    "", // ÀãááÚØÙ / Russian
+    "", // Hrvatski / Croatian
+    "", // Eesti / Estonian
+    "", // Dansk / Danish
+    "", // Èesky / Czech
+  },
+  { "Sudoku list", // English
+    "Sudoku-Liste", // Deutsch / German
+    "", // Slovenski / Slovenian
+    "", // Italiano / Italian
+    "", // Nederlands / Dutch
+    "", // Português / Portuguese
+    "", // Français / French
+    "", // Norsk / Norwegian
+    "", // suomi / Finnish
+    "", // Polski / Polish
+    "", // Español / Spanish
+    "", // ÅëëçíéêÜ / Greek
+    "", // Svenska / Swedish
+    "", // Românã / Romanian
+    "", // Magyar / Hungarian
+    "", // Català / Catalanian
+    "", // ÀãááÚØÙ / Russian
+    "", // Hrvatski / Croatian
+    "", // Eesti / Estonian
+    "", // Dansk / Danish
+    "", // Èesky / Czech
+  },
+  { "Button$Load", // English
+    "Laden", // Deutsch / German
+    "", // Slovenski / Slovenian
+    "", // Italiano / Italian
+    "", // Nederlands / Dutch
+    "", // Português / Portuguese
+    "", // Français / French
+    "", // Norsk / Norwegian
+    "", // suomi / Finnish
+    "", // Polski / Polish
+    "", // Español / Spanish
+    "", // ÅëëçíéêÜ / Greek
+    "", // Svenska / Swedish
+    "", // Românã / Romanian
+    "", // Magyar / Hungarian
+    "", // Català / Catalanian
+    "", // ÀãááÚØÙ / Russian
+    "", // Hrvatski / Croatian
+    "", // Eesti / Estonian
+    "", // Dansk / Danish
+    "", // Èesky / Czech
+  },
+  { "Button$Back", // English
+    "Zurück", // Deutsch / German
+    "", // Slovenski / Slovenian
+    "", // Italiano / Italian
+    "", // Nederlands / Dutch
+    "", // Português / Portuguese
+    "", // Français / French
+    "", // Norsk / Norwegian
+    "", // suomi / Finnish
+    "", // Polski / Polish
+    "", // Español / Spanish
+    "", // ÅëëçíéêÜ / Greek
+    "", // Svenska / Swedish
+    "", // Românã / Romanian
+    "", // Magyar / Hungarian
+    "", // Català / Catalanian
+    "", // ÀãááÚØÙ / Russian
+    "", // Hrvatski / Croatian
+    "", // Eesti / Estonian
+    "", // Dansk / Danish
+    "", // Èesky / Czech
+  },
+  { "Edit sudoku list", // English
+    "Sudoku-Liste bearbeiten", // Deutsch / German
+    "", // Slovenski / Slovenian
+    "", // Italiano / Italian
+    "", // Nederlands / Dutch
+    "", // Português / Portuguese
+    "", // Français / French
+    "", // Norsk / Norwegian
+    "", // suomi / Finnish
+    "", // Polski / Polish
+    "", // Español / Spanish
+    "", // ÅëëçíéêÜ / Greek
+    "", // Svenska / Swedish
+    "", // Românã / Romanian
+    "", // Magyar / Hungarian
+    "", // Català / Catalanian
+    "", // ÀãááÚØÙ / Russian
+    "", // Hrvatski / Croatian
+    "", // Eesti / Estonian
+    "", // Dansk / Danish
+    "", // Èesky / Czech
+  },
+  { "Description", // English
+    "Beschreibung", // Deutsch / German
+    "", // Slovenski / Slovenian
+    "", // Italiano / Italian
+    "", // Nederlands / Dutch
+    "", // Português / Portuguese
+    "", // Français / French
+    "", // Norsk / Norwegian
+    "", // suomi / Finnish
+    "", // Polski / Polish
+    "", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
     "", // Svenska / Swedish
     "", // Românã / Romanian
@@ -155,6 +397,50 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "Merkitse epävarmat", // suomi / Finnish
     "", // Polski / Polish
     "Marcar números ambiguos", // Español / Spanish
+    "", // ÅëëçíéêÜ / Greek
+    "", // Svenska / Swedish
+    "", // Românã / Romanian
+    "", // Magyar / Hungarian
+    "", // Català / Catalanian
+    "", // ÀãááÚØÙ / Russian
+    "", // Hrvatski / Croatian
+    "", // Eesti / Estonian
+    "", // Dansk / Danish
+    "", // Èesky / Czech
+  },
+  { "Show possible numbers as pattern", // English
+    "Mögliche Zahlen als Muster anzeigen", // Deutsch / German
+    "", // Slovenski / Slovenian
+    "", // Italiano / Italian
+    "", // Nederlands / Dutch
+    "", // Português / Portuguese
+    "", // Français / French
+    "", // Norsk / Norwegian
+    "", // suomi / Finnish
+    "", // Polski / Polish
+    "", // Español / Spanish
+    "", // ÅëëçíéêÜ / Greek
+    "", // Svenska / Swedish
+    "", // Românã / Romanian
+    "", // Magyar / Hungarian
+    "", // Català / Catalanian
+    "", // ÀãááÚØÙ / Russian
+    "", // Hrvatski / Croatian
+    "", // Eesti / Estonian
+    "", // Dansk / Danish
+    "", // Èesky / Czech
+  },
+  { "Show possible numbers as digits", // English
+    "Mögliche Zahlen als Ziffern anzeigen", // Deutsch / German
+    "", // Slovenski / Slovenian
+    "", // Italiano / Italian
+    "", // Nederlands / Dutch
+    "", // Português / Portuguese
+    "", // Français / French
+    "", // Norsk / Norwegian
+    "", // suomi / Finnish
+    "", // Polski / Polish
+    "", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
     "", // Svenska / Swedish
     "", // Românã / Romanian
