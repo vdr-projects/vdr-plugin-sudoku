@@ -1,7 +1,7 @@
 /*
  * Sudoku: A plug-in for the Video Disk Recorder
  *
- * Copyright (C) 2005-2007, Thomas Günther <tom@toms-cafe.de>
+ * Copyright (C) 2005-2008, Thomas Günther <tom@toms-cafe.de>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,7 +17,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: bitmap.cpp 106 2007-12-03 23:28:24Z tom $
+ * $Id: bitmap.cpp 122 2008-03-22 00:38:13Z tom $
  */
 
 #include "bitmap.h"
@@ -52,7 +52,7 @@ void Bitmap::text(const char* text, bool centered)
   DrawRectangle(0, 0, Width() - 1, Height() - 1, clrWhite);
   frame(0, 0, Width() - 1, Height() - 1, clrRed);
   const cFont* font = cFont::GetFont(fontOsd);
-  cTextWrapper wrapper(text, font, Width());
+  cTextWrapper wrapper(text, font, Width() - 10);
   int y = max((Height() - wrapper.Lines() * font->Height()) / 2, 0);
   for (int l = 0; l < wrapper.Lines(); ++l, y += font->Height())
   {
