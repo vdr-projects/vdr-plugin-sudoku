@@ -17,13 +17,14 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: i18n.cpp 120 2008-03-22 00:16:44Z tom $
+ * $Id: i18n.cpp 121 2008-03-22 00:26:02Z tom $
  *
  *
  * Translations provided by:
  *
  * Finnish     Ville Skyttä <ville.skytta@iki.fi>
  * Spanish     bittor from open7x0.org
+ * Italian     Gringo <vdr-italian@tiscali.it>
  *
  */
 
@@ -37,7 +38,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
   { "Sudoku", // English
     "Sudoku", // Deutsch / German
     "", // Slovenski / Slovenian
-    "", // Italiano / Italian
+    "Sudoku", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
     "", // Français / French
@@ -59,7 +60,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
   { "Sudoku - generate and solve Number Place puzzles", // English
     "Sudoku - Erzeugen und Lösen von Zahlenpuzzles", // Deutsch / German
     "", // Slovenski / Slovenian
-    "", // Italiano / Italian
+    "Sudoku - Genera e risolvi il rompicapo dei numeri", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
     "", // Français / French
@@ -323,7 +324,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
   { "Givens count", // English
     "Anzahl vorgegebener Zahlen", // Deutsch / German
     "", // Slovenski / Slovenian
-    "", // Italiano / Italian
+    "Numero cifre assegnate", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
     "", // Français / French
@@ -345,7 +346,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
   { "Symmetric givens", // English
     "Vorgegebene Zahlen symmetrisch anordnen", // Deutsch / German
     "", // Slovenski / Slovenian
-    "", // Italiano / Italian
+    "Cifre simmetriche assegnate", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
     "", // Français / French
@@ -367,7 +368,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
   { "Mark errors", // English
     "Fehler markieren", // Deutsch / German
     "", // Slovenski / Slovenian
-    "", // Italiano / Italian
+    "Segna errori", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
     "", // Français / French
@@ -389,7 +390,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
   { "Mark ambiguous numbers", // English
     "Unklare Zahlen markieren", // Deutsch / German
     "", // Slovenski / Slovenian
-    "", // Italiano / Italian
+    "Segna numeri ambigui", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
     "", // Français / French
@@ -455,7 +456,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
   { "Clear marks on reset", // English
     "Markierungen löschen beim Reset", // Deutsch / German
     "", // Slovenski / Slovenian
-    "", // Italiano / Italian
+    "Pulisci segni al riavvio", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
     "", // Français / French
@@ -477,7 +478,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
   { "Transparency (%)", // English
     "Transparenz (%)", // Deutsch / German
     "", // Slovenski / Slovenian
-    "", // Italiano / Italian
+    "Trasparenza (%)", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
     "", // Français / French
@@ -499,7 +500,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
   { "Congratulations!\nPress OK to start a new puzzle", // English
     "Herzlichen Glückwunsch!\nOK startet ein neues Puzzle", // Deutsch / German
     "", // Slovenski / Slovenian
-    "", // Italiano / Italian
+    "Complimenti!\nPremi OK per iniziare una nuova partita", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
     "", // Français / French
