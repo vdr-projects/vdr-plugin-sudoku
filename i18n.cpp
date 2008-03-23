@@ -17,7 +17,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: i18n.cpp 121 2008-03-22 00:26:02Z tom $
+ * $Id: i18n.cpp 125 2008-03-23 13:46:23Z tom $
  *
  *
  * Translations provided by:
@@ -87,7 +87,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "", // Português / Portuguese
     "", // Français / French
     "", // Norsk / Norwegian
-    "", // suomi / Finnish
+    "Uusi ristikko", // suomi / Finnish
     "", // Polski / Polish
     "", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
@@ -109,7 +109,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "", // Português / Portuguese
     "", // Français / French
     "", // Norsk / Norwegian
-    "", // suomi / Finnish
+    "Lataa ristikko", // suomi / Finnish
     "", // Polski / Polish
     "", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
@@ -131,7 +131,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "", // Português / Portuguese
     "", // Français / French
     "", // Norsk / Norwegian
-    "", // suomi / Finnish
+    "Tallenna ristikko", // suomi / Finnish
     "", // Polski / Polish
     "", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
@@ -153,7 +153,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "", // Português / Portuguese
     "", // Français / French
     "", // Norsk / Norwegian
-    "", // suomi / Finnish
+    "Tyhjennä ristikko", // suomi / Finnish
     "", // Polski / Polish
     "", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
@@ -175,7 +175,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "", // Português / Portuguese
     "", // Français / French
     "", // Norsk / Norwegian
-    "", // suomi / Finnish
+    "Asetukset", // suomi / Finnish
     "", // Polski / Polish
     "", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
@@ -197,7 +197,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "", // Português / Portuguese
     "", // Français / French
     "", // Norsk / Norwegian
-    "", // suomi / Finnish
+    "Poistu", // suomi / Finnish
     "", // Polski / Polish
     "", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
@@ -219,7 +219,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "", // Português / Portuguese
     "", // Français / French
     "", // Norsk / Norwegian
-    "", // suomi / Finnish
+    "Tallennetut ristikot", // suomi / Finnish
     "", // Polski / Polish
     "", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
@@ -241,7 +241,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "", // Português / Portuguese
     "", // Français / French
     "", // Norsk / Norwegian
-    "", // suomi / Finnish
+    "Lataa", // suomi / Finnish
     "", // Polski / Polish
     "", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
@@ -263,7 +263,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "", // Português / Portuguese
     "", // Français / French
     "", // Norsk / Norwegian
-    "", // suomi / Finnish
+    "Takaisin", // suomi / Finnish
     "", // Polski / Polish
     "", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
@@ -285,7 +285,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "", // Português / Portuguese
     "", // Français / French
     "", // Norsk / Norwegian
-    "", // suomi / Finnish
+    "Ristikon tiedot", // suomi / Finnish
     "", // Polski / Polish
     "", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
@@ -307,7 +307,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "", // Português / Portuguese
     "", // Français / French
     "", // Norsk / Norwegian
-    "", // suomi / Finnish
+    "Kuvaus", // suomi / Finnish
     "", // Polski / Polish
     "", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
@@ -417,7 +417,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "", // Português / Portuguese
     "", // Français / French
     "", // Norsk / Norwegian
-    "", // suomi / Finnish
+    "Näytä mahdolliset kuviona", // suomi / Finnish
     "", // Polski / Polish
     "", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
@@ -439,7 +439,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "", // Português / Portuguese
     "", // Français / French
     "", // Norsk / Norwegian
-    "", // suomi / Finnish
+    "Näytä mahdolliset numeroina", // suomi / Finnish
     "", // Polski / Polish
     "", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
@@ -505,7 +505,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "", // Português / Portuguese
     "", // Français / French
     "", // Norsk / Norwegian
-    "Onnittelut!\nValitse 'OK' aloittaaksesi uuden tehtävän", // suomi / Finnish
+    "Onnittelut!\nValitse 'OK' aloittaaksesi uuden ristikon", // suomi / Finnish
     "", // Polski / Polish
     "¡Enhorabuena!\nPulse OK para iniciar un nuevo rompecabezas", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek

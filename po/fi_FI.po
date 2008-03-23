@@ -1,16 +1,16 @@
 # Finnish translations for vdr-sudoku package.
 # Copyright (C) 2007-2008 Thomas Günther <tom@toms-cafe.de>
 # This file is distributed under the same license as the vdr-sudoku package.
-# Ville Skyttä <ville.skytta@iki.fi>, 2005.
+# Ville Skyttä <ville.skytta@iki.fi>, 2005, 2008.
 #
-# $Id: fi_FI.po 120 2008-03-22 00:16:44Z tom $
+# $Id: fi_FI.po 125 2008-03-23 13:46:23Z tom $
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: vdr-sudoku 0.1.3\n"
+"Project-Id-Version: vdr-sudoku 0.2.1\n"
 "Report-Msgid-Bugs-To: <tom@toms-cafe.de>\n"
 "POT-Creation-Date: 2008-03-21 13:07+0100\n"
-"PO-Revision-Date: 2007-08-20 22:43+0200\n"
+"PO-Revision-Date: 2008-03-22 13:39+0200\n"
 "Last-Translator: Ville Skyttä <ville.skytta@iki.fi>\n"
 "Language-Team:  <vdr@linuxtv.org>\n"
 "MIME-Version: 1.0\n"
@@ -18,44 +18,44 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 msgid "Generate a new puzzle"
-msgstr ""
+msgstr "Uusi ristikko"
 
 msgid "Load a puzzle"
-msgstr ""
+msgstr "Lataa ristikko"
 
 msgid "Save the puzzle"
-msgstr ""
+msgstr "Tallenna ristikko"
 
 msgid "Reset the puzzle"
-msgstr ""
+msgstr "Tyhjennä ristikko"
 
 msgid "Open setup menu"
-msgstr ""
+msgstr "Asetukset"
 
 msgid "Exit"
-msgstr ""
+msgstr "Poistu"
 
 msgid "Sudoku list"
-msgstr ""
+msgstr "Tallennetut ristikot"
 
 msgid "Button$Load"
-msgstr ""
+msgstr "Lataa"
 
 msgid "Button$Back"
-msgstr ""
+msgstr "Takaisin"
 
 msgid "Edit sudoku list"
-msgstr ""
+msgstr "Ristikon tiedot"
 
 msgid "Description"
-msgstr ""
+msgstr "Kuvaus"
 
 msgid ""
 "Congratulations!\n"
 "Press OK to start a new puzzle"
 msgstr ""
 "Onnittelut!\n"
-"Valitse 'OK' aloittaaksesi uuden tehtävän"
+"Valitse 'OK' aloittaaksesi uuden ristikon"
 
 msgid "Givens count"
 msgstr "Annettujen numeroiden lukumäärä"
@@ -70,10 +70,10 @@ msgid "Mark ambiguous numbers"
 msgstr "Merkitse epävarmat"
 
 msgid "Show possible numbers as pattern"
-msgstr ""
+msgstr "Näytä mahdolliset kuviona"
 
 msgid "Show possible numbers as digits"
-msgstr ""
+msgstr "Näytä mahdolliset numeroina"
 
 msgid "Clear marks on reset"
 msgstr "Poista merkinnät aloitettaessa"
