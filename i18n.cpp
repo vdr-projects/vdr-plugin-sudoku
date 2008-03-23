@@ -17,14 +17,14 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: i18n.cpp 125 2008-03-23 13:46:23Z tom $
+ * $Id: i18n.cpp 126 2008-03-23 15:29:37Z tom $
  *
  *
  * Translations provided by:
  *
  * Finnish     Ville Skyttä <ville.skytta@iki.fi>
  * Spanish     bittor from open7x0.org
- * Italian     Gringo <vdr-italian@tiscali.it>
+ * Italian     Diego Pierotto <vdr-italian@tiscali.it>
  *
  */
 
@@ -82,7 +82,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
   { "Generate a new puzzle", // English
     "Neues Puzzle erzeugen", // Deutsch / German
     "", // Slovenski / Slovenian
-    "", // Italiano / Italian
+    "Genera una nuova partita", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
     "", // Français / French
@@ -104,7 +104,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
   { "Load a puzzle", // English
     "Puzzle laden", // Deutsch / German
     "", // Slovenski / Slovenian
-    "", // Italiano / Italian
+    "Carica una partita", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
     "", // Français / French
@@ -126,7 +126,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
   { "Save the puzzle", // English
     "Puzzle speichern", // Deutsch / German
     "", // Slovenski / Slovenian
-    "", // Italiano / Italian
+    "Salva la partita", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
     "", // Français / French
@@ -148,7 +148,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
   { "Reset the puzzle", // English
     "Puzzle zurücksetzen", // Deutsch / German
     "", // Slovenski / Slovenian
-    "", // Italiano / Italian
+    "Ricomincia la partita", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
     "", // Français / French
@@ -170,7 +170,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
   { "Open setup menu", // English
     "Einstellungsmenü öffnen", // Deutsch / German
     "", // Slovenski / Slovenian
-    "", // Italiano / Italian
+    "Apri il menu opzioni", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
     "", // Français / French
@@ -192,7 +192,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
   { "Exit", // English
     "Beenden", // Deutsch / German
     "", // Slovenski / Slovenian
-    "", // Italiano / Italian
+    "Esci", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
     "", // Français / French
@@ -214,7 +214,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
   { "Sudoku list", // English
     "Sudoku-Liste", // Deutsch / German
     "", // Slovenski / Slovenian
-    "", // Italiano / Italian
+    "Elenco Sudoku", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
     "", // Français / French
@@ -236,7 +236,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
   { "Button$Load", // English
     "Laden", // Deutsch / German
     "", // Slovenski / Slovenian
-    "", // Italiano / Italian
+    "Carica", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
     "", // Français / French
@@ -258,7 +258,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
   { "Button$Back", // English
     "Zurück", // Deutsch / German
     "", // Slovenski / Slovenian
-    "", // Italiano / Italian
+    "Indietro", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
     "", // Français / French
@@ -280,7 +280,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
   { "Edit sudoku list", // English
     "Sudoku-Liste bearbeiten", // Deutsch / German
     "", // Slovenski / Slovenian
-    "", // Italiano / Italian
+    "Modifica elenco Sudoku", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
     "", // Français / French
@@ -302,7 +302,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
   { "Description", // English
     "Beschreibung", // Deutsch / German
     "", // Slovenski / Slovenian
-    "", // Italiano / Italian
+    "Descrizione", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
     "", // Français / French
@@ -412,7 +412,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
   { "Show possible numbers as pattern", // English
     "Mögliche Zahlen als Muster anzeigen", // Deutsch / German
     "", // Slovenski / Slovenian
-    "", // Italiano / Italian
+    "Mostra numeri possibili come valori", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
     "", // Français / French
@@ -434,7 +434,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
   { "Show possible numbers as digits", // English
     "Mögliche Zahlen als Ziffern anzeigen", // Deutsch / German
     "", // Slovenski / Slovenian
-    "", // Italiano / Italian
+    "Mostra numeri possibili come cifre", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
     "", // Français / French
