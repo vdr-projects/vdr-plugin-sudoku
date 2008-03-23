@@ -41,3 +41,7 @@ VDR plug-in 'Sudoku' Revision History
 - Updated German language texts.
 - Added Italian language texts (thanks to Gringo).
 - Margined output of text into the info window.
+
+____-__-__: Version 0.2.1
+
+- Fixed crash after exit command (thanks to Ville Skyttä for reporting this).

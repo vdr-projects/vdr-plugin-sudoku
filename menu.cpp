@@ -17,7 +17,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: menu.cpp 118 2008-03-21 18:05:54Z tom $
+ * $Id: menu.cpp 124 2008-03-23 13:32:18Z tom $
  */
 
 #include "menu.h"
@@ -132,7 +132,8 @@ eOSState Menu::ProcessKey(eKeys key)
         state = (this->*command)();
       if (state == osContinue)
         Show();
-      state = osContinue;
+      if (state == osUnknown)
+        state = osContinue;
     }
     return state;
   }
