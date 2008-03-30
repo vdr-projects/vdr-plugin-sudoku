@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the vdr-sudoku package.
 # Diego Pierotto <vdr-italian@tiscali.it>, 2007, 2008.
 #
-# $Id: it_IT.po 126 2008-03-23 15:29:37Z tom $
+# $Id: it_IT.po 131 2008-03-30 13:49:29Z tom $
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: vdr-sudoku 0.2.1\n"
 "Report-Msgid-Bugs-To: <tom@toms-cafe.de>\n"
 "POT-Creation-Date: 2008-03-21 13:07+0100\n"
-"PO-Revision-Date: 2008-03-22 18:23+0100\n"
+"PO-Revision-Date: 2008-03-29 21:24+0100\n"
 "Last-Translator: Diego Pierotto <vdr-italian@tiscali.it>\n"
 "Language-Team:  <vdr@linuxtv.org>\n"
 "MIME-Version: 1.0\n"
@@ -70,10 +70,10 @@ msgid "Mark ambiguous numbers"
 msgstr "Segna numeri ambigui"
 
 msgid "Show possible numbers as pattern"
-msgstr "Mostra numeri possibili come valori"
+msgstr "Mostra num. possibili in valori"
 
 msgid "Show possible numbers as digits"
-msgstr "Mostra numeri possibili come cifre"
+msgstr "Mostra num. possibili in cifre"
 
 msgid "Clear marks on reset"
 msgstr "Pulisci segni al riavvio"

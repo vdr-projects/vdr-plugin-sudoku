@@ -17,7 +17,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: i18n.cpp 126 2008-03-23 15:29:37Z tom $
+ * $Id: i18n.cpp 131 2008-03-30 13:49:29Z tom $
  *
  *
  * Translations provided by:
@@ -412,7 +412,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
   { "Show possible numbers as pattern", // English
     "Mögliche Zahlen als Muster anzeigen", // Deutsch / German
     "", // Slovenski / Slovenian
-    "Mostra numeri possibili come valori", // Italiano / Italian
+    "Mostra num. possibili in valori", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
     "", // Français / French
@@ -434,7 +434,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
   { "Show possible numbers as digits", // English
     "Mögliche Zahlen als Ziffern anzeigen", // Deutsch / German
     "", // Slovenski / Slovenian
-    "Mostra numeri possibili come cifre", // Italiano / Italian
+    "Mostra num. possibili in cifre", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
     "", // Français / French
