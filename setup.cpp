@@ -17,7 +17,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: setup.cpp 117 2008-03-21 17:57:50Z tom $
+ * $Id: setup.cpp 135 2008-04-05 20:23:44Z tom $
  */
 
 #include "setup.h"
@@ -39,8 +39,8 @@ SetupData::SetupData()
   symmetric = 1;
   mark_errors = 1;
   mark_ambiguous = 1;
-  show_possibles_pattern = 1;
-  show_possibles_digits = 1;
+  show_possibles_pattern = 0;
+  show_possibles_digits = 0;
   clear_marks = 0;
   transparency = 50;
 }

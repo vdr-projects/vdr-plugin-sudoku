@@ -78,15 +78,15 @@ used to structure the dump, e.g. plus signs after each 9 digits/underlines.
 Setup:
 ------
 
-- Givens count            Givens count of the generated puzzles (26-81).
-                          Default is 36.
-- Symmetric givens        Cells with givens are symmetrically ordered (yes/no).
-                          Default is yes.
-- Mark errors             Incorrect cells are marked with red color (yes/no).
-                          Default is yes.
+- Givens count            Givens count of the generated puzzles.
+                          Values: 26-81. Default: 36.
+- Symmetric givens        Cells with givens are symmetrically ordered.
+                          Values: yes/no. Default: yes.
+- Mark errors             Incorrect cells are marked with red color.
+                          Values: yes/no. Default: yes.
 - Mark ambiguous numbers  Cells with ambiguous numbers are marked with magenta
-                          color (yes/no).
-                          Default is yes.
+                          color.
+                          Values: yes/no. Default: yes.
 - Show possible numbers as pattern
                           Show a pattern in all empty cells representing the
                           possible numbers. The pattern is structured by a small
@@ -94,15 +94,15 @@ Setup:
                           left to bottom right. If a number is possible in this
                           cell the background of the corresponding grid section
                           is colored.
-                          Default is yes.
+                          Values: yes/no. Default: no.
 - Show possible numbers as digits (VDR >= 1.5.4)
-                          Show digits in all empty cells representing the possible
-                          numbers (yes/no).
-                          Default is yes.
-- Clear marks on reset    Unmark all cells when the puzzle is reset (yes/no).
-                          Default is no.
-- Transparency (%)        Set the transparency of the menu (0-100).
-                          Default is 50.
+                          Show digits in all empty cells representing the
+                          possible numbers.
+                          Values: yes/no. Default: no.
+- Clear marks on reset    Unmark all cells when the puzzle is reset.
+                          Values: yes/no. Default: no.
+- Transparency (%)        Set the transparency of the menu.
+                          Values: 0-100. Default: 50.
 
 
 Keys:

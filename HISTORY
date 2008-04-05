@@ -47,3 +47,5 @@ ____-__-__: Version 0.2.1
 - Fixed crash after exit command (thanks to Ville Skyttä for reporting this).
 - Updated Finnish language texts (thanks to Ville Skyttä).
 - Updated Italian language texts (thanks to Diego Pierotto).
+- Set default values for "Show possible numbers as pattern/digits" to No,
+  because of problems with DXR3 (thanks to Ville Skyttä for reporting this).
