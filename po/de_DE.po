@@ -3,11 +3,11 @@
 # This file is distributed under the same license as the vdr-sudoku package.
 # Thomas Günther <tom@toms-cafe.de>, 2005, 2008.
 #
-# $Id: de_DE.po 120 2008-03-22 00:16:44Z tom $
+# $Id: de_DE.po 136 2008-04-06 02:01:00Z tom $
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: vdr-sudoku 0.2.0\n"
+"Project-Id-Version: vdr-sudoku 0.2.1\n"
 "Report-Msgid-Bugs-To: <tom@toms-cafe.de>\n"
 "POT-Creation-Date: 2008-03-21 13:07+0100\n"
 "PO-Revision-Date: 2008-03-21 13:07+0100\n"
