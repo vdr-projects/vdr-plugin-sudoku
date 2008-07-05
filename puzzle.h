@@ -17,7 +17,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: puzzle.h 117 2008-03-21 17:57:50Z tom $
+ * $Id: puzzle.h 140 2008-06-30 22:10:38Z tom $
  */
 
 #ifndef VDR_SUDOKU_PUZZLE_H
@@ -34,6 +34,8 @@
  */
 namespace Sudoku
 {
+  class History;
+
 
   /** Regions, rows/columns and square dimension of the puzzle */
   enum
@@ -82,6 +84,10 @@ namespace Sudoku
     unsigned int content[SDIM];
     mutable char* numbers_dump;
 
+    // prevent use of copy constructor and copy operator
+    Numbers(const Numbers& other);
+    Numbers& operator=(const Numbers& other);
+
   public:
 
     /** Constructor */
@@ -104,6 +110,9 @@ namespace Sudoku
 
     /** Get the number from this cell. */
     virtual unsigned int get(Pos pos) const;
+
+    /** Load numbers from a dump. */
+    virtual void load_from_dump(const char* dump);
   };
 
 
@@ -117,6 +126,10 @@ namespace Sudoku
     bool numbers[SDIM][DIM+1];
     unsigned int count[SDIM];
     mutable char* puzzle_dump;
+
+    // prevent use of copy constructor and copy operator
+    Puzzle(const Puzzle& other);
+    Puzzle& operator=(const Puzzle& other);
 
   public:
 
@@ -140,6 +153,9 @@ namespace Sudoku
 
     /** Set the number into this cell. */
     virtual void set(Pos pos, unsigned int number);
+
+    /** Load a puzzle from a dump. */
+    virtual void load_from_dump(const char* dump);
 
     /** Generate a new puzzle. */
     void generate(unsigned int givens_count, bool symmetric = true);
@@ -175,13 +191,13 @@ namespace Sudoku
     Pos next_free(Pos pos = Pos::last()) const;
 
     /** Get the next possible number for this cell. */
-    unsigned int next_number(Pos pos);
+    unsigned int next_number(Pos pos) const;
 
     /** Get the count of possible numbers for this cell. */
-    unsigned int numbers_count(Pos pos);
+    unsigned int numbers_count(Pos pos) const;
 
     /** Is this number in this cell a possible number? */
-    bool possible_number(Pos pos, unsigned int number);
+    bool possible_number(Pos pos, unsigned int number) const;
 
 private:
 
@@ -190,6 +206,52 @@ private:
 
     /** Is the number in this cell a possible number? */
     bool correct(Pos pos) const;
+  };
+
+
+  //--- class Sudoku::PuzzleGame -----------------------------------------------
+
+  /** Sudoku puzzle game */
+  class PuzzleGame : public Puzzle
+  {
+    Pos pos;
+    History* history;
+
+    // prevent use of copy constructor and copy operator
+    PuzzleGame(const PuzzleGame& other);
+    PuzzleGame& operator=(const PuzzleGame& other);
+
+  public:
+
+    /** Constructor */
+    PuzzleGame(const char* dump = 0);
+
+    /** Constructor with generation of a random puzzle */
+    PuzzleGame(unsigned int givens_count, bool symmetric = true);
+
+    /** Destructor */
+    virtual ~PuzzleGame();
+
+    /** Reset the puzzle (including marks). */
+    virtual void reset();
+
+    /** Reset the puzzle (either with or without marks). */
+    virtual void reset(bool clear_marks);
+
+    /** Set the number into the current cell, write action into history. */
+    virtual void set_with_history(unsigned int number);
+
+    /** Get the position of the current cell. */
+    Pos get_pos() const;
+
+    /** Set the position of the current cell. */
+    void set_pos(Pos new_pos);
+
+    /** Go one step backward in the history. */
+    void backward();
+
+    /** Go one step forward in the history. */
+    void forward();
   };
 
 } // namespace Sudoku

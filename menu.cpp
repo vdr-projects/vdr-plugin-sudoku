@@ -17,7 +17,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: menu.cpp 124 2008-03-23 13:32:18Z tom $
+ * $Id: menu.cpp 140 2008-06-30 22:10:38Z tom $
  */
 
 #include "menu.h"
@@ -65,9 +65,11 @@ using namespace Sudoku;
 //--- class SudokuPlugin::Menu -------------------------------------------------
 
 /** Constructor */
-Menu::Menu(cPlugin* plugin, const SetupData& setup, Puzzle& puzzle, Pos& curr) :
-  cOsdObject(true), plugin(plugin), setup(setup), puzzle(puzzle), curr(curr)
+Menu::Menu(cPlugin* plugin, const SetupData& setup, PuzzleGame*& puzzle) :
+  cOsdObject(true), plugin(plugin), setup(setup), puzzle(puzzle)
 {
+  if (puzzle == NULL)
+    puzzle = new PuzzleGame(setup.givens_count, setup.symmetric);
   xPos = (720 - GRID_SIZE) / 2;
   yPos = (576 - GRID_SIZE) / 2;
   osd = NULL;
@@ -146,7 +148,7 @@ eOSState Menu::ProcessKey(eKeys key)
       state = osContinue;
       const char* sudoku = list_menu->get_selected_sudoku();
       if (sudoku)
-        puzzle = Puzzle(sudoku);
+        puzzle->load_from_dump(sudoku);
       DELETENULL(list_menu);
       Show();
     }
@@ -187,23 +189,24 @@ eOSState Menu::ProcessKey(eKeys key)
     }
     else
     {
+      Pos curr = puzzle->get_pos();
       switch (key)
       {
         case kLeft:
         case kLeft|k_Repeat:
-          curr = curr.prev_col();
+          puzzle->set_pos(curr.prev_col());
           break;
         case kRight:
         case kRight|k_Repeat:
-          curr = curr.next_col();
+          puzzle->set_pos(curr.next_col());
           break;
         case kUp:
         case kUp|k_Repeat:
-          curr = curr.prev_row();
+          puzzle->set_pos(curr.prev_row());
           break;
         case kDown:
         case kDown|k_Repeat:
-          curr = curr.next_row();
+          puzzle->set_pos(curr.next_row());
           break;
         case k0:
         case k1:
@@ -215,23 +218,23 @@ eOSState Menu::ProcessKey(eKeys key)
         case k7:
         case k8:
         case k9:
-          puzzle.set(curr, key - k0);
+          puzzle->set_with_history(key - k0);
           break;
         case kRed:
-          puzzle.set(curr, puzzle.next_number(curr));
+          puzzle->set_with_history(puzzle->next_number(curr));
           break;
         case kGreen:
-          puzzle.toggle_mark(curr);
+          puzzle->toggle_mark(curr);
           break;
         case kYellow:
-          if (puzzle.next_free(curr) <= Pos::last())
-            curr = puzzle.next_free(curr);
+          if (puzzle->next_free(curr) <= Pos::last())
+            puzzle->set_pos(puzzle->next_free(curr));
           break;
         default:
           return osContinue;
       }
     }
-    if (puzzle.solved())
+    if (puzzle->solved())
     {
       new_puzzle_request = true;
       infoText = tr("Congratulations!\nPress OK to start a new puzzle");
@@ -245,7 +248,7 @@ eOSState Menu::ProcessKey(eKeys key)
 /** Generate a new puzzle. */
 eOSState Menu::generate()
 {
-  puzzle.generate(setup.givens_count, setup.symmetric);
+  puzzle->generate(setup.givens_count, setup.symmetric);
   return osContinue;
 }
 
@@ -266,15 +269,29 @@ eOSState Menu::save()
   if (osd)
     osd->Flush();
   DELETENULL(osd);
-  list_menu = new ListMenu(listfile, puzzle.get_dump());
+  list_menu = new ListMenu(listfile, puzzle->get_dump());
   list_menu->Display();
   return osUnknown;
+}
+
+/** Undo last action. */
+eOSState Menu::undo()
+{
+  puzzle->backward();
+  return osContinue;
+}
+
+/** Redo last action. */
+eOSState Menu::redo()
+{
+  puzzle->forward();
+  return osContinue;
 }
 
 /** Reset the puzzle. */
 eOSState Menu::reset()
 {
-  puzzle.reset(setup.clear_marks);
+  puzzle->reset(setup.clear_marks);
   return osContinue;
 }
 
@@ -313,13 +330,13 @@ void Menu::paint()
   for (Pos p = Pos::first(); p <= Pos::last(); p = p.next())
   {
     fg = NUMBER_FG, bg = NUMBER_BG;
-    if (puzzle.given(p))
+    if (puzzle->given(p))
       fg = GIVEN_FG, bg = GIVEN_BG;
-    else if (puzzle.marked(p))
+    else if (puzzle->marked(p))
       fg = MARKED_FG, bg = MARKED_BG;
-    else if (setup.mark_errors && puzzle.error(p))
+    else if (setup.mark_errors && puzzle->error(p))
       fg = ERROR_FG, bg = ERROR_BG;
-    else if (setup.mark_ambiguous && puzzle.ambiguous(p))
+    else if (setup.mark_ambiguous && puzzle->ambiguous(p))
       fg = AMBIG_FG, bg = AMBIG_BG;
     fg = TRANS(fg, trans);
     bg = TRANS(bg, trans);
@@ -330,9 +347,9 @@ void Menu::paint()
     osd->DrawRectangle(x1, y1, x2, y2, bg);
 
     // Paint the content of the cell.
-    if (puzzle.get(p) != 0)
+    if (puzzle->get(p) != 0)
     {
-      char txt[2] = { '0' + puzzle.get(p), 0 };
+      char txt[2] = { '0' + puzzle->get(p), 0 };
       osd->DrawText(x1, y1, txt, fg, bg, maxi_font,
                     CELL_SIZE, CELL_SIZE, taCenter);
     }
@@ -340,7 +357,7 @@ void Menu::paint()
     {
       for (unsigned int n = 1; n <= DIM; ++n)
       {
-        if (puzzle.possible_number(p, n))
+        if (puzzle->possible_number(p, n))
         {
           int x3 = x1 + (((n - 1) % RDIM) * CELL_SIZE) / RDIM;
           int y3 = y1 + (((n - 1) / RDIM) * CELL_SIZE) / RDIM;
@@ -368,6 +385,7 @@ void Menu::paint()
   }
 
   // Paint the cursor.
+  Pos curr = puzzle->get_pos();
   bg = TRANS(CURSUR_COLOR, trans);
   x1 = xPos + CELL_POS(curr.col()), y1 = yPos + CELL_POS(curr.row());
   x2 = x1   + CELL_SIZE - 1,        y2 = y1   + CELL_SIZE - 1;

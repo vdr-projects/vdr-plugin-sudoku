@@ -1,7 +1,7 @@
 #
 # Sudoku: A plug-in for the Video Disk Recorder
 #
-# Copyright (C) 2005-2007, Thomas Günther <tom@toms-cafe.de>
+# Copyright (C) 2005-2008, Thomas Günther <tom@toms-cafe.de>
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -17,7 +17,7 @@
 # with this program; if not, write to the Free Software Foundation, Inc.,
 # 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
-# $Id: Makefile 106 2007-12-03 23:28:24Z tom $
+# $Id: Makefile 140 2008-06-30 22:10:38Z tom $
 
 # Define STATIC_LINK=1 to force static linking
 #STATIC_LINK = 1
@@ -27,7 +27,7 @@
 
 PROGRAM = sudoku_generator
 
-SRCS = ../puzzle.cpp ../generator.cpp ../solver.cpp ../backtrack.cpp
+SRCS = ../puzzle.cpp ../generator.cpp ../solver.cpp ../backtrack.cpp ../history.cpp
 
 VERSION = $(shell sed -ne '/static .* VERSION *=/s/^.*"\(.*\)".*$$/\1/p' \
                       ../sudoku.cpp)

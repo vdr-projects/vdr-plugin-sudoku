@@ -1,7 +1,7 @@
 /*
  * Sudoku: A plug-in for the Video Disk Recorder
  *
- * Copyright (C) 2005-2007, Thomas Günther <tom@toms-cafe.de>
+ * Copyright (C) 2005-2008, Thomas Günther <tom@toms-cafe.de>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,22 +17,33 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: sudoku.h 106 2007-12-03 23:28:24Z tom $
+ * $Id: sudoku.h 140 2008-06-30 22:10:38Z tom $
  */
 
 #ifndef VDR_SUDOKU_H
 #define VDR_SUDOKU_H
 
+#include <vector>
+
+
+namespace Sudoku
+{
+  //--- template class Vector --------------------------------------------------
+
+  template <class T> class Vector : public std::vector<T> {};
+
 
 #ifdef USE_RAND
 #include <stdlib.h>
 #include <time.h>
-/** Random number 0 .. max-1 */
-static unsigned int rand(unsigned int max)
-{
-  static unsigned int seed = time(NULL);
-  return (unsigned int)((double)max * rand_r(&seed) / (RAND_MAX + 1.0));
-}
+  /** Random number 0 .. max-1 */
+  static unsigned int rand(unsigned int max)
+  {
+    static unsigned int seed = time(NULL);
+    return (unsigned int)((double)max * rand_r(&seed) / (RAND_MAX + 1.0));
+  }
 #endif // USE_RAND
+
+} // namespace Sudoku
 
 #endif // VDR_SUDOKU_H

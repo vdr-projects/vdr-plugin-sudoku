@@ -129,6 +129,8 @@ Commands menu:
                           descriptions.
 - Save the puzzle         Add the puzzle to the sudoku list, together with an
                           optional description.
+- Undo last action        Go one step backward in the history.
+- Redo last action        Go one step forward in the history.
 - Reset the puzzle        Reset the numbers in all cells, excluding the givens.
 - Open setup menu         Open the setup menu of the plug-in.
 - Exit                    Quit the plug-in.

@@ -17,14 +17,14 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: menu.h 117 2008-03-21 17:57:50Z tom $
+ * $Id: menu.h 140 2008-06-30 22:10:38Z tom $
  */
 
 #ifndef VDR_SUDOKU_MENU_H
 #define VDR_SUDOKU_MENU_H
 
 #include "sudoku.h"
-namespace Sudoku { class Puzzle; class Pos; }
+namespace Sudoku { class PuzzleGame; }
 #include <vdr/config.h>
 #include <vdr/osdbase.h>
 #include <vdr/osd.h>
@@ -47,8 +47,7 @@ namespace SudokuPlugin
   {
     cPlugin* plugin;
     const SetupData& setup;
-    Sudoku::Puzzle& puzzle;
-    Sudoku::Pos& curr;
+    Sudoku::PuzzleGame*& puzzle;
     int xPos, yPos;
     cOsd* osd;
     Bitmap* info;
@@ -64,8 +63,7 @@ namespace SudokuPlugin
   public:
 
     /** Constructor */
-    Menu(cPlugin* plugin, const SetupData& setup,
-         Sudoku::Puzzle& puzzle, Sudoku::Pos& curr);
+    Menu(cPlugin* plugin, const SetupData& setup, Sudoku::PuzzleGame*& puzzle);
 
     /** Destructor */
     virtual ~Menu();
@@ -85,6 +83,12 @@ namespace SudokuPlugin
     /** Save the puzzle. */
     eOSState save();
 
+    /** Undo last action. */
+    eOSState undo();
+
+    /** Redo last action. */
+    eOSState redo();
+ 
     /** Reset the puzzle. */
     eOSState reset();
 

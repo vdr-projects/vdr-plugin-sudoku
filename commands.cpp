@@ -17,7 +17,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: commands.cpp 116 2008-03-21 16:41:20Z tom $
+ * $Id: commands.cpp 140 2008-06-30 22:10:38Z tom $
  */
 
 #include "commands.h"
@@ -41,6 +41,8 @@ CommandMenu::CommandMenu() :
   Add(new Command(hk(tr("Generate a new puzzle")), &Menu::generate));
   Add(new Command(hk(tr("Load a puzzle")),         &Menu::load));
   Add(new Command(hk(tr("Save the puzzle")),       &Menu::save));
+  Add(new Command(hk(tr("Undo last action")),      &Menu::undo));
+  Add(new Command(hk(tr("Redo last action")),      &Menu::redo));
   Add(new Command(hk(tr("Reset the puzzle")),      &Menu::reset));
   Add(new Command(hk(tr("Open setup menu")),       &Menu::open_setup));
   Add(new Command(hk(tr("Exit")),                  &Menu::exit));

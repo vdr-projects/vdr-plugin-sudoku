@@ -17,11 +17,11 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: sudoku.cpp 136 2008-04-06 02:01:00Z tom $
+ * $Id: sudoku.cpp 140 2008-06-30 22:10:38Z tom $
  */
 
 #include "sudoku.h"
-#include "puzzle.h"
+namespace Sudoku { class PuzzleGame; }
 #include "menu.h"
 #include "setup.h"
 #include "i18n.h"
@@ -50,8 +50,7 @@ namespace SudokuPlugin
   class Plugin : public cPlugin
   {
     SetupData setup;
-    Sudoku::Puzzle puzzle;
-    Sudoku::Pos curr;
+    Sudoku::PuzzleGame* puzzle;
 
   public:
 
@@ -94,8 +93,7 @@ bool Plugin::Start()
 #if VDRVERSNUM < 10507
   RegisterI18n(Phrases);
 #endif
-  puzzle.generate(setup.givens_count, setup.symmetric);
-  curr = curr.center();
+  puzzle = NULL;
   return true;
 }
 
@@ -105,7 +103,7 @@ bool Plugin::Start()
  */
 cOsdObject* Plugin::MainMenuAction()
 {
-  return new Menu(this, setup, puzzle, curr);
+  return new Menu(this, setup, puzzle);
 }
 
 /** Setup menu page to adjust the setup parameters of the plugin

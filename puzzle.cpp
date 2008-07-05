@@ -17,11 +17,12 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: puzzle.cpp 117 2008-03-21 17:57:50Z tom $
+ * $Id: puzzle.cpp 141 2008-07-05 14:52:52Z tom $
  */
 
 #include "puzzle.h"
 #include "generator.h"
+#include "history.h"
 #include <string.h>
 #include <assert.h>
 
@@ -34,14 +35,7 @@ using namespace Sudoku;
 Numbers::Numbers(const char* dump) :
   numbers_dump()
 {
-  reset();
-
-  if (dump)
-    for (unsigned int i = 0; *dump && *dump != ':' && i < SDIM; ++i, ++dump)
-      if (*dump == '+')
-        --i;
-      else if (*dump > '0' && *dump - '0' <= DIM)
-        content[i] = *dump - '0';
+  load_from_dump(dump);
 
   assert(!numbers_dump);
 }
@@ -102,6 +96,19 @@ unsigned int Numbers::get(Pos pos) const
   return content[pos];
 }
 
+/** Load numbers from a dump. */
+void Numbers::load_from_dump(const char* dump)
+{
+  reset();
+
+  if (dump)
+    for (unsigned int i = 0; *dump && *dump != ':' && i < SDIM; ++i, ++dump)
+      if (*dump == '+')
+        --i;
+      else if (*dump > '0' && *dump - '0' <= DIM)
+        content[i] = *dump - '0';
+}
+
 
 //--- class Sudoku::Puzzle -----------------------------------------------------
 
@@ -109,26 +116,7 @@ unsigned int Numbers::get(Pos pos) const
 Puzzle::Puzzle(const char* dump) :
   puzzle_dump()
 {
-  // Set givens from the first part of the dump (before the first colon)
-  givens = Numbers(dump);
-  reset();
-
-  // Set numbers from the second part (between the first and the second colon)
-  if (dump)
-    dump = strchr(dump, ':');
-  if (dump)
-  {
-    Numbers numbers(++dump);
-    for (unsigned int i = 0; i < SDIM; ++i)
-      if (numbers.get(i) != 0)
-        set(i, numbers.get(i));
-  }
-
-  // Set marks from the third part (behind the second colon)
-  if (dump)
-    dump = strchr(dump, ':');
-  if (dump)
-    marks = Numbers(++dump);
+  load_from_dump(dump);
 
   assert(!puzzle_dump);
 }
@@ -213,6 +201,31 @@ void Puzzle::set(Pos pos, unsigned int number)
       if (p.col() == pos.col() || p.row() == pos.row() || p.reg() == pos.reg())
         compute_numbers(p);
   }
+}
+
+/** Load a puzzle from a dump. */
+void Puzzle::load_from_dump(const char* dump)
+{
+  // Set givens from the first part of the dump (before the first colon)
+  givens.load_from_dump(dump);
+  reset();
+
+  // Set numbers from the second part (between the first and the second colon)
+  if (dump)
+    dump = strchr(dump, ':');
+  if (dump)
+  {
+    Numbers numbers(++dump);
+    for (unsigned int i = 0; i < SDIM; ++i)
+      if (numbers.get(i) != 0)
+        set(i, numbers.get(i));
+  }
+
+  // Set marks from the third part (behind the second colon)
+  if (dump)
+    dump = strchr(dump, ':');
+  if (dump)
+    marks.load_from_dump(++dump);
 }
 
 /** Generate a new puzzle. */
@@ -310,7 +323,7 @@ Pos Puzzle::next_free(Pos pos) const
 }
 
 /** Get the next possible number for this cell. */
-unsigned int Puzzle::next_number(Pos pos)
+unsigned int Puzzle::next_number(Pos pos) const
 {
   assert(pos <= Pos::last());
   unsigned int n = get(pos);
@@ -325,14 +338,14 @@ unsigned int Puzzle::next_number(Pos pos)
 }
 
 /** Get the count of possible numbers for this cell. */
-unsigned int Puzzle::numbers_count(Pos pos)
+unsigned int Puzzle::numbers_count(Pos pos) const
 {
   assert(pos <= Pos::last());
   return count[pos];
 }
 
 /** Is this number in this cell a possible number? */
-bool Puzzle::possible_number(Pos pos, unsigned int number)
+bool Puzzle::possible_number(Pos pos, unsigned int number) const
 {
   assert(pos <= Pos::last());
   assert(0 <= number && number <= DIM);
@@ -370,4 +383,85 @@ bool Puzzle::correct(Pos pos) const
 {
   assert(pos <= Pos::last());
   return count[pos] != 0 && numbers[pos][get(pos)];
+}
+
+
+//--- class Sudoku::PuzzleGame -------------------------------------------------
+
+/** Constructor */
+PuzzleGame::PuzzleGame(const char* dump) :
+  Puzzle(dump), pos(Pos::center()), history(new History())
+{
+  assert(history);
+}
+
+/** Constructor with generation of a random puzzle */
+PuzzleGame::PuzzleGame(unsigned int givens_count, bool symmetric) :
+  Puzzle(givens_count, symmetric), pos(Pos::center()), history(new History())
+{
+  assert(history);
+}
+
+/** Destructor */
+PuzzleGame::~PuzzleGame()
+{
+  delete history;
+}
+
+/** Reset the puzzle (including marks). */
+void PuzzleGame::reset()
+{
+  reset(true);
+}
+
+/** Reset the puzzle (either with or without marks). */
+void PuzzleGame::reset(bool clear_marks)
+{
+  Puzzle::reset(clear_marks);
+  if (history)
+    history->reset();
+}
+
+/** Set the number into the current cell, write action into history. */
+void PuzzleGame::set_with_history(unsigned int number)
+{
+  if (history && !given(pos) && get(pos) != number)
+  {
+    history->add(new SetMove(*this, number));
+    history->current()->execute();
+  }
+  else
+    set(pos, number);
+}
+
+/** Get the position of the current cell. */
+Pos PuzzleGame::get_pos() const
+{
+  return pos;
+}
+
+/** Set the position of the current cell. */
+void PuzzleGame::set_pos(Pos new_pos)
+{
+  pos = new_pos;
+}
+
+/** Go one step backward in the history. */
+void PuzzleGame::backward()
+{
+  if (history->movesExecuted())
+  {
+    history->current()->takeBack();
+    history->backward();
+  }
+}
+
+/** Go one step forward in the history. */
+void PuzzleGame::forward()
+{
+  if (history->movesToExecute())
+  {
+    history->forward();
+    history->current()->execute();
+  }
 }
