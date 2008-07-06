@@ -101,6 +101,12 @@ Setup:
                           Values: yes/no. Default: no.
 - Clear marks on reset    Unmark all cells when the puzzle is reset.
                           Values: yes/no. Default: no.
+- Key Red                 Choose command for the red key.
+                          Values: see commands menu. Default: Mark/unmark.
+- Key Green               Choose command for the green key.
+                          Values: see commands menu. Default: Undo last action.
+- Key Yellow              Choose command for the yellow key.
+                          Values: see commands menu. Default: Redo last action.
 - Transparency (%)        Set the transparency of the menu.
                           Values: 0-100. Default: 50.
 
@@ -111,11 +117,9 @@ Keys:
 - Left/Right/Up/Down      Move the cursor in the puzzle.
 - 1-9                     Set the number in the current cell.
 - 0                       Remove the number from the current cell.
-- Green                   Mark/unmark the current cell.
-- Yellow                  Move the cursor to the next free cell with minimal
-                          possible numbers.
-- Red                     Set the next possible number for the current cell -
-                          reset the number if greater numbers are not possible.
+- Red                     Execute red key command.
+- Green                   Execute green key command.
+- Yellow                  Execute yellow key command.
 - Blue                    Open the commands menu.
 - Back                    Quit the plug-in.
 
@@ -131,6 +135,11 @@ Commands menu:
                           optional description.
 - Undo last action        Go one step backward in the history.
 - Redo last action        Go one step forward in the history.
+- Mark/unmark             Mark/unmark the current cell.
+- Next cell               Move the cursor to the next free cell with minimal
+                          possible numbers.
+- Next number             Set the next possible number for the current cell -
+                          reset the number if greater numbers are not possible.
 - Reset the puzzle        Reset the numbers in all cells, excluding the givens.
 - Open setup menu         Open the setup menu of the plug-in.
 - Exit                    Quit the plug-in.

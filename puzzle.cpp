@@ -17,7 +17,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: puzzle.cpp 141 2008-07-05 14:52:52Z tom $
+ * $Id: puzzle.cpp 142 2008-07-06 15:50:02Z tom $
  */
 
 #include "puzzle.h"
@@ -311,7 +311,7 @@ void Puzzle::toggle_mark(Pos pos)
 }
 
 /** Get the next free cell with minimal possible numbers. */
-Pos Puzzle::next_free(Pos pos) const
+Pos Puzzle::next_cell(Pos pos) const
 {
   unsigned int min_count = DIM+1, min_index = SDIM, i;
 

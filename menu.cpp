@@ -17,7 +17,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: menu.cpp 140 2008-06-30 22:10:38Z tom $
+ * $Id: menu.cpp 142 2008-07-06 15:50:02Z tom $
  */
 
 #include "menu.h"
@@ -172,73 +172,73 @@ eOSState Menu::ProcessKey(eKeys key)
   eOSState state = cOsdObject::ProcessKey(key);
   if (state == osUnknown)
   {
-    if (key == kBack)
-      return exit();
-    if (key == kBlue)
+    Pos curr = puzzle->get_pos();
+    CommandType command = NULL;
+    switch (key)
     {
-      osd->Flush();
-      DELETENULL(osd);
-      command_menu = new CommandMenu();
-      command_menu->Display();
-      return osContinue;
+      case kLeft:
+      case kLeft|k_Repeat:
+        puzzle->set_pos(curr.prev_col());
+        break;
+      case kRight:
+      case kRight|k_Repeat:
+        puzzle->set_pos(curr.next_col());
+        break;
+      case kUp:
+      case kUp|k_Repeat:
+        puzzle->set_pos(curr.prev_row());
+        break;
+      case kDown:
+      case kDown|k_Repeat:
+        puzzle->set_pos(curr.next_row());
+        break;
+      case k0:
+      case k1:
+      case k2:
+      case k3:
+      case k4:
+      case k5:
+      case k6:
+      case k7:
+      case k8:
+      case k9:
+        puzzle->set_with_history(key - k0);
+        break;
+      case kRed:
+        command = CommandList::command(setup.key_red);
+        break;
+      case kGreen:
+        command = CommandList::command(setup.key_green);
+        break;
+      case kYellow:
+        command = CommandList::command(setup.key_yellow);
+        break;
+      case kBlue:
+        osd->Flush();
+        DELETENULL(osd);
+        command_menu = new CommandMenu();
+        command_menu->Display();
+        return osContinue;
+      case kOk:
+        if (new_puzzle_request)
+          generate();
+        break;
+      case kBack:
+        return exit();
+      default:
+        return osContinue;
     }
+    if (command)
+    {
+      state = (this->*command)();
+      if (state == osUnknown)
+        return osContinue;
+      if (state == osEnd)
+        return osEnd;
+    }
+    new_puzzle_request = !new_puzzle_request && puzzle->solved();
     if (new_puzzle_request)
-    {
-      if (key == kOk)
-        generate();
-    }
-    else
-    {
-      Pos curr = puzzle->get_pos();
-      switch (key)
-      {
-        case kLeft:
-        case kLeft|k_Repeat:
-          puzzle->set_pos(curr.prev_col());
-          break;
-        case kRight:
-        case kRight|k_Repeat:
-          puzzle->set_pos(curr.next_col());
-          break;
-        case kUp:
-        case kUp|k_Repeat:
-          puzzle->set_pos(curr.prev_row());
-          break;
-        case kDown:
-        case kDown|k_Repeat:
-          puzzle->set_pos(curr.next_row());
-          break;
-        case k0:
-        case k1:
-        case k2:
-        case k3:
-        case k4:
-        case k5:
-        case k6:
-        case k7:
-        case k8:
-        case k9:
-          puzzle->set_with_history(key - k0);
-          break;
-        case kRed:
-          puzzle->set_with_history(puzzle->next_number(curr));
-          break;
-        case kGreen:
-          puzzle->toggle_mark(curr);
-          break;
-        case kYellow:
-          if (puzzle->next_free(curr) <= Pos::last())
-            puzzle->set_pos(puzzle->next_free(curr));
-          break;
-        default:
-          return osContinue;
-      }
-    }
-    if (puzzle->solved())
-    {
-      new_puzzle_request = true;
       infoText = tr("Congratulations!\nPress OK to start a new puzzle");
-    }
     paint();
     state = osContinue;
   }
@@ -285,6 +285,29 @@ eOSState Menu::undo()
 eOSState Menu::redo()
 {
   puzzle->forward();
+  return osContinue;
+}
+
+/** Mark/unmark the current cell. */
+eOSState Menu::toggle_mark()
+{
+  puzzle->toggle_mark(puzzle->get_pos());
+  return osContinue;
+}
+
+/** Move the cursor to the next free cell with minimal possible numbers. */
+eOSState Menu::next_cell()
+{
+  Pos new_pos = puzzle->next_cell(puzzle->get_pos());
+  if (new_pos <= Pos::last())
+    puzzle->set_pos(new_pos);
+  return osContinue;
+}
+
+/** Set the next possible number for the current cell. */
+eOSState Menu::next_number()
+{
+  puzzle->set_with_history(puzzle->next_number(puzzle->get_pos()));
   return osContinue;
 }
 
@@ -403,8 +426,6 @@ void Menu::paint()
     osd->DrawBitmap(xPos + 10, yPos + 10, *info);
     infoText = NULL;
   }
-  else
-    new_puzzle_request = false;
 
   osd->Flush();
 }

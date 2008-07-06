@@ -53,3 +53,5 @@ VDR plug-in 'Sudoku' Revision History
 ____-__-__: Version 0.3.0
 
 - Added history function.
+- Added setup options to configure red, green and yellow key.
+- Change default commands for red, green and yellow key: mark, undo and redo.

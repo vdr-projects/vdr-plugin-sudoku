@@ -17,7 +17,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: menu.h 140 2008-06-30 22:10:38Z tom $
+ * $Id: menu.h 142 2008-07-06 15:50:02Z tom $
  */
 
 #ifndef VDR_SUDOKU_MENU_H
@@ -88,7 +88,16 @@ namespace SudokuPlugin
 
     /** Redo last action. */
     eOSState redo();
- 
+
+    /** Mark/unmark the current cell. */
+    eOSState toggle_mark();
+
+    /** Move the cursor to the next free cell with minimal possible numbers. */
+    eOSState next_cell();
+
+    /** Set the next possible number for the current cell. */
+    eOSState next_number();
+
     /** Reset the puzzle. */
     eOSState reset();
 

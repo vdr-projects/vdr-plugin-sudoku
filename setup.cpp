@@ -17,10 +17,11 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: setup.cpp 135 2008-04-05 20:23:44Z tom $
+ * $Id: setup.cpp 142 2008-07-06 15:50:02Z tom $
  */
 
 #include "setup.h"
+#include "commands.h"
 #include "i18n.h"
 #include <strings.h>
 
@@ -42,6 +43,9 @@ SetupData::SetupData()
   show_possibles_pattern = 0;
   show_possibles_digits = 0;
   clear_marks = 0;
+  key_red = CommandList::key_red_default_index();
+  key_green = CommandList::key_green_default_index();
+  key_yellow = CommandList::key_yellow_default_index();
   transparency = 50;
 }
 
@@ -52,6 +56,7 @@ SetupData::SetupData()
  */
 bool SetupData::parse(const char* name, const char* value)
 {
+  CommandList cl;
   if (!strcasecmp(name, "GivensCount"))
     givens_count = atoi(value);
   else if (!strcasecmp(name, "Symmetric"))
@@ -66,6 +71,12 @@ bool SetupData::parse(const char* name, const char* value)
     show_possibles_digits = atoi(value);
   else if (!strcasecmp(name, "ClearMarks"))
     clear_marks = atoi(value);
+  else if (!strcasecmp(name, "KeyRed"))
+    key_red = cl.id_to_index(atoi(value), cl.key_red_default_index());
+  else if (!strcasecmp(name, "KeyGreen"))
+    key_green = cl.id_to_index(atoi(value), cl.key_green_default_index());
+  else if (!strcasecmp(name, "KeyYellow"))
+    key_yellow = cl.id_to_index(atoi(value), cl.key_yellow_default_index());
   else if (!strcasecmp(name, "Transparency"))
     transparency = atoi(value);
   else
@@ -92,6 +103,12 @@ SetupPage::SetupPage(SetupData& setup) :
                             &data.show_possibles_digits));
 #endif
   Add(new cMenuEditBoolItem(tr("Clear marks on reset"), &data.clear_marks));
+  Add(new cMenuEditStraItem(tr("Key Red"), &data.key_red,
+                            CommandList::count(), CommandList::texts()));
+  Add(new cMenuEditStraItem(tr("Key Green"), &data.key_green,
+                            CommandList::count(), CommandList::texts()));
+  Add(new cMenuEditStraItem(tr("Key Yellow"), &data.key_yellow,
+                            CommandList::count(), CommandList::texts()));
   Add(new cMenuEditIntItem(tr("Transparency (%)"), &data.transparency, 0, 100));
 }
 
@@ -110,5 +127,8 @@ void SetupPage::Store()
   SetupStore("ShowPossiblesPattern", setup.show_possibles_pattern);
   SetupStore("ShowPossiblesDigits", setup.show_possibles_digits);
   SetupStore("ClearMarks", setup.clear_marks);
+  SetupStore("KeyRed", CommandList::id(setup.key_red));
+  SetupStore("KeyGreen", CommandList::id(setup.key_green));
+  SetupStore("KeyYellow", CommandList::id(setup.key_yellow));
   SetupStore("Transparency", setup.transparency);
 }

@@ -17,7 +17,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: solver.cpp 117 2008-03-21 17:57:50Z tom $
+ * $Id: solver.cpp 142 2008-07-06 15:50:02Z tom $
  */
 
 #define USE_RAND
@@ -46,7 +46,7 @@ Solver::Solver(Puzzle& puzzle, bool random_init, unsigned int max_iter) :
 void Solver::set_first_at(unsigned int level)
 {
   assert(level < free_count);
-  const Pos p = puzzle.next_free();
+  const Pos p = puzzle.next_cell();
   assert(p <= Pos::last());
 
   free_list[level] = p;
