@@ -54,6 +54,7 @@ ____-__-__: Version 0.3.0
 
 - Added history function.
 - Added setup options to configure red, green and yellow key.
-- Change default commands for red, green and yellow key: mark, undo and redo.
+- Changed default commands for red, green and yellow key: mark, undo and redo.
 - Added setup options to configure fonts (VDR >= 1.5.4).
 - Updated German language texts.
+- Added French language texts (thanks to Patrice Staudt).
