@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the vdr-sudoku package.
 # Diego Pierotto <vdr-italian@tiscali.it>, 2007, 2008.
 #
-# $Id: it_IT.po 131 2008-03-30 13:49:29Z tom $
+# $Id: it_IT.po 144 2008-07-26 18:42:51Z tom $
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: vdr-sudoku 0.2.1\n"
 "Report-Msgid-Bugs-To: <tom@toms-cafe.de>\n"
-"POT-Creation-Date: 2008-03-21 13:07+0100\n"
+"POT-Creation-Date: 2008-07-23 00:32+0200\n"
 "PO-Revision-Date: 2008-03-29 21:24+0100\n"
 "Last-Translator: Diego Pierotto <vdr-italian@tiscali.it>\n"
 "Language-Team:  <vdr@linuxtv.org>\n"
@@ -25,6 +25,21 @@ msgstr "Carica una partita"
 
 msgid "Save the puzzle"
 msgstr "Salva la partita"
+
+msgid "Undo last action"
+msgstr ""
+
+msgid "Redo last action"
+msgstr ""
+
+msgid "Mark/unmark"
+msgstr ""
+
+msgid "Next cell"
+msgstr ""
+
+msgid "Next number"
+msgstr ""
 
 msgid "Reset the puzzle"
 msgstr "Ricomincia la partita"
@@ -77,6 +92,33 @@ msgstr "Mostra num. possibili in cifre"
 
 msgid "Clear marks on reset"
 msgstr "Pulisci segni al riavvio"
+
+msgid "Key Red"
+msgstr ""
+
+msgid "Key Green"
+msgstr ""
+
+msgid "Key Yellow"
+msgstr ""
+
+msgid "Great font"
+msgstr ""
+
+msgid "Great font height (pixel)"
+msgstr ""
+
+msgid "Great font width (pixel)"
+msgstr ""
+
+msgid "Small font"
+msgstr ""
+
+msgid "Small font height (pixel)"
+msgstr ""
+
+msgid "Small font width (pixel)"
+msgstr ""
 
 msgid "Transparency (%)"
 msgstr "Trasparenza (%)"

@@ -17,7 +17,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: i18n.cpp 131 2008-03-30 13:49:29Z tom $
+ * $Id: i18n.cpp 144 2008-07-26 18:42:51Z tom $
  *
  *
  * Translations provided by:
@@ -132,6 +132,116 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "", // Français / French
     "", // Norsk / Norwegian
     "Tallenna ristikko", // suomi / Finnish
+    "", // Polski / Polish
+    "", // Español / Spanish
+    "", // ÅëëçíéêÜ / Greek
+    "", // Svenska / Swedish
+    "", // Românã / Romanian
+    "", // Magyar / Hungarian
+    "", // Català / Catalanian
+    "", // ÀãááÚØÙ / Russian
+    "", // Hrvatski / Croatian
+    "", // Eesti / Estonian
+    "", // Dansk / Danish
+    "", // Èesky / Czech
+  },
+  { "Undo last action", // English
+    "Letzte Aktion zurücknehmen", // Deutsch / German
+    "", // Slovenski / Slovenian
+    "", // Italiano / Italian
+    "", // Nederlands / Dutch
+    "", // Português / Portuguese
+    "", // Français / French
+    "", // Norsk / Norwegian
+    "", // suomi / Finnish
+    "", // Polski / Polish
+    "", // Español / Spanish
+    "", // ÅëëçíéêÜ / Greek
+    "", // Svenska / Swedish
+    "", // Românã / Romanian
+    "", // Magyar / Hungarian
+    "", // Català / Catalanian
+    "", // ÀãááÚØÙ / Russian
+    "", // Hrvatski / Croatian
+    "", // Eesti / Estonian
+    "", // Dansk / Danish
+    "", // Èesky / Czech
+  },
+  { "Redo last action", // English
+    "Letzte Aktion wiederholen", // Deutsch / German
+    "", // Slovenski / Slovenian
+    "", // Italiano / Italian
+    "", // Nederlands / Dutch
+    "", // Português / Portuguese
+    "", // Français / French
+    "", // Norsk / Norwegian
+    "", // suomi / Finnish
+    "", // Polski / Polish
+    "", // Español / Spanish
+    "", // ÅëëçíéêÜ / Greek
+    "", // Svenska / Swedish
+    "", // Românã / Romanian
+    "", // Magyar / Hungarian
+    "", // Català / Catalanian
+    "", // ÀãááÚØÙ / Russian
+    "", // Hrvatski / Croatian
+    "", // Eesti / Estonian
+    "", // Dansk / Danish
+    "", // Èesky / Czech
+  },
+  { "Mark/unmark", // English
+    "Markierung setzen/löschen", // Deutsch / German
+    "", // Slovenski / Slovenian
+    "", // Italiano / Italian
+    "", // Nederlands / Dutch
+    "", // Português / Portuguese
+    "", // Français / French
+    "", // Norsk / Norwegian
+    "", // suomi / Finnish
+    "", // Polski / Polish
+    "", // Español / Spanish
+    "", // ÅëëçíéêÜ / Greek
+    "", // Svenska / Swedish
+    "", // Românã / Romanian
+    "", // Magyar / Hungarian
+    "", // Català / Catalanian
+    "", // ÀãááÚØÙ / Russian
+    "", // Hrvatski / Croatian
+    "", // Eesti / Estonian
+    "", // Dansk / Danish
+    "", // Èesky / Czech
+  },
+  { "Next cell", // English
+    "Nächste Zelle", // Deutsch / German
+    "", // Slovenski / Slovenian
+    "", // Italiano / Italian
+    "", // Nederlands / Dutch
+    "", // Português / Portuguese
+    "", // Français / French
+    "", // Norsk / Norwegian
+    "", // suomi / Finnish
+    "", // Polski / Polish
+    "", // Español / Spanish
+    "", // ÅëëçíéêÜ / Greek
+    "", // Svenska / Swedish
+    "", // Românã / Romanian
+    "", // Magyar / Hungarian
+    "", // Català / Catalanian
+    "", // ÀãááÚØÙ / Russian
+    "", // Hrvatski / Croatian
+    "", // Eesti / Estonian
+    "", // Dansk / Danish
+    "", // Èesky / Czech
+  },
+  { "Next number", // English
+    "Nächste Zahl", // Deutsch / German
+    "", // Slovenski / Slovenian
+    "", // Italiano / Italian
+    "", // Nederlands / Dutch
+    "", // Português / Portuguese
+    "", // Français / French
+    "", // Norsk / Norwegian
+    "", // suomi / Finnish
     "", // Polski / Polish
     "", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
@@ -464,6 +574,204 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "Poista merkinnät aloitettaessa", // suomi / Finnish
     "", // Polski / Polish
     "Quitar marcas al reiniciar", // Español / Spanish
+    "", // ÅëëçíéêÜ / Greek
+    "", // Svenska / Swedish
+    "", // Românã / Romanian
+    "", // Magyar / Hungarian
+    "", // Català / Catalanian
+    "", // ÀãááÚØÙ / Russian
+    "", // Hrvatski / Croatian
+    "", // Eesti / Estonian
+    "", // Dansk / Danish
+    "", // Èesky / Czech
+  },
+  { "Key Red", // English
+    "Taste Rot", // Deutsch / German
+    "", // Slovenski / Slovenian
+    "", // Italiano / Italian
+    "", // Nederlands / Dutch
+    "", // Português / Portuguese
+    "", // Français / French
+    "", // Norsk / Norwegian
+    "", // suomi / Finnish
+    "", // Polski / Polish
+    "", // Español / Spanish
+    "", // ÅëëçíéêÜ / Greek
+    "", // Svenska / Swedish
+    "", // Românã / Romanian
+    "", // Magyar / Hungarian
+    "", // Català / Catalanian
+    "", // ÀãááÚØÙ / Russian
+    "", // Hrvatski / Croatian
+    "", // Eesti / Estonian
+    "", // Dansk / Danish
+    "", // Èesky / Czech
+  },
+  { "Key Green", // English
+    "Taste Grün", // Deutsch / German
+    "", // Slovenski / Slovenian
+    "", // Italiano / Italian
+    "", // Nederlands / Dutch
+    "", // Português / Portuguese
+    "", // Français / French
+    "", // Norsk / Norwegian
+    "", // suomi / Finnish
+    "", // Polski / Polish
+    "", // Español / Spanish
+    "", // ÅëëçíéêÜ / Greek
+    "", // Svenska / Swedish
+    "", // Românã / Romanian
+    "", // Magyar / Hungarian
+    "", // Català / Catalanian
+    "", // ÀãááÚØÙ / Russian
+    "", // Hrvatski / Croatian
+    "", // Eesti / Estonian
+    "", // Dansk / Danish
+    "", // Èesky / Czech
+  },
+  { "Key Yellow", // English
+    "Taste Gelb", // Deutsch / German
+    "", // Slovenski / Slovenian
+    "", // Italiano / Italian
+    "", // Nederlands / Dutch
+    "", // Português / Portuguese
+    "", // Français / French
+    "", // Norsk / Norwegian
+    "", // suomi / Finnish
+    "", // Polski / Polish
+    "", // Español / Spanish
+    "", // ÅëëçíéêÜ / Greek
+    "", // Svenska / Swedish
+    "", // Românã / Romanian
+    "", // Magyar / Hungarian
+    "", // Català / Catalanian
+    "", // ÀãááÚØÙ / Russian
+    "", // Hrvatski / Croatian
+    "", // Eesti / Estonian
+    "", // Dansk / Danish
+    "", // Èesky / Czech
+  },
+  { "Great font", // English
+    "Große Schriftart", // Deutsch / German
+    "", // Slovenski / Slovenian
+    "", // Italiano / Italian
+    "", // Nederlands / Dutch
+    "", // Português / Portuguese
+    "", // Français / French
+    "", // Norsk / Norwegian
+    "", // suomi / Finnish
+    "", // Polski / Polish
+    "", // Español / Spanish
+    "", // ÅëëçíéêÜ / Greek
+    "", // Svenska / Swedish
+    "", // Românã / Romanian
+    "", // Magyar / Hungarian
+    "", // Català / Catalanian
+    "", // ÀãááÚØÙ / Russian
+    "", // Hrvatski / Croatian
+    "", // Eesti / Estonian
+    "", // Dansk / Danish
+    "", // Èesky / Czech
+  },
+  { "Great font height (pixel)", // English
+    "Große Schrifthöhe (pixel)", // Deutsch / German
+    "", // Slovenski / Slovenian
+    "", // Italiano / Italian
+    "", // Nederlands / Dutch
+    "", // Português / Portuguese
+    "", // Français / French
+    "", // Norsk / Norwegian
+    "", // suomi / Finnish
+    "", // Polski / Polish
+    "", // Español / Spanish
+    "", // ÅëëçíéêÜ / Greek
+    "", // Svenska / Swedish
+    "", // Românã / Romanian
+    "", // Magyar / Hungarian
+    "", // Català / Catalanian
+    "", // ÀãááÚØÙ / Russian
+    "", // Hrvatski / Croatian
+    "", // Eesti / Estonian
+    "", // Dansk / Danish
+    "", // Èesky / Czech
+  },
+  { "Great font width (pixel)", // English
+    "Große Schriftbreite (pixel)", // Deutsch / German
+    "", // Slovenski / Slovenian
+    "", // Italiano / Italian
+    "", // Nederlands / Dutch
+    "", // Português / Portuguese
+    "", // Français / French
+    "", // Norsk / Norwegian
+    "", // suomi / Finnish
+    "", // Polski / Polish
+    "", // Español / Spanish
+    "", // ÅëëçíéêÜ / Greek
+    "", // Svenska / Swedish
+    "", // Românã / Romanian
+    "", // Magyar / Hungarian
+    "", // Català / Catalanian
+    "", // ÀãááÚØÙ / Russian
+    "", // Hrvatski / Croatian
+    "", // Eesti / Estonian
+    "", // Dansk / Danish
+    "", // Èesky / Czech
+  },
+  { "Small font", // English
+    "Kleine Schriftart", // Deutsch / German
+    "", // Slovenski / Slovenian
+    "", // Italiano / Italian
+    "", // Nederlands / Dutch
+    "", // Português / Portuguese
+    "", // Français / French
+    "", // Norsk / Norwegian
+    "", // suomi / Finnish
+    "", // Polski / Polish
+    "", // Español / Spanish
+    "", // ÅëëçíéêÜ / Greek
+    "", // Svenska / Swedish
+    "", // Românã / Romanian
+    "", // Magyar / Hungarian
+    "", // Català / Catalanian
+    "", // ÀãááÚØÙ / Russian
+    "", // Hrvatski / Croatian
+    "", // Eesti / Estonian
+    "", // Dansk / Danish
+    "", // Èesky / Czech
+  },
+  { "Small font height (pixel)", // English
+    "Kleine Schrifthöhe (pixel)", // Deutsch / German
+    "", // Slovenski / Slovenian
+    "", // Italiano / Italian
+    "", // Nederlands / Dutch
+    "", // Português / Portuguese
+    "", // Français / French
+    "", // Norsk / Norwegian
+    "", // suomi / Finnish
+    "", // Polski / Polish
+    "", // Español / Spanish
+    "", // ÅëëçíéêÜ / Greek
+    "", // Svenska / Swedish
+    "", // Românã / Romanian
+    "", // Magyar / Hungarian
+    "", // Català / Catalanian
+    "", // ÀãááÚØÙ / Russian
+    "", // Hrvatski / Croatian
+    "", // Eesti / Estonian
+    "", // Dansk / Danish
+    "", // Èesky / Czech
+  },
+  { "Small font width (pixel)", // English
+    "Kleine Schriftbreite (pixel)", // Deutsch / German
+    "", // Slovenski / Slovenian
+    "", // Italiano / Italian
+    "", // Nederlands / Dutch
+    "", // Português / Portuguese
+    "", // Français / French
+    "", // Norsk / Norwegian
+    "", // suomi / Finnish
+    "", // Polski / Polish
+    "", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
     "", // Svenska / Swedish
     "", // Românã / Romanian

@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the vdr-sudoku package.
 # Thomas Günther <tom@toms-cafe.de>, 2005, 2008.
 #
-# $Id: de_DE.po 136 2008-04-06 02:01:00Z tom $
+# $Id: de_DE.po 144 2008-07-26 18:42:51Z tom $
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: vdr-sudoku 0.2.1\n"
+"Project-Id-Version: vdr-sudoku 0.3.0\n"
 "Report-Msgid-Bugs-To: <tom@toms-cafe.de>\n"
-"POT-Creation-Date: 2008-03-21 13:07+0100\n"
-"PO-Revision-Date: 2008-03-21 13:07+0100\n"
+"POT-Creation-Date: 2008-07-23 00:32+0200\n"
+"PO-Revision-Date: 2008-07-23 00:32+0200\n"
 "Last-Translator: Thomas Günther <tom@toms-cafe.de>\n"
 "Language-Team:  <vdr@linuxtv.org>\n"
 "MIME-Version: 1.0\n"
@@ -25,6 +25,21 @@ msgstr "Puzzle laden"
 
 msgid "Save the puzzle"
 msgstr "Puzzle speichern"
+
+msgid "Undo last action"
+msgstr "Letzte Aktion zurücknehmen"
+
+msgid "Redo last action"
+msgstr "Letzte Aktion wiederholen"
+
+msgid "Mark/unmark"
+msgstr "Markierung setzen/löschen"
+
+msgid "Next cell"
+msgstr "Nächste Zelle"
+
+msgid "Next number"
+msgstr "Nächste Zahl"
 
 msgid "Reset the puzzle"
 msgstr "Puzzle zurücksetzen"
@@ -77,6 +92,33 @@ msgstr "Mögliche Zahlen als Ziffern anzeigen"
 
 msgid "Clear marks on reset"
 msgstr "Markierungen löschen beim Reset"
+
+msgid "Key Red"
+msgstr "Taste Rot"
+
+msgid "Key Green"
+msgstr "Taste Grün"
+
+msgid "Key Yellow"
+msgstr "Taste Gelb"
+
+msgid "Great font"
+msgstr "Große Schriftart"
+
+msgid "Great font height (pixel)"
+msgstr "Große Schrifthöhe (pixel)"
+
+msgid "Great font width (pixel)"
+msgstr "Große Schriftbreite (pixel)"
+
+msgid "Small font"
+msgstr "Kleine Schriftart"
+
+msgid "Small font height (pixel)"
+msgstr "Kleine Schrifthöhe (pixel)"
+
+msgid "Small font width (pixel)"
+msgstr "Kleine Schriftbreite (pixel)"
 
 msgid "Transparency (%)"
 msgstr "Transparenz (%)"

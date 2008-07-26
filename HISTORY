@@ -56,3 +56,4 @@ ____-__-__: Version 0.3.0
 - Added setup options to configure red, green and yellow key.
 - Change default commands for red, green and yellow key: mark, undo and redo.
 - Added setup options to configure fonts (VDR >= 1.5.4).
+- Updated German language texts.
