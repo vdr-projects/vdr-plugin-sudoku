@@ -17,7 +17,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: menu.cpp 142 2008-07-06 15:50:02Z tom $
+ * $Id: menu.cpp 143 2008-07-26 18:38:59Z tom $
  */
 
 #include "menu.h"
@@ -77,9 +77,10 @@ Menu::Menu(cPlugin* plugin, const SetupData& setup, PuzzleGame*& puzzle) :
   infoText = NULL;
   new_puzzle_request = false;
 #if VDRVERSNUM >= 10504
-  maxi_font = cFont::CreateFont(Setup.FontOsd, 3 * CELL_SIZE / 4, CELL_SIZE);
-  mini_font = cFont::CreateFont(Setup.FontOsd, 3 * CELL_SIZE / RDIM / 4,
-                                CELL_SIZE / RDIM);
+  maxi_font = cFont::CreateFont(setup.maxi_font, setup.maxi_font_height,
+                                setup.maxi_font_width);
+  mini_font = cFont::CreateFont(setup.mini_font, setup.mini_font_height,
+                                setup.mini_font_width);
 #else
   maxi_font = cFont::GetFont(fontFix);
   mini_font = NULL;
@@ -164,6 +165,14 @@ eOSState Menu::ProcessKey(eKeys key)
       if (key == kOk)
         Setup.Save();
       DELETENULL(setup_menu);
+#if VDRVERSNUM >= 10504
+      DELETENULL(maxi_font);
+      DELETENULL(mini_font);
+      maxi_font = cFont::CreateFont(setup.maxi_font, setup.maxi_font_height,
+                                    setup.maxi_font_width);
+      mini_font = cFont::CreateFont(setup.mini_font, setup.mini_font_height,
+                                    setup.mini_font_width);
+#endif
       Show();
     }
     return state;

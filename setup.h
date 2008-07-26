@@ -17,14 +17,16 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: setup.h 142 2008-07-06 15:50:02Z tom $
+ * $Id: setup.h 143 2008-07-26 18:38:59Z tom $
  */
 
 #ifndef VDR_SUDOKU_SETUP_H
 #define VDR_SUDOKU_SETUP_H
 
 #include "sudoku.h"
+#include <vdr/config.h>
 #include <vdr/menuitems.h>
+#include <vdr/font.h>
 
 
 namespace SudokuPlugin
@@ -46,6 +48,14 @@ namespace SudokuPlugin
     int key_red;
     int key_green;
     int key_yellow;
+#if VDRVERSNUM >= 10504
+    char maxi_font[MAXFONTNAME];
+    int maxi_font_height;
+    int maxi_font_width;
+    char mini_font[MAXFONTNAME];
+    int mini_font_height;
+    int mini_font_width;
+#endif
     int transparency;
 
     /** Constructor */
@@ -63,6 +73,10 @@ namespace SudokuPlugin
   {
     SetupData& setup;
     SetupData data;
+#if VDRVERSNUM >= 10504
+    cStringList maxi_font_names, mini_font_names;
+    int maxi_font_index, mini_font_index;
+#endif
 
   public:
 

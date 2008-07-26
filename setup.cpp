@@ -17,7 +17,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: setup.cpp 142 2008-07-06 15:50:02Z tom $
+ * $Id: setup.cpp 143 2008-07-26 18:38:59Z tom $
  */
 
 #include "setup.h"
@@ -46,6 +46,14 @@ SetupData::SetupData()
   key_red = CommandList::key_red_default_index();
   key_green = CommandList::key_green_default_index();
   key_yellow = CommandList::key_yellow_default_index();
+#if VDRVERSNUM >= 10504
+  strcpy(maxi_font, DefaultFontOsd);
+  maxi_font_height = 31;
+  maxi_font_width = 42;
+  strcpy(mini_font, DefaultFontOsd);
+  mini_font_height = 10;
+  mini_font_width = 14;
+#endif
   transparency = 50;
 }
 
@@ -77,6 +85,20 @@ bool SetupData::parse(const char* name, const char* value)
     key_green = cl.id_to_index(atoi(value), cl.key_green_default_index());
   else if (!strcasecmp(name, "KeyYellow"))
     key_yellow = cl.id_to_index(atoi(value), cl.key_yellow_default_index());
+#if VDRVERSNUM >= 10504
+  else if (!strcasecmp(name, "MaxiFont"))
+    Utf8Strn0Cpy(maxi_font, value, MAXFONTNAME);
+  else if (!strcasecmp(name, "MaxiFontHeight"))
+    maxi_font_height = atoi(value);
+  else if (!strcasecmp(name, "MaxiFontWidth"))
+    maxi_font_width = atoi(value);
+  else if (!strcasecmp(name, "MiniFont"))
+    Utf8Strn0Cpy(mini_font, value, MAXFONTNAME);
+  else if (!strcasecmp(name, "MiniFontHeight"))
+    mini_font_height = atoi(value);
+  else if (!strcasecmp(name, "MiniFontWidth"))
+    mini_font_width = atoi(value);
+#endif
   else if (!strcasecmp(name, "Transparency"))
     transparency = atoi(value);
   else
@@ -91,6 +113,15 @@ bool SetupData::parse(const char* name, const char* value)
 SetupPage::SetupPage(SetupData& setup) :
   setup(setup), data(setup)
 {
+#if VDRVERSNUM >= 10504
+  cFont::GetAvailableFontNames(&maxi_font_names);
+  cFont::GetAvailableFontNames(&mini_font_names);
+  maxi_font_names.Insert(strdup(DefaultFontOsd));
+  mini_font_names.Insert(strdup(DefaultFontOsd));
+  maxi_font_index = max(0, maxi_font_names.Find(data.maxi_font));
+  mini_font_index = max(0, mini_font_names.Find(data.mini_font));
+#endif
+
   Add(new cMenuEditIntItem(tr("Givens count"), &data.givens_count, 26, 81));
   Add(new cMenuEditBoolItem(tr("Symmetric givens"), &data.symmetric));
   Add(new cMenuEditBoolItem(tr("Mark errors"), &data.mark_errors));
@@ -109,6 +140,20 @@ SetupPage::SetupPage(SetupData& setup) :
                             CommandList::count(), CommandList::texts()));
   Add(new cMenuEditStraItem(tr("Key Yellow"), &data.key_yellow,
                             CommandList::count(), CommandList::texts()));
+#if VDRVERSNUM >= 10504
+  Add(new cMenuEditStraItem(tr("Great font"), &maxi_font_index,
+                            maxi_font_names.Size(), &maxi_font_names[0]));
+  Add(new cMenuEditIntItem(tr("Great font height (pixel)"),
+                           &data.maxi_font_height, 10, MAXFONTSIZE));
+  Add(new cMenuEditIntItem(tr("Great font width (pixel)"),
+                           &data.maxi_font_width, 10, MAXFONTSIZE));
+  Add(new cMenuEditStraItem(tr("Small font"), &mini_font_index,
+                            mini_font_names.Size(), &mini_font_names[0]));
+  Add(new cMenuEditIntItem(tr("Small font height (pixel)"),
+                           &data.mini_font_height, 10, MAXFONTSIZE));
+  Add(new cMenuEditIntItem(tr("Small font width (pixel)"),
+                           &data.mini_font_width, 10, MAXFONTSIZE));
+#endif
   Add(new cMenuEditIntItem(tr("Transparency (%)"), &data.transparency, 0, 100));
 }
 
@@ -119,6 +164,13 @@ SetupPage::SetupPage(SetupData& setup) :
  */
 void SetupPage::Store()
 {
+#if VDRVERSNUM >= 10504
+  Utf8Strn0Cpy(data.maxi_font, maxi_font_names[maxi_font_index],
+               sizeof(data.maxi_font));
+  Utf8Strn0Cpy(data.mini_font, mini_font_names[mini_font_index],
+               sizeof(data.mini_font));
+#endif
+
   setup = data;
   SetupStore("GivensCount", setup.givens_count);
   SetupStore("Symmetric", setup.symmetric);
@@ -130,5 +182,13 @@ void SetupPage::Store()
   SetupStore("KeyRed", CommandList::id(setup.key_red));
   SetupStore("KeyGreen", CommandList::id(setup.key_green));
   SetupStore("KeyYellow", CommandList::id(setup.key_yellow));
+#if VDRVERSNUM >= 10504
+  SetupStore("MaxiFont", setup.maxi_font);
+  SetupStore("MaxiFontHeight", setup.maxi_font_height);
+  SetupStore("MaxiFontWidth", setup.maxi_font_width);
+  SetupStore("MiniFont", setup.mini_font);
+  SetupStore("MiniFontHeight", setup.mini_font_height);
+  SetupStore("MiniFontWidth", setup.mini_font_width);
+#endif
   SetupStore("Transparency", setup.transparency);
 }
