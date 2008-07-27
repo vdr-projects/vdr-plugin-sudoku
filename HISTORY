@@ -50,7 +50,7 @@ VDR plug-in 'Sudoku' Revision History
 - Set default values for "Show possible numbers as pattern/digits" to No,
   because of problems with DXR3 (thanks to Ville Skyttä for reporting this).
 
-____-__-__: Version 0.3.0
+2008-07-27: Version 0.3.0
 
 - Added history function.
 - Added setup options to configure red, green and yellow key.

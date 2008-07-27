@@ -17,7 +17,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: sudoku.cpp 140 2008-06-30 22:10:38Z tom $
+ * $Id: sudoku.cpp 146 2008-07-27 00:41:20Z tom $
  */
 
 #include "sudoku.h"
@@ -34,7 +34,7 @@ namespace SudokuPlugin
 {
 
   /** Version number of the plugin */
-  static const char* VERSION = "0.2.1";
+  static const char* VERSION = "0.3.0";
 
   /** Short description of the plugin's purpose */
   static const char* DESCRIPTION =
