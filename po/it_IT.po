@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the vdr-sudoku package.
 # Diego Pierotto <vdr-italian@tiscali.it>, 2007, 2008.
 #
-# $Id: it_IT.po 144 2008-07-26 18:42:51Z tom $
+# $Id: it_IT.po 151 2008-08-29 22:57:35Z tom $
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: vdr-sudoku 0.2.1\n"
+"Project-Id-Version: vdr-sudoku 0.3.1\n"
 "Report-Msgid-Bugs-To: <tom@toms-cafe.de>\n"
-"POT-Creation-Date: 2008-07-23 00:32+0200\n"
-"PO-Revision-Date: 2008-03-29 21:24+0100\n"
+"POT-Creation-Date: 2008-08-28 23:32+0200\n"
+"PO-Revision-Date: 2008-07-27 20:28+0200\n"
 "Last-Translator: Diego Pierotto <vdr-italian@tiscali.it>\n"
 "Language-Team:  <vdr@linuxtv.org>\n"
 "MIME-Version: 1.0\n"
@@ -18,34 +18,34 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 msgid "Generate a new puzzle"
-msgstr "Genera una nuova partita"
+msgstr "Genera nuova partita"
 
 msgid "Load a puzzle"
-msgstr "Carica una partita"
+msgstr "Carica partita"
 
 msgid "Save the puzzle"
-msgstr "Salva la partita"
+msgstr "Salva partita"
 
 msgid "Undo last action"
-msgstr ""
+msgstr "Annulla ultima azione"
 
 msgid "Redo last action"
-msgstr ""
+msgstr "Ripeti ultima azione"
 
 msgid "Mark/unmark"
-msgstr ""
+msgstr "Marca/Smarca"
 
 msgid "Next cell"
-msgstr ""
+msgstr "Cella successiva"
 
 msgid "Next number"
-msgstr ""
+msgstr "Num. successivo"
 
 msgid "Reset the puzzle"
-msgstr "Ricomincia la partita"
+msgstr "Ricomincia partita"
 
 msgid "Open setup menu"
-msgstr "Apri il menu opzioni"
+msgstr "Apri menu opzioni"
 
 msgid "Exit"
 msgstr "Esci"
@@ -94,31 +94,31 @@ msgid "Clear marks on reset"
 msgstr "Pulisci segni al riavvio"
 
 msgid "Key Red"
-msgstr ""
+msgstr "Tasto Rosso"
 
 msgid "Key Green"
-msgstr ""
+msgstr "Tasto Verde"
 
 msgid "Key Yellow"
-msgstr ""
+msgstr "Tasto Giallo"
 
-msgid "Great font"
-msgstr ""
+msgid "Large font"
+msgstr "Caratteri grandi"
 
-msgid "Great font height (pixel)"
-msgstr ""
+msgid "Large font height (pixel)"
+msgstr "Altezza car. grandi (pixel)"
 
-msgid "Great font width (pixel)"
-msgstr ""
+msgid "Large font width (pixel)"
+msgstr "Larghezza car. grandi (pixel)"
 
 msgid "Small font"
-msgstr ""
+msgstr "Caratteri piccoli"
 
 msgid "Small font height (pixel)"
-msgstr ""
+msgstr "Altezza car. piccoli (pixel)"
 
 msgid "Small font width (pixel)"
-msgstr ""
+msgstr "Larghezza car. piccoli (pixel)"
 
 msgid "Transparency (%)"
 msgstr "Trasparenza (%)"

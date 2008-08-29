@@ -17,7 +17,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: setup.cpp 143 2008-07-26 18:38:59Z tom $
+ * $Id: setup.cpp 151 2008-08-29 22:57:35Z tom $
  */
 
 #include "setup.h"
@@ -141,11 +141,11 @@ SetupPage::SetupPage(SetupData& setup) :
   Add(new cMenuEditStraItem(tr("Key Yellow"), &data.key_yellow,
                             CommandList::count(), CommandList::texts()));
 #if VDRVERSNUM >= 10504
-  Add(new cMenuEditStraItem(tr("Great font"), &maxi_font_index,
+  Add(new cMenuEditStraItem(tr("Large font"), &maxi_font_index,
                             maxi_font_names.Size(), &maxi_font_names[0]));
-  Add(new cMenuEditIntItem(tr("Great font height (pixel)"),
+  Add(new cMenuEditIntItem(tr("Large font height (pixel)"),
                            &data.maxi_font_height, 10, MAXFONTSIZE));
-  Add(new cMenuEditIntItem(tr("Great font width (pixel)"),
+  Add(new cMenuEditIntItem(tr("Large font width (pixel)"),
                            &data.maxi_font_width, 10, MAXFONTSIZE));
   Add(new cMenuEditStraItem(tr("Small font"), &mini_font_index,
                             mini_font_names.Size(), &mini_font_names[0]));

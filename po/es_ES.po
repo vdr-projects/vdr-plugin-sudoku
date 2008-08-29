@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the vdr-sudoku package.
 # bittor from open7x0.org, 2007.
 #
-# $Id: es_ES.po 144 2008-07-26 18:42:51Z tom $
+# $Id: es_ES.po 151 2008-08-29 22:57:35Z tom $
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: vdr-sudoku 0.1.3\n"
 "Report-Msgid-Bugs-To: <tom@toms-cafe.de>\n"
-"POT-Creation-Date: 2008-07-23 00:32+0200\n"
+"POT-Creation-Date: 2008-08-28 23:32+0200\n"
 "PO-Revision-Date: 2007-08-20 22:43+0200\n"
 "Last-Translator: bittor from open7x0.org\n"
 "Language-Team:  <vdr@linuxtv.org>\n"
@@ -102,13 +102,13 @@ msgstr ""
 msgid "Key Yellow"
 msgstr ""
 
-msgid "Great font"
+msgid "Large font"
 msgstr ""
 
-msgid "Great font height (pixel)"
+msgid "Large font height (pixel)"
 msgstr ""
 
-msgid "Great font width (pixel)"
+msgid "Large font width (pixel)"
 msgstr ""
 
 msgid "Small font"

@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the vdr-sudoku package.
 # Thomas Günther <tom@toms-cafe.de>, 2005, 2008.
 #
-# $Id: de_DE.po 144 2008-07-26 18:42:51Z tom $
+# $Id: de_DE.po 151 2008-08-29 22:57:35Z tom $
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: vdr-sudoku 0.3.0\n"
+"Project-Id-Version: vdr-sudoku 0.3.1\n"
 "Report-Msgid-Bugs-To: <tom@toms-cafe.de>\n"
-"POT-Creation-Date: 2008-07-23 00:32+0200\n"
-"PO-Revision-Date: 2008-07-23 00:32+0200\n"
+"POT-Creation-Date: 2008-08-28 23:32+0200\n"
+"PO-Revision-Date: 2008-08-28 23:32+0200\n"
 "Last-Translator: Thomas Günther <tom@toms-cafe.de>\n"
 "Language-Team:  <vdr@linuxtv.org>\n"
 "MIME-Version: 1.0\n"
@@ -102,13 +102,13 @@ msgstr "Taste Grün"
 msgid "Key Yellow"
 msgstr "Taste Gelb"
 
-msgid "Great font"
+msgid "Large font"
 msgstr "Große Schriftart"
 
-msgid "Great font height (pixel)"
+msgid "Large font height (pixel)"
 msgstr "Große Schrifthöhe (pixel)"
 
-msgid "Great font width (pixel)"
+msgid "Large font width (pixel)"
 msgstr "Große Schriftbreite (pixel)"
 
 msgid "Small font"

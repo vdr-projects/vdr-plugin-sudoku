@@ -105,14 +105,14 @@ Setup:
                           Values: see commands menu. Default: Undo last action.
 - Key Yellow              Choose command for the yellow key.
                           Values: see commands menu. Default: Redo last action.
-- Great font (VDR >= 1.5.4)
-                          Choose font for the great digits.
+- Large font (VDR >= 1.5.4)
+                          Choose font for the large digits.
                           Values: all installed fonts. Default: Sans Serif:Bold.
-- Great font height (pixel) (VDR >= 1.5.4)
-                          Font height for the great digits.
+- Large font height (pixel) (VDR >= 1.5.4)
+                          Font height for the large digits.
                           Values: 10-64. Default: 31.
-- Great font width (pixel) (VDR >= 1.5.4)
-                          Font width for the great digits.
+- Large font width (pixel) (VDR >= 1.5.4)
+                          Font width for the large digits.
                           Values: 10-64. Default: 42.
 - Small font (VDR >= 1.5.4)
                           Choose font for the small digits.

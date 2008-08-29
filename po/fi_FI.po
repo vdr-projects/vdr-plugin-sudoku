@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the vdr-sudoku package.
 # Ville Skyttä <ville.skytta@iki.fi>, 2005, 2008.
 #
-# $Id: fi_FI.po 144 2008-07-26 18:42:51Z tom $
+# $Id: fi_FI.po 151 2008-08-29 22:57:35Z tom $
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: vdr-sudoku 0.2.1\n"
+"Project-Id-Version: vdr-sudoku 0.3.1\n"
 "Report-Msgid-Bugs-To: <tom@toms-cafe.de>\n"
-"POT-Creation-Date: 2008-07-23 00:32+0200\n"
-"PO-Revision-Date: 2008-03-22 13:39+0200\n"
+"POT-Creation-Date: 2008-08-28 23:32+0200\n"
+"PO-Revision-Date: 2008-07-27 12:24+0300\n"
 "Last-Translator: Ville Skyttä <ville.skytta@iki.fi>\n"
 "Language-Team:  <vdr@linuxtv.org>\n"
 "MIME-Version: 1.0\n"
@@ -27,19 +27,19 @@ msgid "Save the puzzle"
 msgstr "Tallenna ristikko"
 
 msgid "Undo last action"
-msgstr ""
+msgstr "Peru viimeisin"
 
 msgid "Redo last action"
-msgstr ""
+msgstr "Toista viimeisin"
 
 msgid "Mark/unmark"
-msgstr ""
+msgstr "Merkitse/poista merkintä"
 
 msgid "Next cell"
-msgstr ""
+msgstr "Seuraava ruutu"
 
 msgid "Next number"
-msgstr ""
+msgstr "Seuraava numero"
 
 msgid "Reset the puzzle"
 msgstr "Tyhjennä ristikko"
@@ -94,31 +94,31 @@ msgid "Clear marks on reset"
 msgstr "Poista merkinnät aloitettaessa"
 
 msgid "Key Red"
-msgstr ""
+msgstr "Punainen näppäin"
 
 msgid "Key Green"
-msgstr ""
+msgstr "Vihreä näppäin"
 
 msgid "Key Yellow"
-msgstr ""
+msgstr "Keltainen näppäin"
 
-msgid "Great font"
-msgstr ""
+msgid "Large font"
+msgstr "Suuri kirjasin"
 
-msgid "Great font height (pixel)"
-msgstr ""
+msgid "Large font height (pixel)"
+msgstr "Suuren kirjasimen korkeus (pikseleitä)"
 
-msgid "Great font width (pixel)"
-msgstr ""
+msgid "Large font width (pixel)"
+msgstr "Suuren kirjasimen leveys (pikseleitä)"
 
 msgid "Small font"
-msgstr ""
+msgstr "Pieni kirjasin"
 
 msgid "Small font height (pixel)"
-msgstr ""
+msgstr "Pienen kirjasimen korkeus (pikseleitä)"
 
 msgid "Small font width (pixel)"
-msgstr ""
+msgstr "Pienen kirjasimen leveys (pikseleitä)"
 
 msgid "Transparency (%)"
 msgstr "Läpinäkyvyys (%)"
