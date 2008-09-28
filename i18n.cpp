@@ -17,13 +17,14 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: i18n.cpp 151 2008-08-29 22:57:35Z tom $
+ * $Id: i18n.cpp 157 2008-09-28 00:13:23Z tom $
  *
  *
  * Translations provided by:
  *
  * Italian     Diego Pierotto <vdr-italian@tiscali.it>
  * French      Patrice Staudt <patr.staudt@laposte.net>
+ *             NIVAL Michaël <mnival@vdrbox.lautre.net>
  * Finnish     Ville Skyttä <ville.skytta@iki.fi>
  * Spanish     bittor from open7x0.org
  *
@@ -64,7 +65,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "Sudoku - Genera e risolvi il rompicapo dei numeri", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
-    "Sudoku - créer et résoudre des puzzles de chiffres.", // Français / French
+    "Sudoku - créer et résoudre des puzzles de chiffres", // Français / French
     "", // Norsk / Norwegian
     "Sudoku-numeroristikot", // suomi / Finnish
     "", // Polski / Polish
@@ -86,7 +87,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "Genera nuova partita", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
-    "Créer une nouveau puzzle", // Français / French
+    "Créer un nouveau puzzle", // Français / French
     "", // Norsk / Norwegian
     "Uusi ristikko", // suomi / Finnish
     "", // Polski / Polish
@@ -108,7 +109,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "Carica partita", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
-    "Charger puzzle", // Français / French
+    "Charger un puzzle", // Français / French
     "", // Norsk / Norwegian
     "Lataa ristikko", // suomi / Finnish
     "", // Polski / Polish
@@ -130,7 +131,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "Salva partita", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
-    "Sauvegarder puzzle", // Français / French
+    "Sauvegarder le puzzle", // Français / French
     "", // Norsk / Norwegian
     "Tallenna ristikko", // suomi / Finnish
     "", // Polski / Polish
@@ -152,7 +153,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "Annulla ultima azione", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
-    "", // Français / French
+    "Annuler la dernière action", // Français / French
     "", // Norsk / Norwegian
     "Peru viimeisin", // suomi / Finnish
     "", // Polski / Polish
@@ -174,7 +175,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "Ripeti ultima azione", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
-    "", // Français / French
+    "Répéter la dernière action", // Français / French
     "", // Norsk / Norwegian
     "Toista viimeisin", // suomi / Finnish
     "", // Polski / Polish
@@ -196,7 +197,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "Marca/Smarca", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
-    "", // Français / French
+    "Marquer/Démarquer", // Français / French
     "", // Norsk / Norwegian
     "Merkitse/poista merkintä", // suomi / Finnish
     "", // Polski / Polish
@@ -218,7 +219,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "Cella successiva", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
-    "", // Français / French
+    "Cellule suivante", // Français / French
     "", // Norsk / Norwegian
     "Seuraava ruutu", // suomi / Finnish
     "", // Polski / Polish
@@ -240,7 +241,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "Num. successivo", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
-    "", // Français / French
+    "Nombre suivant", // Français / French
     "", // Norsk / Norwegian
     "Seuraava numero", // suomi / Finnish
     "", // Polski / Polish
@@ -438,7 +439,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "Numero cifre assegnate", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
-    "Nombre de chiffre donnée", // Français / French
+    "Nombre de chiffre donné", // Français / French
     "", // Norsk / Norwegian
     "Annettujen numeroiden lukumäärä", // suomi / Finnish
     "", // Polski / Polish
@@ -460,7 +461,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "Cifre simmetriche assegnate", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
-    "Chiffre données sysmétrique", // Français / French
+    "Chiffre donné symétrique", // Français / French
     "", // Norsk / Norwegian
     "Järjestä annetut symmetrisesti", // suomi / Finnish
     "", // Polski / Polish
@@ -592,7 +593,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "Tasto Rosso", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
-    "", // Français / French
+    "Bouton rouge", // Français / French
     "", // Norsk / Norwegian
     "Punainen näppäin", // suomi / Finnish
     "", // Polski / Polish
@@ -614,7 +615,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "Tasto Verde", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
-    "", // Français / French
+    "Bouton vert", // Français / French
     "", // Norsk / Norwegian
     "Vihreä näppäin", // suomi / Finnish
     "", // Polski / Polish
@@ -636,7 +637,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "Tasto Giallo", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
-    "", // Français / French
+    "Bouton jaune", // Français / French
     "", // Norsk / Norwegian
     "Keltainen näppäin", // suomi / Finnish
     "", // Polski / Polish
@@ -658,7 +659,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "Caratteri grandi", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
-    "", // Français / French
+    "Grande police", // Français / French
     "", // Norsk / Norwegian
     "Suuri kirjasin", // suomi / Finnish
     "", // Polski / Polish
@@ -680,7 +681,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "Altezza car. grandi (pixel)", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
-    "", // Français / French
+    "Hauteur grande police (pixel)", // Français / French
     "", // Norsk / Norwegian
     "Suuren kirjasimen korkeus (pikseleitä)", // suomi / Finnish
     "", // Polski / Polish
@@ -702,7 +703,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "Larghezza car. grandi (pixel)", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
-    "", // Français / French
+    "Largeur grande police (pixel)", // Français / French
     "", // Norsk / Norwegian
     "Suuren kirjasimen leveys (pikseleitä)", // suomi / Finnish
     "", // Polski / Polish
@@ -724,7 +725,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "Caratteri piccoli", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
-    "", // Français / French
+    "Petite police", // Français / French
     "", // Norsk / Norwegian
     "Pieni kirjasin", // suomi / Finnish
     "", // Polski / Polish
@@ -746,7 +747,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "Altezza car. piccoli (pixel)", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
-    "", // Français / French
+    "Hauteur petite police (pixel)", // Français / French
     "", // Norsk / Norwegian
     "Pienen kirjasimen korkeus (pikseleitä)", // suomi / Finnish
     "", // Polski / Polish
@@ -768,7 +769,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "Larghezza car. piccoli (pixel)", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
-    "", // Français / French
+    "Largeur petite police (pixel)", // Français / French
     "", // Norsk / Norwegian
     "Pienen kirjasimen leveys (pikseleitä)", // suomi / Finnish
     "", // Polski / Polish
