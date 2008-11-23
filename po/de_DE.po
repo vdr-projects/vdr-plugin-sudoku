@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the vdr-sudoku package.
 # Thomas Günther <tom@toms-cafe.de>, 2005, 2008.
 #
-# $Id: de_DE.po 157 2008-09-28 00:13:23Z tom $
+# $Id: de_DE.po 161 2008-11-23 00:18:02Z tom $
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: vdr-sudoku 0.3.2\n"
+"Project-Id-Version: vdr-sudoku 0.3.3\n"
 "Report-Msgid-Bugs-To: <tom@toms-cafe.de>\n"
-"POT-Creation-Date: 2008-08-28 23:32+0200\n"
-"PO-Revision-Date: 2008-08-28 23:32+0200\n"
+"POT-Creation-Date: 2008-11-21 00:36+0100\n"
+"PO-Revision-Date: 2008-11-21 00:36+0100\n"
 "Last-Translator: Thomas Günther <tom@toms-cafe.de>\n"
 "Language-Team:  <vdr@linuxtv.org>\n"
 "MIME-Version: 1.0\n"
@@ -52,6 +52,9 @@ msgstr "Beenden"
 
 msgid "Sudoku list"
 msgstr "Sudoku-Liste"
+
+msgid "Delete the puzzle?"
+msgstr "Puzzle löschen?"
 
 msgid "Button$Load"
 msgstr "Laden"

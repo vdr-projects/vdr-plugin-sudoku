@@ -69,3 +69,9 @@ VDR plug-in 'Sudoku' Revision History
 2008-09-28: Version 0.3.2
 
 - Updated French language texts (thanks to NIVAL Michaël).
+
+2008-11-23: Version 0.3.3
+
+- Delete puzzles from the sudoku-list file with confirmation.
+- Added version option to sudoku_generator.
+- Added manual page for sudoku_generator.

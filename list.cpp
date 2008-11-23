@@ -17,7 +17,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: list.cpp 115 2008-03-19 00:38:58Z tom $
+ * $Id: list.cpp 161 2008-11-23 00:18:02Z tom $
  */
 
 #include "list.h"
@@ -26,6 +26,7 @@
 #include <vdr/osdbase.h>
 #include <vdr/osd.h>
 #include <vdr/menuitems.h>
+#include <vdr/interface.h>
 #include <assert.h>
 
 // Compatibility to older vdr versions
@@ -145,7 +146,8 @@ eOSState ListMenu::ProcessKey(eKeys key)
           return AddSubMenu(new ListEdit(*list.Get(Current())));
         break;
       case kYellow:
-        if (Current() >= 0 && Current() < list.Count())
+        if (Current() >= 0 && Current() < list.Count() &&
+            Interface->Confirm(tr("Delete the puzzle?")))
           list.Del(list.Get(Current()));
         refresh();
         list.Save();

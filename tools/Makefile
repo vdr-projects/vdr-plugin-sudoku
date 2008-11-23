@@ -17,7 +17,7 @@
 # with this program; if not, write to the Free Software Foundation, Inc.,
 # 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
-# $Id: Makefile 140 2008-06-30 22:10:38Z tom $
+# $Id: Makefile 161 2008-11-23 00:18:02Z tom $
 
 # Define STATIC_LINK=1 to force static linking
 #STATIC_LINK = 1
@@ -27,7 +27,8 @@
 
 PROGRAM = sudoku_generator
 
-SRCS = ../puzzle.cpp ../generator.cpp ../solver.cpp ../backtrack.cpp ../history.cpp
+SRCS = ../puzzle.cpp ../generator.cpp ../solver.cpp ../backtrack.cpp \
+       ../history.cpp
 
 VERSION = $(shell sed -ne '/static .* VERSION *=/s/^.*"\(.*\)".*$$/\1/p' \
                       ../sudoku.cpp)
@@ -44,12 +45,31 @@ ifdef WITH_TEST
     DEFINES += -DWITH_TEST
 endif
 
+### Directories:
+
+prefix = /usr/local
+bindir = $(prefix)/bin
+mandir = $(prefix)/share/man
+man1dir = $(mandir)/man1
+
+### Tools:
+
+INSTALL = install
+INSTALL_DIRS = $(INSTALL) -d
+INSTALL_PROG = $(INSTALL)
+INSTALL_DATA = $(INSTALL) -m u=rw,g=r,o=r
+
 ### Targets:
 
 all: $(PROGRAM)
 
 $(PROGRAM): $(PROGRAM).cpp $(SRCS) $(SRCS:%.cpp=%.h)
 	$(CXX) $(CXXFLAGS) $(DEFINES) $(INCLUDES) -o $@ $(PROGRAM).cpp $(SRCS)
+
+install: all
+	$(INSTALL_DIRS) $(DESTDIR)$(bindir) $(DESTDIR)$(man1dir)
+	$(INSTALL_PROG) $(PROGRAM) $(DESTDIR)$(bindir)/
+	$(INSTALL_DATA) $(PROGRAM).1 $(DESTDIR)$(man1dir)/
 
 clean:
 	@-rm -f $(PROGRAM) core* *~

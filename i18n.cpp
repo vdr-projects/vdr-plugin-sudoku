@@ -17,7 +17,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: i18n.cpp 157 2008-09-28 00:13:23Z tom $
+ * $Id: i18n.cpp 161 2008-11-23 00:18:02Z tom $
  *
  *
  * Translations provided by:
@@ -332,6 +332,28 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "Liste Sudoku", // Français / French
     "", // Norsk / Norwegian
     "Tallennetut ristikot", // suomi / Finnish
+    "", // Polski / Polish
+    "", // Español / Spanish
+    "", // ÅëëçíéêÜ / Greek
+    "", // Svenska / Swedish
+    "", // Românã / Romanian
+    "", // Magyar / Hungarian
+    "", // Català / Catalanian
+    "", // ÀãááÚØÙ / Russian
+    "", // Hrvatski / Croatian
+    "", // Eesti / Estonian
+    "", // Dansk / Danish
+    "", // Èesky / Czech
+  },
+  { "Delete the puzzle?", // English
+    "Puzzle löschen?", // Deutsch / German
+    "", // Slovenski / Slovenian
+    "Eliminare partita?", // Italiano / Italian
+    "", // Nederlands / Dutch
+    "", // Português / Portuguese
+    "Supprimer le puzzle ?", // Français / French
+    "", // Norsk / Norwegian
+    "Poistetaanko ristikko?", // suomi / Finnish
     "", // Polski / Polish
     "", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
