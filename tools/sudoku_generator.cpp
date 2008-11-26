@@ -17,7 +17,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: sudoku_generator.cpp 161 2008-11-23 00:18:02Z tom $
+ * $Id: sudoku_generator.cpp 163 2008-11-26 23:53:04Z tom $
  */
 
 #include "../puzzle.h"
@@ -355,10 +355,12 @@ int main(int argc, char* argv[])
   int arg_count = argc - optind;
 
   bool generate = non_sym || dump ||
-                  (arg_count == 0 && !test && !version && !help);
+                  (arg_count == 0 && !test && !version && !help) ||
+                  (arg_count == 1 && !solve && !print);
   unsigned int givens_count = 36;
-  if (arg_count == 1 && sscanf(argv[optind], "%u", &givens_count) == 1)
-    generate = true;
+  if (arg_count == 1 && generate &&
+      sscanf(argv[optind], "%u", &givens_count) != 1)
+    return print_usage();
 
   if ((generate ? 1 : 0) + (solve ? 1 : 0) + (print ? 1 : 0) + (test ? 1 : 0) +
       (version ? 1 : 0) + (help ? 1 : 0) > 1 || error)
