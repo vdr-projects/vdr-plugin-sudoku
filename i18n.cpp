@@ -17,7 +17,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: i18n.cpp 161 2008-11-23 00:18:02Z tom $
+ * $Id: i18n.cpp 164 2008-11-27 00:00:38Z tom $
  *
  *
  * Translations provided by:
@@ -26,7 +26,7 @@
  * French      Patrice Staudt <patr.staudt@laposte.net>
  *             NIVAL Michaël <mnival@vdrbox.lautre.net>
  * Finnish     Ville Skyttä <ville.skytta@iki.fi>
- * Spanish     bittor from open7x0.org
+ * Spanish     Bittor Corl <bittor7x0 _at_ gmail.com>
  *
  */
 
@@ -91,7 +91,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "", // Norsk / Norwegian
     "Uusi ristikko", // suomi / Finnish
     "", // Polski / Polish
-    "", // Español / Spanish
+    "Generar nuevo rompecabezas", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
     "", // Svenska / Swedish
     "", // Românã / Romanian
@@ -113,7 +113,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "", // Norsk / Norwegian
     "Lataa ristikko", // suomi / Finnish
     "", // Polski / Polish
-    "", // Español / Spanish
+    "Cargar un rompecabezas", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
     "", // Svenska / Swedish
     "", // Românã / Romanian
@@ -135,7 +135,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "", // Norsk / Norwegian
     "Tallenna ristikko", // suomi / Finnish
     "", // Polski / Polish
-    "", // Español / Spanish
+    "Guardar rompecabezas", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
     "", // Svenska / Swedish
     "", // Românã / Romanian
@@ -157,7 +157,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "", // Norsk / Norwegian
     "Peru viimeisin", // suomi / Finnish
     "", // Polski / Polish
-    "", // Español / Spanish
+    "Deshacer última acción", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
     "", // Svenska / Swedish
     "", // Românã / Romanian
@@ -179,7 +179,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "", // Norsk / Norwegian
     "Toista viimeisin", // suomi / Finnish
     "", // Polski / Polish
-    "", // Español / Spanish
+    "Rehacer última acción", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
     "", // Svenska / Swedish
     "", // Românã / Romanian
@@ -201,7 +201,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "", // Norsk / Norwegian
     "Merkitse/poista merkintä", // suomi / Finnish
     "", // Polski / Polish
-    "", // Español / Spanish
+    "Marcar/desmarcar", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
     "", // Svenska / Swedish
     "", // Românã / Romanian
@@ -223,7 +223,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "", // Norsk / Norwegian
     "Seuraava ruutu", // suomi / Finnish
     "", // Polski / Polish
-    "", // Español / Spanish
+    "Celda siguiente", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
     "", // Svenska / Swedish
     "", // Românã / Romanian
@@ -245,7 +245,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "", // Norsk / Norwegian
     "Seuraava numero", // suomi / Finnish
     "", // Polski / Polish
-    "", // Español / Spanish
+    "Número siguiente", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
     "", // Svenska / Swedish
     "", // Românã / Romanian
@@ -267,7 +267,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "", // Norsk / Norwegian
     "Tyhjennä ristikko", // suomi / Finnish
     "", // Polski / Polish
-    "", // Español / Spanish
+    "Reiniciar el rompecabezas", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
     "", // Svenska / Swedish
     "", // Românã / Romanian
@@ -289,7 +289,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "", // Norsk / Norwegian
     "Asetukset", // suomi / Finnish
     "", // Polski / Polish
-    "", // Español / Spanish
+    "Abrir menú de opciones", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
     "", // Svenska / Swedish
     "", // Românã / Romanian
@@ -311,7 +311,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "", // Norsk / Norwegian
     "Poistu", // suomi / Finnish
     "", // Polski / Polish
-    "", // Español / Spanish
+    "Salir", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
     "", // Svenska / Swedish
     "", // Românã / Romanian
@@ -333,7 +333,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "", // Norsk / Norwegian
     "Tallennetut ristikot", // suomi / Finnish
     "", // Polski / Polish
-    "", // Español / Spanish
+    "Lista Sudoku", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
     "", // Svenska / Swedish
     "", // Românã / Romanian
@@ -348,14 +348,14 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
   { "Delete the puzzle?", // English
     "Puzzle löschen?", // Deutsch / German
     "", // Slovenski / Slovenian
-    "Eliminare partita?", // Italiano / Italian
+    "Eliminare la partita?", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
     "Supprimer le puzzle ?", // Français / French
     "", // Norsk / Norwegian
     "Poistetaanko ristikko?", // suomi / Finnish
     "", // Polski / Polish
-    "", // Español / Spanish
+    "¿Borrar el rompecabezas?", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
     "", // Svenska / Swedish
     "", // Românã / Romanian
@@ -377,7 +377,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "", // Norsk / Norwegian
     "Lataa", // suomi / Finnish
     "", // Polski / Polish
-    "", // Español / Spanish
+    "Cargar", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
     "", // Svenska / Swedish
     "", // Românã / Romanian
@@ -399,7 +399,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "", // Norsk / Norwegian
     "Takaisin", // suomi / Finnish
     "", // Polski / Polish
-    "", // Español / Spanish
+    "Volver", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
     "", // Svenska / Swedish
     "", // Românã / Romanian
@@ -421,7 +421,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "", // Norsk / Norwegian
     "Ristikon tiedot", // suomi / Finnish
     "", // Polski / Polish
-    "", // Español / Spanish
+    "Editar lista Sudoku", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
     "", // Svenska / Swedish
     "", // Românã / Romanian
@@ -443,7 +443,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "", // Norsk / Norwegian
     "Kuvaus", // suomi / Finnish
     "", // Polski / Polish
-    "", // Español / Spanish
+    "Descripción", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
     "", // Svenska / Swedish
     "", // Românã / Romanian
@@ -553,7 +553,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "", // Norsk / Norwegian
     "Näytä mahdolliset kuviona", // suomi / Finnish
     "", // Polski / Polish
-    "", // Español / Spanish
+    "Mostrar posibles núm. como patrón", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
     "", // Svenska / Swedish
     "", // Românã / Romanian
@@ -575,7 +575,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "", // Norsk / Norwegian
     "Näytä mahdolliset numeroina", // suomi / Finnish
     "", // Polski / Polish
-    "", // Español / Spanish
+    "Mostrar posibles núm. como dígitos", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
     "", // Svenska / Swedish
     "", // Românã / Romanian
@@ -619,7 +619,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "", // Norsk / Norwegian
     "Punainen näppäin", // suomi / Finnish
     "", // Polski / Polish
-    "", // Español / Spanish
+    "Botón Rojo", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
     "", // Svenska / Swedish
     "", // Românã / Romanian
@@ -641,7 +641,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "", // Norsk / Norwegian
     "Vihreä näppäin", // suomi / Finnish
     "", // Polski / Polish
-    "", // Español / Spanish
+    "Botón Verde", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
     "", // Svenska / Swedish
     "", // Românã / Romanian
@@ -663,7 +663,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "", // Norsk / Norwegian
     "Keltainen näppäin", // suomi / Finnish
     "", // Polski / Polish
-    "", // Español / Spanish
+    "Botón Amarillo", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
     "", // Svenska / Swedish
     "", // Românã / Romanian
@@ -685,7 +685,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "", // Norsk / Norwegian
     "Suuri kirjasin", // suomi / Finnish
     "", // Polski / Polish
-    "", // Español / Spanish
+    "Fuente grande", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
     "", // Svenska / Swedish
     "", // Românã / Romanian
@@ -707,7 +707,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "", // Norsk / Norwegian
     "Suuren kirjasimen korkeus (pikseleitä)", // suomi / Finnish
     "", // Polski / Polish
-    "", // Español / Spanish
+    "Alto fuente grande (pixel)", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
     "", // Svenska / Swedish
     "", // Românã / Romanian
@@ -729,7 +729,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "", // Norsk / Norwegian
     "Suuren kirjasimen leveys (pikseleitä)", // suomi / Finnish
     "", // Polski / Polish
-    "", // Español / Spanish
+    "Ancho fuente grande (pixel)", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
     "", // Svenska / Swedish
     "", // Românã / Romanian
@@ -751,7 +751,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "", // Norsk / Norwegian
     "Pieni kirjasin", // suomi / Finnish
     "", // Polski / Polish
-    "", // Español / Spanish
+    "Fuente pequeña", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
     "", // Svenska / Swedish
     "", // Românã / Romanian
@@ -773,7 +773,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "", // Norsk / Norwegian
     "Pienen kirjasimen korkeus (pikseleitä)", // suomi / Finnish
     "", // Polski / Polish
-    "", // Español / Spanish
+    "Alto fuente pequeña (pixel)", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
     "", // Svenska / Swedish
     "", // Românã / Romanian
@@ -795,7 +795,7 @@ const tI18nPhrase SudokuPlugin::Phrases[] = {
     "", // Norsk / Norwegian
     "Pienen kirjasimen leveys (pikseleitä)", // suomi / Finnish
     "", // Polski / Polish
-    "", // Español / Spanish
+    "Ancho fuente pequeña (pixel)", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
     "", // Svenska / Swedish
     "", // Românã / Romanian

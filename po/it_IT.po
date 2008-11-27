@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the vdr-sudoku package.
 # Diego Pierotto <vdr-italian@tiscali.it>, 2007, 2008.
 #
-# $Id: it_IT.po 161 2008-11-23 00:18:02Z tom $
+# $Id: it_IT.po 164 2008-11-27 00:00:38Z tom $
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: vdr-sudoku 0.3.2\n"
+"Project-Id-Version: vdr-sudoku 0.3.4\n"
 "Report-Msgid-Bugs-To: <tom@toms-cafe.de>\n"
 "POT-Creation-Date: 2008-11-21 00:36+0100\n"
-"PO-Revision-Date: 2008-07-27 20:28+0200\n"
+"PO-Revision-Date: 2008-11-25 20:47+0100\n"
 "Last-Translator: Diego Pierotto <vdr-italian@tiscali.it>\n"
 "Language-Team:  <vdr@linuxtv.org>\n"
 "MIME-Version: 1.0\n"
@@ -53,9 +53,8 @@ msgstr "Esci"
 msgid "Sudoku list"
 msgstr "Elenco Sudoku"
 
-#, fuzzy
 msgid "Delete the puzzle?"
-msgstr "Eliminare partita?"
+msgstr "Eliminare la partita?"
 
 msgid "Button$Load"
 msgstr "Carica"

@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the vdr-sudoku package.
 # Ville Skyttä <ville.skytta@iki.fi>, 2005, 2008.
 #
-# $Id: fi_FI.po 161 2008-11-23 00:18:02Z tom $
+# $Id: fi_FI.po 164 2008-11-27 00:00:38Z tom $
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: vdr-sudoku 0.3.2\n"
+"Project-Id-Version: vdr-sudoku 0.3.4\n"
 "Report-Msgid-Bugs-To: <tom@toms-cafe.de>\n"
 "POT-Creation-Date: 2008-11-21 00:36+0100\n"
-"PO-Revision-Date: 2008-07-27 12:24+0300\n"
+"PO-Revision-Date: 2008-11-24 18:49+0200\n"
 "Last-Translator: Ville Skyttä <ville.skytta@iki.fi>\n"
 "Language-Team:  <vdr@linuxtv.org>\n"
 "MIME-Version: 1.0\n"
@@ -53,7 +53,6 @@ msgstr "Poistu"
 msgid "Sudoku list"
 msgstr "Tallennetut ristikot"
 
-#, fuzzy
 msgid "Delete the puzzle?"
 msgstr "Poistetaanko ristikko?"
 
