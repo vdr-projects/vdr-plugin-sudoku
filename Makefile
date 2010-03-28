@@ -1,7 +1,7 @@
 #
 # Sudoku: A plug-in for the Video Disk Recorder
 #
-# Copyright (C) 2005-2007, Thomas Günther <tom@toms-cafe.de>
+# Copyright (C) 2005-2010, Thomas Günther <tom@toms-cafe.de>
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -40,6 +40,10 @@ CXXFLAGS ?= -fPIC -g -O2 -Wall -Woverloaded-virtual
 VDRDIR = ../../..
 LIBDIR = ../../lib
 TMPDIR = /tmp
+
+### Make sure that necessary options are included:
+
+-include $(VDRDIR)/Make.global
 
 ### Allow user defined options to overwrite defaults:
 
@@ -111,8 +115,7 @@ dist: clean
 	@-rm -rf $(TMPDIR)/$(ARCHIVE)
 	@mkdir $(TMPDIR)/$(ARCHIVE)
 	@cp -a * $(TMPDIR)/$(ARCHIVE)
-	@tar czf $(PACKAGE).tgz -C $(TMPDIR) \
-	     --exclude debian --exclude CVS --exclude .svn $(ARCHIVE)
+	@tar czf $(PACKAGE).tgz -C $(TMPDIR) --exclude debian $(ARCHIVE)
 	@-rm -rf $(TMPDIR)/$(ARCHIVE)
 	@echo Distribution package created as $(PACKAGE).tgz
 

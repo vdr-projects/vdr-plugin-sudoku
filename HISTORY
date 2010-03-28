@@ -91,3 +91,4 @@ ____-__-__: Version 0.3.5
 - Moved to http://projects.vdr-developer.org/projects/show/plg-sudoku.
 - Changed repository from subversion to git.
 - Removed subversion keywords ($Id).
+- Added support for VDR >= 1.7.13 (Make.global).
