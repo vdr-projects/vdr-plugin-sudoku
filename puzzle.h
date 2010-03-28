@@ -1,7 +1,7 @@
 /*
  * Sudoku: A plug-in for the Video Disk Recorder
  *
- * Copyright (C) 2005-2008, Thomas Günther <tom@toms-cafe.de>
+ * Copyright (C) 2005-2010, Thomas Günther <tom@toms-cafe.de>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -71,6 +71,8 @@ namespace Sudoku
     Pos next_col() const { return col() < DIM-1 ? pos + 1   : pos; }
     Pos prev_row() const { return row() > 0     ? pos - DIM : pos; }
     Pos next_row() const { return row() < DIM-1 ? pos + DIM : pos; }
+    bool interacts_with(Pos other) const { return pos != other &&
+      (col() == other.col() || row() == other.row() || reg() == other.reg()); }
   };
 
 

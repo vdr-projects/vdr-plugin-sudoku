@@ -1,7 +1,7 @@
 /*
  * Sudoku: A plug-in for the Video Disk Recorder
  *
- * Copyright (C) 2005-2008, Thomas Günther <tom@toms-cafe.de>
+ * Copyright (C) 2005-2010, Thomas Günther <tom@toms-cafe.de>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -196,7 +196,7 @@ void Puzzle::set(Pos pos, unsigned int number)
 
     // Refresh possible numbers of all affected cells.
     for (Pos p = Pos::first(); p <= Pos::last(); p = p.next())
-      if (p.col() == pos.col() || p.row() == pos.row() || p.reg() == pos.reg())
+      if (p.interacts_with(pos))
         compute_numbers(p);
   }
 }
@@ -362,8 +362,7 @@ void Puzzle::compute_numbers(Pos pos)
 
   // Disable numbers found in row, column or region.
   for (Pos p = Pos::first(); p <= Pos::last(); p = p.next())
-    if (p != pos &&
-        (p.col() == pos.col() || p.row() == pos.row() || p.reg() == pos.reg()))
+    if (p.interacts_with(pos))
       numbers[pos][get(p)] = false;
 
   // Count the possible numbers.
