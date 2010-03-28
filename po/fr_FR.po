@@ -4,8 +4,6 @@
 # Patrice Staudt <patr.staudt@laposte.net>, 2008.
 # NIVAL Michaël <mnival@vdrbox.lautre.net>, 2008.
 #
-# $Id: fr_FR.po 164 2008-11-27 00:00:38Z tom $
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: vdr-sudoku 0.3.4\n"

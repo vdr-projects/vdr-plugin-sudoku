@@ -3,8 +3,6 @@
 # This file is distributed under the same license as the vdr-sudoku package.
 # Bittor Corl <bittor7x0 _at_ gmail.com>, 2007, 2008.
 #
-# $Id: es_ES.po 164 2008-11-27 00:00:38Z tom $
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: vdr-sudoku 0.3.4\n"

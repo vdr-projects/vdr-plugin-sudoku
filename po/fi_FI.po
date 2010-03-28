@@ -3,8 +3,6 @@
 # This file is distributed under the same license as the vdr-sudoku package.
 # Ville Skyttä <ville.skytta@iki.fi>, 2005, 2008.
 #
-# $Id: fi_FI.po 164 2008-11-27 00:00:38Z tom $
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: vdr-sudoku 0.3.4\n"

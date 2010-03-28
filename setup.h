@@ -16,8 +16,6 @@
  * You should have received a copy of the GNU General Public License along
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
- *
- * $Id: setup.h 143 2008-07-26 18:38:59Z tom $
  */
 
 #ifndef VDR_SUDOKU_SETUP_H

@@ -16,8 +16,6 @@
  * You should have received a copy of the GNU General Public License along
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
- *
- * $Id: bitmap.cpp 122 2008-03-22 00:38:13Z tom $
  */
 
 #include "bitmap.h"
