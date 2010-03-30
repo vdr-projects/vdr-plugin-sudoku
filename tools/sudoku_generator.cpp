@@ -1,7 +1,7 @@
 /*
  * Sudoku: A plug-in for the Video Disk Recorder
  *
- * Copyright (C) 2005-2008, Thomas Günther <tom@toms-cafe.de>
+ * Copyright (C) 2005-2008, Thomas GÃ¼nther <tom@toms-cafe.de>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -31,7 +31,7 @@ using namespace Sudoku;
 int print_version()
 {
   printf("sudoku_generator %s\n"
-         "Copyright (C) 2005-2008, Thomas Günther <tom@toms-cafe.de>\n"
+         "Copyright (C) 2005-2008, Thomas GÃ¼nther <tom@toms-cafe.de>\n"
          "This GPL program comes with ABSOLUTELY NO WARRANTY;\n"
          "this is free software, and you are welcome to redistribute it\n"
          "under certain conditions; see the source for details.\n", VERSION);

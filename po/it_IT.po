@@ -1,5 +1,5 @@
 # Italian translations for vdr-sudoku package.
-# Copyright (C) 2007-2008 Thomas Günther <tom@toms-cafe.de>
+# Copyright (C) 2007-2008 Thomas GÃ¼nther <tom@toms-cafe.de>
 # This file is distributed under the same license as the vdr-sudoku package.
 # Diego Pierotto <vdr-italian@tiscali.it>, 2007, 2008.
 #

@@ -1,8 +1,8 @@
 # French translations for vdr-sudoku package.
-# Copyright (C) 2007-2008 Thomas Günther <tom@toms-cafe.de>
+# Copyright (C) 2007-2008 Thomas GÃ¼nther <tom@toms-cafe.de>
 # This file is distributed under the same license as the vdr-sudoku package.
 # Patrice Staudt <patr.staudt@laposte.net>, 2008.
-# NIVAL Michaël <mnival@vdrbox.lautre.net>, 2008.
+# NIVAL MichaÃ«l <mnival@vdrbox.lautre.net>, 2008.
 #
 msgid ""
 msgstr ""
