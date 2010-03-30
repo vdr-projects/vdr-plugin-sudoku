@@ -1,7 +1,7 @@
 /*
  * Sudoku: A plug-in for the Video Disk Recorder
  *
- * Copyright (C) 2005-2008, Thomas Günther <tom@toms-cafe.de>
+ * Copyright (C) 2005-2010, Thomas Günther <tom@toms-cafe.de>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -24,7 +24,7 @@
 #include "bitmap.h"
 #include "commands.h"
 #include "list.h"
-#include "i18n.h"
+#include <vdr/i18n.h>
 #include <vdr/config.h>
 #include <vdr/osdbase.h>
 #include <vdr/osd.h>
@@ -74,15 +74,10 @@ Menu::Menu(cPlugin* plugin, const SetupData& setup, PuzzleGame*& puzzle) :
   info = NULL;
   infoText = NULL;
   new_puzzle_request = false;
-#if VDRVERSNUM >= 10504
   maxi_font = cFont::CreateFont(setup.maxi_font, setup.maxi_font_height,
                                 setup.maxi_font_width);
   mini_font = cFont::CreateFont(setup.mini_font, setup.mini_font_height,
                                 setup.mini_font_width);
-#else
-  maxi_font = cFont::GetFont(fontFix);
-  mini_font = NULL;
-#endif
   command_menu = NULL;
   list_menu = NULL;
   setup_menu = NULL;
@@ -95,10 +90,8 @@ Menu::~Menu()
   delete setup_menu;
   delete list_menu;
   delete command_menu;
-#if VDRVERSNUM >= 10504
   delete maxi_font;
   delete mini_font;
-#endif
   delete info;
   delete osd;
 }
@@ -163,14 +156,12 @@ eOSState Menu::ProcessKey(eKeys key)
       if (key == kOk)
         Setup.Save();
       DELETENULL(setup_menu);
-#if VDRVERSNUM >= 10504
       DELETENULL(maxi_font);
       DELETENULL(mini_font);
       maxi_font = cFont::CreateFont(setup.maxi_font, setup.maxi_font_height,
                                     setup.maxi_font_width);
       mini_font = cFont::CreateFont(setup.mini_font, setup.mini_font_height,
                                     setup.mini_font_width);
-#endif
       Show();
     }
     return state;
@@ -401,14 +392,12 @@ void Menu::paint()
             osd->DrawRectangle(x3, y3, x4, y4, bg);
           }
 
-#if VDRVERSNUM >= 10504
           if (setup.show_possibles_digits)
           {
             char txt[2] = { '0' + n, 0 };
             osd->DrawText(x3, y3, txt, fg, bg, mini_font,
                           CELL_SIZE / RDIM, CELL_SIZE / RDIM, taCenter);
           }
-#endif
         }
       }
     }

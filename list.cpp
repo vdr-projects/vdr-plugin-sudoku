@@ -1,7 +1,7 @@
 /*
  * Sudoku: A plug-in for the Video Disk Recorder
  *
- * Copyright (C) 2008, Thomas Günther <tom@toms-cafe.de>
+ * Copyright (C) 2008-2010, Thomas Günther <tom@toms-cafe.de>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,19 +19,13 @@
  */
 
 #include "list.h"
-#include "i18n.h"
+#include <vdr/i18n.h>
 #include <vdr/config.h>
 #include <vdr/osdbase.h>
 #include <vdr/osd.h>
 #include <vdr/menuitems.h>
 #include <vdr/interface.h>
 #include <assert.h>
-
-// Compatibility to older vdr versions
-#if VDRVERSNUM < 10511
-  #define cMenuEditStrItem(n, v, l) cMenuEditStrItem((n), (v), (l),\
-                                                     trVDR(FileNameChars))
-#endif
 
 using namespace SudokuPlugin;
 

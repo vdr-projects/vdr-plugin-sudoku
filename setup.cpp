@@ -1,7 +1,7 @@
 /*
  * Sudoku: A plug-in for the Video Disk Recorder
  *
- * Copyright (C) 2005-2008, Thomas Günther <tom@toms-cafe.de>
+ * Copyright (C) 2005-2010, Thomas Günther <tom@toms-cafe.de>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,7 +20,7 @@
 
 #include "setup.h"
 #include "commands.h"
-#include "i18n.h"
+#include <vdr/i18n.h>
 #include <strings.h>
 
 using namespace SudokuPlugin;
@@ -44,14 +44,12 @@ SetupData::SetupData()
   key_red = CommandList::key_red_default_index();
   key_green = CommandList::key_green_default_index();
   key_yellow = CommandList::key_yellow_default_index();
-#if VDRVERSNUM >= 10504
   strcpy(maxi_font, DefaultFontOsd);
   maxi_font_height = 31;
   maxi_font_width = 42;
   strcpy(mini_font, DefaultFontOsd);
   mini_font_height = 10;
   mini_font_width = 14;
-#endif
   transparency = 50;
 }
 
@@ -83,7 +81,6 @@ bool SetupData::parse(const char* name, const char* value)
     key_green = cl.id_to_index(atoi(value), cl.key_green_default_index());
   else if (!strcasecmp(name, "KeyYellow"))
     key_yellow = cl.id_to_index(atoi(value), cl.key_yellow_default_index());
-#if VDRVERSNUM >= 10504
   else if (!strcasecmp(name, "MaxiFont"))
     Utf8Strn0Cpy(maxi_font, value, MAXFONTNAME);
   else if (!strcasecmp(name, "MaxiFontHeight"))
@@ -96,7 +93,6 @@ bool SetupData::parse(const char* name, const char* value)
     mini_font_height = atoi(value);
   else if (!strcasecmp(name, "MiniFontWidth"))
     mini_font_width = atoi(value);
-#endif
   else if (!strcasecmp(name, "Transparency"))
     transparency = atoi(value);
   else
@@ -111,14 +107,12 @@ bool SetupData::parse(const char* name, const char* value)
 SetupPage::SetupPage(SetupData& setup) :
   setup(setup), data(setup)
 {
-#if VDRVERSNUM >= 10504
   cFont::GetAvailableFontNames(&maxi_font_names);
   cFont::GetAvailableFontNames(&mini_font_names);
   maxi_font_names.Insert(strdup(DefaultFontOsd));
   mini_font_names.Insert(strdup(DefaultFontOsd));
   maxi_font_index = max(0, maxi_font_names.Find(data.maxi_font));
   mini_font_index = max(0, mini_font_names.Find(data.mini_font));
-#endif
 
   Add(new cMenuEditIntItem(tr("Givens count"), &data.givens_count, 26, 81));
   Add(new cMenuEditBoolItem(tr("Symmetric givens"), &data.symmetric));
@@ -127,10 +121,8 @@ SetupPage::SetupPage(SetupData& setup) :
                             &data.mark_ambiguous));
   Add(new cMenuEditBoolItem(tr("Show possible numbers as pattern"),
                             &data.show_possibles_pattern));
-#if VDRVERSNUM >= 10504
   Add(new cMenuEditBoolItem(tr("Show possible numbers as digits"),
                             &data.show_possibles_digits));
-#endif
   Add(new cMenuEditBoolItem(tr("Clear marks on reset"), &data.clear_marks));
   Add(new cMenuEditStraItem(tr("Key Red"), &data.key_red,
                             CommandList::count(), CommandList::texts()));
@@ -138,7 +130,6 @@ SetupPage::SetupPage(SetupData& setup) :
                             CommandList::count(), CommandList::texts()));
   Add(new cMenuEditStraItem(tr("Key Yellow"), &data.key_yellow,
                             CommandList::count(), CommandList::texts()));
-#if VDRVERSNUM >= 10504
   Add(new cMenuEditStraItem(tr("Large font"), &maxi_font_index,
                             maxi_font_names.Size(), &maxi_font_names[0]));
   Add(new cMenuEditIntItem(tr("Large font height (pixel)"),
@@ -151,7 +142,6 @@ SetupPage::SetupPage(SetupData& setup) :
                            &data.mini_font_height, 10, MAXFONTSIZE));
   Add(new cMenuEditIntItem(tr("Small font width (pixel)"),
                            &data.mini_font_width, 10, MAXFONTSIZE));
-#endif
   Add(new cMenuEditIntItem(tr("Transparency (%)"), &data.transparency, 0, 100));
 }
 
@@ -162,12 +152,10 @@ SetupPage::SetupPage(SetupData& setup) :
  */
 void SetupPage::Store()
 {
-#if VDRVERSNUM >= 10504
   Utf8Strn0Cpy(data.maxi_font, maxi_font_names[maxi_font_index],
                sizeof(data.maxi_font));
   Utf8Strn0Cpy(data.mini_font, mini_font_names[mini_font_index],
                sizeof(data.mini_font));
-#endif
 
   setup = data;
   SetupStore("GivensCount", setup.givens_count);
@@ -180,13 +168,11 @@ void SetupPage::Store()
   SetupStore("KeyRed", CommandList::id(setup.key_red));
   SetupStore("KeyGreen", CommandList::id(setup.key_green));
   SetupStore("KeyYellow", CommandList::id(setup.key_yellow));
-#if VDRVERSNUM >= 10504
   SetupStore("MaxiFont", setup.maxi_font);
   SetupStore("MaxiFontHeight", setup.maxi_font_height);
   SetupStore("MaxiFontWidth", setup.maxi_font_width);
   SetupStore("MiniFont", setup.mini_font);
   SetupStore("MiniFontHeight", setup.mini_font_height);
   SetupStore("MiniFontWidth", setup.mini_font_width);
-#endif
   SetupStore("Transparency", setup.transparency);
 }

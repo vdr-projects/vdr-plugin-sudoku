@@ -1,7 +1,7 @@
 /*
  * Sudoku: A plug-in for the Video Disk Recorder
  *
- * Copyright (C) 2005-2008, Thomas Günther <tom@toms-cafe.de>
+ * Copyright (C) 2005-2010, Thomas Günther <tom@toms-cafe.de>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -22,9 +22,13 @@
 namespace Sudoku { class PuzzleGame; }
 #include "menu.h"
 #include "setup.h"
-#include "i18n.h"
+#include <vdr/i18n.h>
 #include <vdr/plugin.h>
 #include <vdr/config.h>
+
+#if APIVERSNUM < 10600
+#error "VDR-1.6.0 API version or greater is required!"
+#endif
 
 
 /** 'Sudoku' is a VDR plugin to generate and solve Number Place puzzles. */
@@ -88,9 +92,6 @@ using namespace SudokuPlugin;
  */
 bool Plugin::Start()
 {
-#if VDRVERSNUM < 10507
-  RegisterI18n(Phrases);
-#endif
   puzzle = NULL;
   return true;
 }

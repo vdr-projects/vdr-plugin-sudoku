@@ -1,7 +1,7 @@
 /*
  * Sudoku: A plug-in for the Video Disk Recorder
  *
- * Copyright (C) 2005-2008, Thomas Günther <tom@toms-cafe.de>
+ * Copyright (C) 2005-2010, Thomas Günther <tom@toms-cafe.de>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -46,14 +46,12 @@ namespace SudokuPlugin
     int key_red;
     int key_green;
     int key_yellow;
-#if VDRVERSNUM >= 10504
     char maxi_font[MAXFONTNAME];
     int maxi_font_height;
     int maxi_font_width;
     char mini_font[MAXFONTNAME];
     int mini_font_height;
     int mini_font_width;
-#endif
     int transparency;
 
     /** Constructor */
@@ -71,10 +69,8 @@ namespace SudokuPlugin
   {
     SetupData& setup;
     SetupData data;
-#if VDRVERSNUM >= 10504
     cStringList maxi_font_names, mini_font_names;
     int maxi_font_index, mini_font_index;
-#endif
 
   public:
 
