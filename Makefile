@@ -111,6 +111,10 @@ libvdr-$(PLUGIN).so: $(OBJS)
 	$(CXX) $(CXXFLAGS) -shared $^ -o $@
 	@cp --remove-destination $@ $(LIBDIR)/$@.$(APIVERSION)
 
+.PHONY: tests
+tests:
+	@cd $@ && $(MAKE)
+
 dist: clean
 	@-rm -rf $(TMPDIR)/$(ARCHIVE)
 	@mkdir $(TMPDIR)/$(ARCHIVE)
@@ -126,3 +130,4 @@ clean:
 	@-rm -f $(DEPFILE) *.o *.so $(I18Npot) *.tgz core* *~
 	@-rm -rf srcdoc
 	@cd tools && $(MAKE) clean
+	@cd tests && $(MAKE) clean
