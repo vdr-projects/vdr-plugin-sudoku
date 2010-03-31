@@ -1,7 +1,7 @@
 /*
  * Sudoku: A plug-in for the Video Disk Recorder
  *
- * Copyright (C) 2008, Thomas Günther <tom@toms-cafe.de>
+ * Copyright (C) 2008-2010, Thomas Günther <tom@toms-cafe.de>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -53,7 +53,9 @@ void History::reset()
 /** Current move in the history */
 Move* History::current()
 {
-  return history[executed - 1];
+  if (movesExecuted())
+    return history[executed - 1];
+  return 0;
 }
 
 /** Add a new move */
