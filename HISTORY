@@ -98,3 +98,4 @@ ____-__-__: Version 0.3.5
 - Added unit tests.
 - Fixed segfault in History::current.
 - Fixed null pointer handling in History::add.
+- Updated url and email of the VDR project to tvdr.de.
