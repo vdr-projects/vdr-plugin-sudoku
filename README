@@ -32,6 +32,12 @@ Requirements:
   http://cxxtest.tigris.org/
   On Debian systems you could download the RPM file and install it with alien.
 
+- (optionally) Doxygen for source documentation (tested with version 1.6.3)
+  http://doxygen.org/
+
+- (optionally) Graphviz for doxygen graphs (tested with version 2.26.3)
+  http://www.graphviz.org/
+
 
 Description:
 ------------
