@@ -61,14 +61,17 @@ Move* History::current()
 /** Add a new move */
 void History::add(Move* move)
 {
-  for (unsigned int pos = history.size(); pos > executed; --pos)
+  if (move)
   {
-    // Remove object created outside of History
-    delete history.back();
-    history.pop_back();
+    for (unsigned int pos = history.size(); pos > executed; --pos)
+    {
+      // Remove object created outside of History
+      delete history.back();
+      history.pop_back();
+    }
+    history.push_back(move);
+    ++executed;
   }
-  history.push_back(move);
-  ++executed;
 }
 
 /** Set previous move as current */
