@@ -58,7 +58,7 @@ Move* History::current()
   return 0;
 }
 
-/** Add a new move */
+/** Add a new move. */
 void History::add(Move* move)
 {
   if (move)
@@ -74,28 +74,28 @@ void History::add(Move* move)
   }
 }
 
-/** Set previous move as current */
+/** Set previous move as current. */
 void History::backward()
 {
   if (movesExecuted())
     --executed;
 }
 
-/** Set next move as current */
+/** Set next move as current. */
 void History::forward()
 {
   if (movesToExecute())
     ++executed;
 }
 
-/** Are there executed moves in the history */
-bool History::movesExecuted()
+/** Are there executed moves in the history? */
+bool History::movesExecuted() const
 {
   return executed > 0;
 }
 
-/** Are there moves to execute in the history */
-bool History::movesToExecute()
+/** Are there moves to execute in the history? */
+bool History::movesToExecute() const
 {
   return executed < history.size();
 }

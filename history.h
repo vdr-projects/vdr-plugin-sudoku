@@ -1,7 +1,7 @@
 /*
  * Sudoku: A plug-in for the Video Disk Recorder
  *
- * Copyright (C) 2008, Thomas Günther <tom@toms-cafe.de>
+ * Copyright (C) 2008-2010, Thomas Günther <tom@toms-cafe.de>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -54,20 +54,20 @@ namespace Sudoku
     /** Current move in the history */
     Move* current();
 
-    /** Add a new move */
+    /** Add a new move. */
     void add(Move* move);
 
-    /** Set previous move as current */
+    /** Set previous move as current. */
     void backward();
 
-    /** Set next move as current */
+    /** Set next move as current. */
     void forward();
 
-    /** Are there executed moves in the history */
-    bool movesExecuted();
+    /** Are there executed moves in the history? */
+    bool movesExecuted() const;
 
-    /** Are there moves to execute in the history */
-    bool movesToExecute();
+    /** Are there moves to execute in the history? */
+    bool movesToExecute() const;
   };
 
 
@@ -80,7 +80,7 @@ namespace Sudoku
     /** Destructor */
     virtual ~Move() {};
 
-    /** Do the move */
+    /** Do the move. */
     virtual void execute() = 0;
 
     /** Undo the move. */
