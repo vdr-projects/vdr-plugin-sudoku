@@ -346,7 +346,7 @@ unsigned int Puzzle::numbers_count(Pos pos) const
 bool Puzzle::possible_number(Pos pos, unsigned int number) const
 {
   assert(pos <= Pos::last());
-  assert(0 <= number && number <= DIM);
+  assert(0 < number && number <= DIM);
   return numbers[pos][number];
 }
 
