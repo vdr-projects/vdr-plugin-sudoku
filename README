@@ -1,7 +1,7 @@
 Sudoku: A plug-in for the Video Disk Recorder
 ---------------------------------------------
 
-Copyright (C) 2005-2008, Thomas Günther <tom@toms-cafe.de>
+Copyright (C) 2005-2010, Thomas Günther <tom@toms-cafe.de>
 
 Project's homepage: http://toms-cafe.de/vdr/sudoku
 
@@ -104,7 +104,7 @@ Setup:
                           cell the background of the corresponding grid section
                           is colored.
                           Values: yes/no. Default: no.
-- Show possible numbers as digits (VDR >= 1.5.4)
+- Show possible numbers as digits
                           Show digits in all empty cells representing the
                           possible numbers.
                           Values: yes/no. Default: no.
@@ -116,22 +116,22 @@ Setup:
                           Values: see commands menu. Default: Undo last action.
 - Key Yellow              Choose command for the yellow key.
                           Values: see commands menu. Default: Redo last action.
-- Large font (VDR >= 1.5.4)
+- Large font
                           Choose font for the large digits.
                           Values: all installed fonts. Default: Sans Serif:Bold.
-- Large font height (pixel) (VDR >= 1.5.4)
+- Large font height (pixel)
                           Font height for the large digits.
                           Values: 10-64. Default: 31.
-- Large font width (pixel) (VDR >= 1.5.4)
+- Large font width (pixel)
                           Font width for the large digits.
                           Values: 10-64. Default: 42.
-- Small font (VDR >= 1.5.4)
+- Small font
                           Choose font for the small digits.
                           Values: all installed fonts. Default: Sans Serif:Bold.
-- Small font height (pixel) (VDR >= 1.5.4)
+- Small font height (pixel)
                           Font height for the small digits.
                           Values: 10-64. Default: 10.
-- Small font width (pixel) (VDR >= 1.5.4)
+- Small font width (pixel)
                           Font width for the small digits.
                           Values: 10-64. Default: 14.
 - Transparency (%)        Set the transparency of the menu.
