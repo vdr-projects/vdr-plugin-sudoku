@@ -36,7 +36,7 @@ namespace SudokuPlugin
 {
 
   /** Version number of the plugin */
-  static const char* VERSION = "0.3.4";
+  static const char* VERSION = "0.3.5";
 
   /** Short description of the plugin's purpose */
   static const char* DESCRIPTION =

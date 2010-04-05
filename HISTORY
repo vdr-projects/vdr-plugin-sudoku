@@ -86,7 +86,7 @@ VDR plug-in 'Sudoku' Revision History
 - Updated Italian language texts (thanks to Diego Pierotto).
 - Updated Spanish language texts (thanks to Bittor Corl).
 
-____-__-__: Version 0.3.5
+2010-04-05: Version 0.3.5
 
 - Moved to http://projects.vdr-developer.org/projects/show/plg-sudoku.
 - Changed repository from subversion to git.
